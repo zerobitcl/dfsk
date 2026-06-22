@@ -1,13 +1,16 @@
-CARPETA DE IMÁGENES – Felipe Núñez Autos
-=========================================
+CARPETA DE IMÁGENES – Felipe Núñez · Callegari Automotora
+=========================================================
 
 Coloca aquí los archivos de imagen del proyecto.
 
 IMÁGENES REQUERIDAS:
 --------------------
-• image_5f369d.jpg   → Imagen hero principal de la landing-campana.html
-                       (foto del auto o camioneta DFSK en paisaje de la IV Región)
-                       Tamaño recomendado: 1920×1080 px, JPG comprimido a ~150 KB
+• callegari-logo.png   → Logo/sello Callegari Automotora (header, hero y footer)
+                       PNG con fondo transparente, ~300×80 px, comprimido
+
+• image_5f369d.jpg     → Imagen hero principal de landing-campana.html
+                       (camioneta DFSK en paisaje IV Región)
+                       Tamaño recomendado: 1920×1080 px, JPG ~150 KB
 
 RECOMENDACIONES:
 ----------------

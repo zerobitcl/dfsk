@@ -8,7 +8,7 @@
   <!-- ═══ SEO PRIMARIO ═══ -->
   <title>Camionetas DFSK Ovalle | D1 Trabajo y Z9 Premium · Felipe Núñez</title>
   <meta name="description" content="Camionetas DFSK en Ovalle: D1 para trabajo (motor, chasis y caja Nissan) y Z9 premium (cámara 540°, cuero). Taller y repuestos en Ovalle. Pie desde $3.200.000. Garantía 3 años / 100.000 km.">
-  <meta name="keywords" content="Camionetas DFSK Ovalle, DFSK D1 Ovalle, DFSK Z9 Coquimbo, camioneta trabajo Ovalle, comprar DFSK IV Región, retoma auto Ovalle">
+  <meta name="keywords" content="Camionetas DFSK Ovalle, DFSK D1 Ovalle, DFSK Z9 Coquimbo, camioneta trabajo Ovalle, comprar DFSK IV Región, parte de pago auto Ovalle">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Felipe Núñez - Asesor Comercial DFSK">
   <link rel="canonical" href="https://dfsk-coquimbo.cl/">
@@ -16,7 +16,7 @@
   <!-- ═══ OPEN GRAPH ═══ -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Camionetas DFSK Ovalle · D1 Trabajo y Z9 Premium">
-  <meta property="og:description" content="Taller y repuestos en Ovalle. Retoma desde 2016. Pie desde $3.200.000. Crédito tradicional 60 cuotas o inteligente 48 cuotas.">
+  <meta property="og:description" content="Taller y repuestos en Ovalle. Parte de pago desde 2016. Pie desde $3.200.000. Crédito tradicional 60 cuotas o inteligente 48 cuotas.">
   <meta property="og:url" content="https://dfsk-coquimbo.cl/">
   <meta property="og:image" content="https://dfsk-coquimbo.cl/og-image.jpg">
   <meta property="og:locale" content="es_CL">
@@ -30,8 +30,8 @@
       {
         "@type": "AutoDealer",
         "@id": "https://dfsk-coquimbo.cl/#dealer",
-        "name": "DFSK Ovalle — Felipe Núñez",
-        "description": "Camionetas DFSK D1 y Z9 en Ovalle y Región de Coquimbo. Taller y repuestos locales.",
+        "name": "Callegari Automotora — Felipe Núñez",
+        "description": "Camionetas DFSK D1 y Z9 en Ovalle. Concesionario Callegari Automotora.",
         "url": "https://dfsk-coquimbo.cl/",
         "telephone": "+56912345678",
         "priceRange": "$$",
@@ -49,7 +49,7 @@
         "employee": {
           "@type": "Person",
           "name": "Felipe Núñez",
-          "jobTitle": "Asesor Comercial VIP",
+          "jobTitle": "Asesor Comercial",
           "telephone": "+56912345678"
         }
       },
@@ -259,8 +259,87 @@
       transition: background var(--tr), transform var(--tr) !important;
     }
     .nav-cta:hover { background: var(--c-wa-d) !important; transform: scale(1.03); }
-    @media (max-width: 700px) { .nav-links .hide-sm { display: none; } }
+    @media (max-width: 700px) { .nav-links .hide-sm { display: none; } .callegari-seal--header { display: none; } }
     @media (max-width: 480px) { .nav-links { gap: 12px; } }
+
+    /* Callegari Automotora — sello oficial */
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .callegari-seal {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border: 1px solid rgba(201,168,76,.28);
+      border-radius: var(--r-sm);
+      background: rgba(255,255,255,.04);
+    }
+    .callegari-seal img {
+      height: 26px;
+      width: auto;
+      max-width: 110px;
+      object-fit: contain;
+      filter: brightness(1.05);
+    }
+    .callegari-seal-fallback {
+      display: none;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .callegari-seal-fallback strong {
+      font-size: .62rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--c-gold);
+    }
+    .callegari-seal-fallback span {
+      font-size: .58rem;
+      color: rgba(255,255,255,.45);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .callegari-hero-seal {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      padding: 10px 16px;
+      border: 1px solid rgba(201,168,76,.22);
+      border-radius: var(--r-md);
+      background: rgba(201,168,76,.06);
+    }
+    .callegari-hero-seal img {
+      height: 32px;
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+    }
+    .callegari-hero-seal span {
+      font-size: .78rem;
+      color: rgba(255,255,255,.65);
+      font-weight: 600;
+    }
+    .footer-callegari {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .footer-callegari img {
+      height: 24px;
+      width: auto;
+      max-width: 100px;
+      object-fit: contain;
+      opacity: .85;
+    }
+    .footer-callegari span {
+      font-size: .75rem;
+      color: var(--c-gray-500);
+    }
 
     /* ════════════════════════════════════════════
        HERO
@@ -583,7 +662,7 @@
       line-height: 1.5;
     }
     .req-icon { flex-shrink: 0; color: var(--c-wa); font-size: 1rem; margin-top: 1px; }
-    .retoma-banner {
+    .parte-pago-banner {
       margin-top: 24px;
       background: linear-gradient(135deg, rgba(201,168,76,.12), rgba(201,168,76,.05));
       border: 1px solid rgba(201,168,76,.3);
@@ -593,9 +672,9 @@
       gap: 14px;
       align-items: flex-start;
     }
-    .retoma-icon { font-size: 1.6rem; flex-shrink: 0; }
-    .retoma-text strong { display: block; font-size: .95rem; font-weight: 700; color: var(--c-gold); margin-bottom: 4px; }
-    .retoma-text span { font-size: .84rem; color: rgba(255,255,255,.65); line-height: 1.55; }
+    .parte-pago-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .parte-pago-text strong { display: block; font-size: .95rem; font-weight: 700; color: var(--c-gold); margin-bottom: 4px; }
+    .parte-pago-text span { font-size: .84rem; color: rgba(255,255,255,.65); line-height: 1.55; }
 
     .guarantee-strip {
       margin-top: 52px;
@@ -781,10 +860,26 @@
   <!-- ════════ HEADER ════════ -->
   <header class="header" id="header">
     <div class="header-inner">
-      <a href="#" class="logo" aria-label="DFSK Coquimbo inicio">
-        <span>DFSK</span>
-        <span class="logo-badge">Ovalle</span>
-      </a>
+      <div class="header-brand">
+        <a href="#" class="logo" aria-label="DFSK Ovalle — Callegari Automotora">
+          <span>DFSK</span>
+          <span class="logo-badge">Ovalle</span>
+        </a>
+        <div class="callegari-seal callegari-seal--header" aria-label="Callegari Automotora — concesionario oficial">
+          <img
+            src="assets/img/callegari-logo.png"
+            alt="Callegari Automotora"
+            width="110"
+            height="32"
+            loading="eager"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          >
+          <div class="callegari-seal-fallback">
+            <strong>Callegari</strong>
+            <span>Automotora</span>
+          </div>
+        </div>
+      </div>
       <nav class="nav-links" aria-label="Navegación principal">
         <a href="modelos-dfsk.html" class="hide-sm">Modelos</a>
         <a href="#financiamiento" class="hide-sm">Financiamiento</a>
@@ -816,6 +911,18 @@
             <span>Ovalle · La Serena · Coquimbo — Camionetas DFSK</span>
           </div>
 
+          <div class="callegari-hero-seal" aria-label="Venta oficial Callegari Automotora">
+            <img
+              src="assets/img/callegari-logo.png"
+              alt="Callegari Automotora"
+              width="120"
+              height="36"
+              loading="eager"
+              onerror="this.style.display='none';"
+            >
+            <span>Venta oficial · Callegari Automotora · Ovalle</span>
+          </div>
+
           <h1 class="hero-title">
             Camionetas DFSK<br>
             en <em>Ovalle</em><br>
@@ -824,7 +931,7 @@
 
           <p class="hero-sub">
             <strong>DFSK D1</strong> para faena (motor, chasis y caja Nissan) y <strong>DFSK Z9</strong> premium
-            (cámara 540°, cuero). Taller y repuestos en Ovalle, retoma de autos y pie desde <strong>$3.200.000</strong>.
+            (cámara 540°, cuero). Taller y repuestos en Ovalle, parte de pago de tu vehículo usado y pie desde <strong>$3.200.000</strong>.
             Asesoría directa con Felipe Núñez.
           </p>
 
@@ -855,7 +962,7 @@
               <span>Pie desde</span>
             </div>
             <div class="hero-stat">
-              <strong>Retoma</strong>
+              <strong>Parte de pago</strong>
               <span>Desde 2016 · máx. 100k km</span>
             </div>
             <div class="hero-stat">
@@ -888,8 +995,8 @@
           </article>
           <article class="benefit-card fade-in">
             <div class="benefit-icon" aria-hidden="true">🔄</div>
-            <h3 class="benefit-title">Retoma de tu auto usado</h3>
-            <p class="benefit-desc">Recibimos vehículos desde año 2016 con máximo 100.000 km. Tasación rápida para bajar tu pie.</p>
+            <h3 class="benefit-title">Parte de pago de tu auto usado</h3>
+            <p class="benefit-desc">Recibimos vehículos desde año 2016 con máximo 100.000 km en parte de pago. Tasación rápida para bajar tu pie.</p>
           </article>
           <article class="benefit-card fade-in">
             <div class="benefit-icon" aria-hidden="true">💰</div>
@@ -1064,7 +1171,7 @@
             </ol>
           </div>
 
-          <!-- Right: Requirements + Retoma -->
+          <!-- Right: Requirements + Parte de pago -->
           <div>
             <div class="requisites-card fade-in">
               <h3>Opciones de financiamiento</h3>
@@ -1087,13 +1194,13 @@
                 </li>
                 <li class="req-item">
                   <span class="req-icon" aria-hidden="true">✓</span>
-                  <span>Retoma de autos desde año 2016, máximo 100.000 km</span>
+                  <span>Parte de pago: vehículos desde año 2016, máximo 100.000 km</span>
                 </li>
               </ul>
 
-              <div class="retoma-banner" role="note" aria-label="Opción de retoma con tu auto usado">
-                <span class="retoma-icon" aria-hidden="true">🔄</span>
-                <div class="retoma-text">
+              <div class="parte-pago-banner" role="note" aria-label="Opción de parte de pago con tu vehículo usado">
+                <span class="parte-pago-icon" aria-hidden="true">🔄</span>
+                <div class="parte-pago-text">
                   <strong>¿Tienes camioneta o auto usado?</strong>
                   <span>Lo tasamos y lo dejamos en parte de pago. Bajas el pie y aceleras la aprobación.</span>
                 </div>
@@ -1121,14 +1228,14 @@
             <div class="section-tag">Contacto directo</div>
             <h2 class="section-title" id="contact-title">Hablemos sin<br>intermediarios</h2>
             <p class="section-sub">
-              Soy Felipe Núñez, Asesor Comercial VIP. Mi trabajo es darte el mejor precio y la mejor experiencia de compra en toda la Región de Coquimbo.
+              Soy Felipe Núñez, Asesor Comercial de Callegari Automotora. Mi trabajo es darte el mejor precio y la mejor experiencia de compra en toda la Región de Coquimbo.
             </p>
 
             <div class="advisor-card" aria-label="Perfil de Felipe Núñez">
               <div class="advisor-avatar" aria-hidden="true">👤</div>
               <div class="advisor-info">
                 <strong>Felipe Núñez</strong>
-                <span>Asesor Comercial VIP · DFSK Coquimbo</span>
+                <span>Asesor Comercial · Callegari Automotora · Ovalle</span>
               </div>
             </div>
 
@@ -1198,7 +1305,7 @@
                       <option value="Desde $3.200.000">Desde $3.200.000</option>
                       <option value="Entre $3.200.000 y $5.000.000">Entre $3.200.000 y $5.000.000</option>
                       <option value="Más de $5.000.000">Más de $5.000.000</option>
-                      <option value="Tengo vehículo para parte de pago">Tengo vehículo para parte de pago (retoma)</option>
+                      <option value="Tengo vehículo para parte de pago">Tengo vehículo para parte de pago</option>
                     </select>
                   </div>
                   <button type="submit" class="btn-submit" aria-label="Enviar formulario de cotización">
@@ -1237,9 +1344,22 @@
   <!-- ════════ FOOTER ════════ -->
   <footer>
     <div class="footer-inner">
-      <p class="footer-copy">
-        © 2026 <strong>Felipe Núñez · Asesor DFSK Coquimbo</strong> — La Serena, Coquimbo, Ovalle, Región de Coquimbo, Chile.
-      </p>
+      <div>
+        <div class="footer-callegari" aria-label="Callegari Automotora">
+          <img
+            src="assets/img/callegari-logo.png"
+            alt="Callegari Automotora"
+            width="100"
+            height="28"
+            loading="lazy"
+            onerror="this.style.display='none';"
+          >
+          <span>Concesionario oficial · Callegari Automotora</span>
+        </div>
+        <p class="footer-copy">
+          © 2026 <strong>Felipe Núñez · Asesor Callegari Automotora</strong> — Ovalle, La Serena, Coquimbo, Región de Coquimbo, Chile.
+        </p>
+      </div>
       <nav class="footer-links" aria-label="Navegación del pie de página">
         <a href="#inicio">Inicio</a>
         <a href="modelos-dfsk.html">Modelos DFSK</a>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cotiza tu Camioneta DFSK en Ovalle | Oferta Meta Ads</title>
-  <meta name="description" content="DFSK D1 para trabajo y Z9 premium en Ovalle. Pie desde $3.200.000. Retoma desde 2016. Taller y repuestos locales. Cotiza ahora con Felipe Núñez." />
+  <meta name="description" content="DFSK D1 para trabajo y Z9 premium en Ovalle. Pie desde $3.200.000. Parte de pago desde 2016. Taller y repuestos locales. Callegari Automotora. Cotiza con Felipe Núñez." />
   <meta name="robots" content="noindex" />
 
   <!-- Open Graph para Meta Ads -->
@@ -61,6 +61,8 @@
       from { opacity: 0; transform: translateY(12px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+    .callegari-seal img { height: 28px; width: auto; max-width: 110px; object-fit: contain; }
+    .callegari-seal-fallback { display: none; font-size: .65rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #d97706; }
   </style>
 </head>
 
@@ -70,6 +72,24 @@
        HERO FULL-SCREEN con imagen + formulario overlay
   ============================================================ -->
   <main>
+    <!-- Sello Callegari — barra superior -->
+    <div class="relative z-20 bg-zinc-950/90 border-b border-zinc-800 px-4 py-2.5">
+      <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+        <div class="callegari-seal inline-flex items-center gap-2 px-3 py-1.5 border border-zinc-700 rounded-lg bg-zinc-900/80" aria-label="Callegari Automotora">
+          <img
+            src="assets/img/callegari-logo.png"
+            alt="Callegari Automotora"
+            width="110"
+            height="28"
+            loading="eager"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+          >
+          <span class="callegari-seal-fallback">Callegari Automotora</span>
+        </div>
+        <p class="text-zinc-500 text-xs hidden sm:block">Felipe Núñez · Asesor Comercial</p>
+      </div>
+    </div>
+
     <section class="relative min-h-screen flex items-center overflow-hidden" aria-labelledby="hero-lp-heading">
 
       <!-- Imagen de fondo -->
@@ -104,7 +124,7 @@
             <p class="text-zinc-300 text-lg mb-8 leading-relaxed max-w-md">
               <strong class="text-white">D1</strong> para trabajo (motor, chasis y caja Nissan) o
               <strong class="text-white">Z9</strong> premium (cámara 540°, cuero).
-              Taller y repuestos en Ovalle, retoma desde 2016 y pie desde <strong class="text-white">$3.200.000</strong>.
+              Taller y repuestos en Ovalle, parte de pago desde 2016 y pie desde <strong class="text-white">$3.200.000</strong>.
               <strong class="text-white block mt-2">Respondemos en menos de 2 horas.</strong>
             </p>
 
@@ -122,7 +142,7 @@
               </div>
               <div class="pillar trust-badge bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-4" style="animation-delay:0.15s">
                 <div class="text-brand-500 text-xl mb-1">🔄</div>
-                <p class="text-white text-sm font-semibold">Retoma</p>
+                <p class="text-white text-sm font-semibold">Parte de pago</p>
                 <p class="text-zinc-400 text-xs mt-0.5">Desde 2016 · máx. 100k km</p>
               </div>
               <div class="pillar trust-badge bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-4" style="animation-delay:0.2s">
@@ -281,8 +301,20 @@
        FOOTER MINIMALISTA (sin links de salida a otras páginas)
   ============================================================ -->
   <footer class="bg-zinc-950 border-t border-zinc-800 py-8 px-4 text-center" role="contentinfo">
+    <div class="flex items-center justify-center gap-3 mb-3" aria-label="Callegari Automotora">
+      <img
+        src="assets/img/callegari-logo.png"
+        alt="Callegari Automotora"
+        width="100"
+        height="26"
+        loading="lazy"
+        class="opacity-80"
+        onerror="this.style.display='none';"
+      >
+      <span class="text-zinc-500 text-xs">Concesionario oficial · Callegari Automotora</span>
+    </div>
     <p class="text-zinc-600 text-xs">
-      © 2026 Felipe Núñez Automotora · Ovalle, La Serena y Coquimbo, Chile ·
+      © 2026 Felipe Núñez · Callegari Automotora · Ovalle, La Serena y Coquimbo, Chile ·
       <a href="tel:+56912345678" class="hover:text-zinc-400 transition-colors">+569 1234 5678</a>
     </p>
   </footer>

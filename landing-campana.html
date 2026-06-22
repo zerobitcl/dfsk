@@ -292,14 +292,19 @@
   </footer>
 
   <script>
-    // Validación y feedback del formulario (sin dependencias externas)
     const form = document.getElementById('cotizacion-form');
+    const API_LEADS = 'api/leads.php';
+
     if (form) {
       form.addEventListener('submit', function(e) {
         e.preventDefault();
         const btn = form.querySelector('button[type="submit"]');
         const nombre = form.querySelector('#nombre').value.trim();
         const telefono = form.querySelector('#telefono').value.trim();
+        const ciudad = form.querySelector('#ciudad').value;
+        const modelo = form.querySelector('#modelo').value;
+        const mensaje = form.querySelector('#mensaje').value.trim();
+
         if (!nombre || !telefono) {
           btn.textContent = 'Completa nombre y teléfono';
           btn.classList.add('bg-red-700');
@@ -311,9 +316,31 @@
           }, 2500);
           return;
         }
-        btn.textContent = '✓ Enviado — Te contactamos pronto';
+
+        btn.textContent = 'Enviando…';
         btn.disabled = true;
-        btn.classList.add('opacity-70', 'cursor-not-allowed');
+
+        const notas = [
+          ciudad ? 'Ciudad: ' + ciudad : '',
+          mensaje ? 'Consulta: ' + mensaje : ''
+        ].filter(Boolean).join(' | ');
+
+        fetch(API_LEADS, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            nombre,
+            telefono,
+            modelo: modelo || null,
+            fuente: 'landing',
+            notas: notas || null
+          })
+        }).catch(function () {
+          /* Continúa aunque falle el guardado */
+        }).finally(function () {
+          btn.textContent = '✓ Enviado — Te contactamos pronto';
+          btn.classList.add('opacity-70', 'cursor-not-allowed');
+        });
       });
     }
   </script>

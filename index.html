@@ -1,324 +1,1418 @@
 <!DOCTYPE html>
 <html lang="es-CL">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Venta de Autos en Ovalle, La Serena y Coquimbo | Felipe Núñez – DFSK & Subaru</title>
-  <meta name="description" content="Compra tu auto nuevo o usado en la Región de Coquimbo con Felipe Núñez. Distribuidores oficiales DFSK y Subaru en Ovalle, La Serena y Coquimbo. Financiamiento, test drive y posventa." />
-  <meta name="keywords" content="venta de autos Ovalle, venta de autos La Serena, venta de autos Coquimbo, DFSK Coquimbo, Subaru IV región, camionetas trabajo DFSK, autos nuevos Coquimbo, concesionario Ovalle" />
-  <meta name="author" content="Felipe Núñez Automotora" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://felipenuñezautos.cl/" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d1117">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_CL" />
-  <meta property="og:title" content="Venta de Autos en Coquimbo | Felipe Núñez – DFSK & Subaru" />
-  <meta property="og:description" content="Distribuidores DFSK y Subaru en Ovalle, La Serena y Coquimbo. Financiamiento en el acto, test drive gratis y garantía de fábrica." />
-  <meta property="og:url" content="https://felipenuñezautos.cl/" />
+  <!-- ═══ SEO PRIMARIO ═══ -->
+  <title>DFSK 580 y 600 en Coquimbo | SUV Familiar · Felipe Núñez Asesor VIP</title>
+  <meta name="description" content="Compra tu DFSK SUV 580 (7 asientos) o 600 (6 asientos, 181 HP Turbo) en La Serena, Coquimbo y Ovalle. Financiamiento con cuotas hasta 45% más bajas. Asesor VIP Felipe Núñez · Garantía 5 años.">
+  <meta name="keywords" content="DFSK 580 precio La Serena, DFSK 600 Coquimbo, SUV 3 corridas asientos Ovalle, comprar DFSK Coquimbo, SUV familiar La Serena, DFSK Chile financiamiento, SUV 7 pasajeros La Serena">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Felipe Núñez - Asesor Comercial DFSK">
+  <link rel="canonical" href="https://dfsk-coquimbo.cl/">
 
-  <!-- Structured Data: Local Business -->
+  <!-- ═══ OPEN GRAPH ═══ -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DFSK 580 y 600 · SUV Familiar en Coquimbo | Asesor Felipe Núñez">
+  <meta property="og:description" content="Financiamiento inteligente, cuotas hasta 45% más bajas. Retoma tu auto usado. Garantía 5 años. Atención VIP en La Serena.">
+  <meta property="og:url" content="https://dfsk-coquimbo.cl/">
+  <meta property="og:image" content="https://dfsk-coquimbo.cl/og-image.jpg">
+  <meta property="og:locale" content="es_CL">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ═══ SCHEMA MARKUP — LOCAL SEO ═══ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AutoDealer",
-    "name": "Felipe Núñez Automotora",
-    "description": "Venta de autos DFSK y Subaru en la Región de Coquimbo. Atención en Ovalle, La Serena y Coquimbo.",
-    "url": "https://felipenuñezautos.cl",
-    "telephone": "+56912345678",
-    "areaServed": ["Ovalle", "La Serena", "Coquimbo", "Región de Coquimbo"],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Ovalle",
-      "addressRegion": "Coquimbo",
-      "addressCountry": "CL"
-    },
-    "openingHours": "Mo-Sa 09:00-19:00",
-    "brand": [
-      { "@type": "Brand", "name": "DFSK" },
-      { "@type": "Brand", "name": "Subaru" }
+    "@graph": [
+      {
+        "@type": "AutoDealer",
+        "@id": "https://dfsk-coquimbo.cl/#dealer",
+        "name": "DFSK Coquimbo — Felipe Núñez",
+        "description": "Asesor Comercial VIP DFSK SUV 580 y 600 en la Región de Coquimbo, Chile.",
+        "url": "https://dfsk-coquimbo.cl/",
+        "telephone": "+56912345678",
+        "priceRange": "$$",
+        "areaServed": [
+          {"@type": "City", "name": "La Serena"},
+          {"@type": "City", "name": "Coquimbo"},
+          {"@type": "City", "name": "Ovalle"},
+          {"@type": "AdministrativeArea", "name": "Región de Coquimbo"}
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Región de Coquimbo",
+          "addressCountry": "CL"
+        },
+        "employee": {
+          "@type": "Person",
+          "name": "Felipe Núñez",
+          "jobTitle": "Asesor Comercial VIP",
+          "telephone": "+56912345678"
+        }
+      },
+      {
+        "@type": "Car",
+        "@id": "https://dfsk-coquimbo.cl/#dfsk600",
+        "name": "DFSK SUV 600",
+        "brand": {"@type": "Brand", "name": "DFSK"},
+        "description": "SUV 6 pasajeros (2+2+2), Motor 1.5L Turbo 181 HP, Pantalla 12.3\", CarPlay/Android Auto. Garantía 5 años o 100.000 km.",
+        "vehicleSeatingCapacity": 6,
+        "vehicleEngine": {"@type": "EngineSpecification", "engineDisplacement": "1.5L Turbo"},
+        "offers": {"@type": "Offer", "seller": {"@id": "https://dfsk-coquimbo.cl/#dealer"}, "priceCurrency": "CLP", "availability": "https://schema.org/InStock"}
+      },
+      {
+        "@type": "Car",
+        "@id": "https://dfsk-coquimbo.cl/#dfsk580",
+        "name": "DFSK SUV 580",
+        "brand": {"@type": "Brand", "name": "DFSK"},
+        "description": "SUV 7 pasajeros, Motor 1.8L 138 HP, despeje 230mm. Garantía 5 años o 100.000 km.",
+        "vehicleSeatingCapacity": 7,
+        "vehicleEngine": {"@type": "EngineSpecification", "engineDisplacement": "1.8L"},
+        "offers": {"@type": "Offer", "seller": {"@id": "https://dfsk-coquimbo.cl/#dealer"}, "priceCurrency": "CLP", "availability": "https://schema.org/InStock"}
+      }
     ]
   }
   </script>
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'system-ui', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              500: '#d97706',
-              600: '#b45309',
-              700: '#92400e',
-            }
-          }
-        }
-      }
-    }
-  </script>
   <style>
-    html { scroll-behavior: smooth; }
-    .nav-link { transition: color 0.2s ease; }
-    .card-hover { transition: transform 0.25s ease, box-shadow 0.25s ease; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-    .btn-primary { transition: background-color 0.2s ease, transform 0.15s ease; }
-    .btn-primary:hover { transform: scale(1.02); }
-    .logo-text { letter-spacing: -0.03em; }
+    /* ════════════════════════════════════════════
+       DESIGN TOKENS
+    ════════════════════════════════════════════ */
+    :root {
+      --c-dark:      #080e1a;
+      --c-dark-2:    #111827;
+      --c-dark-3:    #1f2937;
+      --c-blue:      #1a4b8c;
+      --c-blue-l:    #2563eb;
+      --c-gold:      #c9a84c;
+      --c-gold-l:    #e8c97a;
+      --c-wa:        #25d366;
+      --c-wa-d:      #1da851;
+      --c-red:       #dc2626;
+      --c-white:     #ffffff;
+      --c-gray-50:   #f9fafb;
+      --c-gray-100:  #f3f4f6;
+      --c-gray-200:  #e5e7eb;
+      --c-gray-500:  #6b7280;
+      --c-gray-700:  #374151;
+      --c-gray-900:  #111827;
+      --font:        -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Helvetica Neue', Arial, sans-serif;
+      --r-sm:   8px;
+      --r-md:   14px;
+      --r-lg:   22px;
+      --r-xl:   32px;
+      --shadow: 0 4px 32px rgba(0,0,0,.18);
+      --shadow-lg: 0 12px 56px rgba(0,0,0,.28);
+      --tr: .3s ease;
+      --max: 1160px;
+    }
+
+    /* ════════════════════════════════════════════
+       RESET & BASE
+    ════════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font);
+      background: var(--c-dark);
+      color: var(--c-white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: var(--font); }
+
+    /* ════════════════════════════════════════════
+       UTILITIES
+    ════════════════════════════════════════════ */
+    .container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    .section-tag {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--c-gold);
+      background: rgba(201,168,76,.12);
+      border: 1px solid rgba(201,168,76,.28);
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--c-gray-500);
+      line-height: 1.7;
+      margin-top: 10px;
+    }
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* ════════════════════════════════════════════
+       FLOATING WHATSAPP
+    ════════════════════════════════════════════ */
+    .wa-float {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--c-wa);
+      color: var(--c-white);
+      padding: 13px 20px 13px 16px;
+      border-radius: 100px;
+      font-size: .9rem;
+      font-weight: 700;
+      box-shadow: 0 4px 24px rgba(37,211,102,.4);
+      transition: var(--tr);
+      will-change: transform;
+    }
+    .wa-float:hover { background: var(--c-wa-d); transform: scale(1.04); box-shadow: 0 6px 32px rgba(37,211,102,.55); }
+    .wa-float svg { flex-shrink: 0; }
+    @media (max-width: 480px) { .wa-float span { display: none; } .wa-float { padding: 15px; } }
+
+    /* Pulse ring */
+    .wa-float::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 100px;
+      border: 2px solid var(--c-wa);
+      animation: pulse-ring 2.2s ease-out infinite;
+    }
+    @keyframes pulse-ring {
+      0%   { transform: scale(1); opacity: .7; }
+      100% { transform: scale(1.45); opacity: 0; }
+    }
+
+    /* ════════════════════════════════════════════
+       HEADER / NAV
+    ════════════════════════════════════════════ */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0 20px;
+      transition: background .35s ease, backdrop-filter .35s ease, box-shadow .35s ease;
+    }
+    .header.scrolled {
+      background: rgba(8,14,26,.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 2px 20px rgba(0,0,0,.4);
+    }
+    .header-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: -.03em;
+    }
+    .logo-badge {
+      background: var(--c-gold);
+      color: var(--c-dark);
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-links a {
+      font-size: .88rem;
+      font-weight: 500;
+      color: rgba(255,255,255,.75);
+      transition: color var(--tr);
+    }
+    .nav-links a:hover { color: var(--c-gold); }
+    .nav-cta {
+      background: var(--c-wa);
+      color: var(--c-white) !important;
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-weight: 700 !important;
+      font-size: .84rem !important;
+      transition: background var(--tr), transform var(--tr) !important;
+    }
+    .nav-cta:hover { background: var(--c-wa-d) !important; transform: scale(1.03); }
+    @media (max-width: 700px) { .nav-links .hide-sm { display: none; } }
+    @media (max-width: 480px) { .nav-links { gap: 12px; } }
+
+    /* ════════════════════════════════════════════
+       HERO
+    ════════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 88px 20px 60px;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      /* Reemplazar con: background-image: url('hero-dfsk.jpg'); */
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(26,75,140,.45) 0%, transparent 65%),
+        linear-gradient(135deg, #080e1a 0%, #0d1a2e 50%, #080e1a 100%);
+    }
+    /* Grid decorativo */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .hero-eyebrow span {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--c-gold);
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 2px;
+      background: var(--c-gold);
+    }
+    .hero-title {
+      font-size: clamp(2rem, 6vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -.03em;
+      margin-bottom: 18px;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--c-gold);
+    }
+    .hero-sub {
+      font-size: clamp(.95rem, 2.2vw, 1.15rem);
+      color: rgba(255,255,255,.72);
+      line-height: 1.65;
+      margin-bottom: 32px;
+      max-width: 480px;
+    }
+    .hero-sub strong { color: var(--c-white); }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--c-wa);
+      color: var(--c-white);
+      font-size: .95rem;
+      font-weight: 700;
+      padding: 15px 28px;
+      border-radius: var(--r-lg);
+      box-shadow: 0 4px 24px rgba(37,211,102,.35);
+      transition: var(--tr);
+    }
+    .btn-wa:hover { background: var(--c-wa-d); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(37,211,102,.45); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: transparent;
+      color: var(--c-white);
+      font-size: .95rem;
+      font-weight: 600;
+      padding: 14px 26px;
+      border-radius: var(--r-lg);
+      border: 1.5px solid rgba(255,255,255,.28);
+      transition: var(--tr);
+    }
+    .btn-outline:hover { border-color: var(--c-gold); color: var(--c-gold); }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .hero-stat { display: flex; flex-direction: column; }
+    .hero-stat strong { font-size: 1.6rem; font-weight: 900; color: var(--c-gold); letter-spacing: -.03em; }
+    .hero-stat span { font-size: .78rem; color: rgba(255,255,255,.55); font-weight: 500; }
+    /* Car visual placeholder — reemplazar con <img src="dfsk-600.png" alt="DFSK SUV 600"> */
+    .hero-car {
+      position: absolute;
+      right: -40px;
+      bottom: 0;
+      width: clamp(340px, 55vw, 760px);
+      height: 70%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      opacity: .18;
+      /* Si tienes la imagen: background-image: url('dfsk-hero.png'); background-size: contain; background-repeat: no-repeat; background-position: bottom; opacity: 1; */
+    }
+    @media (max-width: 900px) { .hero-car { display: none; } }
+
+    /* ════════════════════════════════════════════
+       URGENCY BAR
+    ════════════════════════════════════════════ */
+    .urgency-bar {
+      background: var(--c-red);
+      padding: 10px 20px;
+      text-align: center;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+    .urgency-bar span { opacity: .85; font-weight: 400; }
+
+    /* ════════════════════════════════════════════
+       BENEFITS
+    ════════════════════════════════════════════ */
+    .section-benefits {
+      background: var(--c-dark-2);
+      padding: 80px 0;
+    }
+    .benefits-header { text-align: center; margin-bottom: 52px; }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .benefit-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--r-md);
+      padding: 28px 24px;
+      transition: border-color var(--tr), transform var(--tr);
+    }
+    .benefit-card:hover { border-color: rgba(201,168,76,.35); transform: translateY(-4px); }
+    .benefit-icon {
+      width: 52px; height: 52px;
+      background: rgba(201,168,76,.12);
+      border-radius: var(--r-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      font-size: 1.5rem;
+    }
+    .benefit-title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .benefit-desc { font-size: .88rem; color: var(--c-gray-500); line-height: 1.6; }
+
+    /* ════════════════════════════════════════════
+       MODELS SECTION
+    ════════════════════════════════════════════ */
+    .section-models {
+      padding: 90px 0;
+      background: var(--c-dark);
+    }
+    .models-header { text-align: center; margin-bottom: 56px; }
+    .models-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+    .model-card {
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.08);
+      background: var(--c-dark-2);
+      display: flex;
+      flex-direction: column;
+      transition: border-color var(--tr), box-shadow var(--tr);
+    }
+    .model-card:hover { border-color: var(--c-gold); box-shadow: 0 8px 48px rgba(201,168,76,.12); }
+    .model-card.featured { border-color: rgba(201,168,76,.45); }
+    .model-badge {
+      background: var(--c-gold);
+      color: var(--c-dark);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      display: inline-block;
+      border-radius: 0 0 var(--r-sm) 0;
+      position: absolute;
+      top: 0; left: 0;
+    }
+
+    /* Imagen del modelo — reemplazar con <img src="dfsk-600.jpg" alt="DFSK SUV 600"> */
+    .model-img {
+      position: relative;
+      aspect-ratio: 16/9;
+      /* background-image: url('dfsk-600.jpg'); background-size: cover; background-position: center; */
+      background: linear-gradient(135deg, #0f1e38 0%, #1a3255 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .model-img-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: .35;
+    }
+    .model-img-inner svg { width: 80px; height: 80px; }
+    .model-img-inner span { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+    /* Cuando tengas imágenes reales, elimina .model-img-inner y descomenta background-image */
+
+    .model-body { padding: 28px 24px 24px; display: flex; flex-direction: column; flex: 1; }
+    .model-name { font-size: 1.5rem; font-weight: 900; letter-spacing: -.03em; margin-bottom: 4px; }
+    .model-tagline { font-size: .85rem; color: var(--c-gold); font-weight: 600; margin-bottom: 20px; }
+    .model-specs { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      font-size: .88rem;
+    }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-label { color: var(--c-gray-500); display: flex; align-items: center; gap: 8px; }
+    .spec-value { font-weight: 700; color: var(--c-white); }
+    .spec-value.highlight { color: var(--c-gold); }
+    .model-cta { margin-top: auto; }
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      width: 100%;
+      background: var(--c-gold);
+      color: var(--c-dark);
+      font-size: .95rem;
+      font-weight: 800;
+      padding: 15px;
+      border-radius: var(--r-md);
+      transition: var(--tr);
+    }
+    .btn-primary:hover { background: var(--c-gold-l); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(201,168,76,.35); }
+
+    /* ════════════════════════════════════════════
+       FINANCING
+    ════════════════════════════════════════════ */
+    .section-financing {
+      background: var(--c-dark-2);
+      padding: 90px 0;
+    }
+    .financing-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    @media (max-width: 800px) { .financing-inner { grid-template-columns: 1fr; gap: 48px; } }
+    .steps-list { display: flex; flex-direction: column; gap: 20px; margin-top: 36px; }
+    .step {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--c-gold);
+      color: var(--c-dark);
+      font-size: .9rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-content { padding-top: 3px; }
+    .step-title { font-size: 1rem; font-weight: 700; margin-bottom: 5px; }
+    .step-desc { font-size: .87rem; color: var(--c-gray-500); line-height: 1.6; }
+
+    .requisites-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--r-lg);
+      padding: 32px;
+    }
+    .requisites-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 20px; color: var(--c-gold); }
+    .req-list { display: flex; flex-direction: column; gap: 14px; }
+    .req-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: .9rem;
+      line-height: 1.5;
+    }
+    .req-icon { flex-shrink: 0; color: var(--c-wa); font-size: 1rem; margin-top: 1px; }
+    .retoma-banner {
+      margin-top: 24px;
+      background: linear-gradient(135deg, rgba(201,168,76,.12), rgba(201,168,76,.05));
+      border: 1px solid rgba(201,168,76,.3);
+      border-radius: var(--r-md);
+      padding: 18px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .retoma-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .retoma-text strong { display: block; font-size: .95rem; font-weight: 700; color: var(--c-gold); margin-bottom: 4px; }
+    .retoma-text span { font-size: .84rem; color: rgba(255,255,255,.65); line-height: 1.55; }
+
+    .guarantee-strip {
+      margin-top: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 22px 28px;
+      background: rgba(37,211,102,.07);
+      border: 1px solid rgba(37,211,102,.2);
+      border-radius: var(--r-lg);
+      text-align: center;
+    }
+    .guarantee-strip .g-icon { font-size: 2rem; }
+    .guarantee-strip strong { display: block; font-size: 1rem; font-weight: 800; }
+    .guarantee-strip span { font-size: .85rem; color: var(--c-gray-500); }
+
+    /* ════════════════════════════════════════════
+       CONTACT / FORM
+    ════════════════════════════════════════════ */
+    .section-contact {
+      padding: 90px 0;
+      background: var(--c-dark);
+    }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    @media (max-width: 800px) { .contact-inner { grid-template-columns: 1fr; gap: 48px; } }
+    .contact-left .section-sub { max-width: 420px; }
+    .advisor-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 28px 0;
+      padding: 18px 20px;
+      background: rgba(201,168,76,.07);
+      border: 1px solid rgba(201,168,76,.2);
+      border-radius: var(--r-md);
+    }
+    .advisor-avatar {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--c-gold), var(--c-blue));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .advisor-info strong { display: block; font-size: .95rem; font-weight: 800; }
+    .advisor-info span { font-size: .8rem; color: var(--c-gold); font-weight: 600; }
+    .contact-methods { display: flex; flex-direction: column; gap: 10px; }
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: .9rem;
+      padding: 10px 0;
+      color: rgba(255,255,255,.75);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .contact-method:last-child { border-bottom: none; }
+    .contact-method svg { color: var(--c-gold); flex-shrink: 0; }
+    /* Form */
+    .form-card {
+      background: var(--c-dark-2);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--r-lg);
+      padding: 36px 32px;
+    }
+    .form-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 6px; }
+    .form-subtitle { font-size: .85rem; color: var(--c-gray-500); margin-bottom: 28px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: .82rem; font-weight: 600; color: rgba(255,255,255,.7); margin-bottom: 7px; }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      background: rgba(255,255,255,.05);
+      border: 1.5px solid rgba(255,255,255,.1);
+      border-radius: var(--r-sm);
+      color: var(--c-white);
+      font-size: .92rem;
+      font-family: var(--font);
+      padding: 13px 16px;
+      transition: border-color var(--tr), background var(--tr);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .form-group input::placeholder { color: rgba(255,255,255,.3); }
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--c-gold);
+      background: rgba(201,168,76,.06);
+    }
+    .form-group select option { background: var(--c-dark-2); color: var(--c-white); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 540px) { .form-row { grid-template-columns: 1fr; } .form-card { padding: 26px 20px; } }
+    .btn-submit {
+      width: 100%;
+      background: var(--c-wa);
+      color: var(--c-white);
+      font-size: 1rem;
+      font-weight: 800;
+      padding: 16px;
+      border-radius: var(--r-md);
+      transition: var(--tr);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: none;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    .btn-submit:hover { background: var(--c-wa-d); transform: translateY(-2px); }
+    .btn-submit:active { transform: translateY(0); }
+    .form-privacy { font-size: .75rem; color: var(--c-gray-500); text-align: center; margin-top: 12px; line-height: 1.5; }
+
+    /* Form success state */
+    .form-success {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 14px;
+      padding: 40px 20px;
+    }
+    .form-success .success-icon { font-size: 3.5rem; }
+    .form-success strong { font-size: 1.2rem; font-weight: 800; }
+    .form-success p { font-size: .9rem; color: var(--c-gray-500); line-height: 1.6; }
+
+    /* ════════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════════ */
+    footer {
+      background: var(--c-dark-2);
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 32px 20px;
+    }
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .footer-copy { font-size: .8rem; color: var(--c-gray-500); }
+    .footer-copy strong { color: var(--c-gold); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: .8rem; color: var(--c-gray-500); transition: color var(--tr); }
+    .footer-links a:hover { color: var(--c-gold); }
+
+    /* ════════════════════════════════════════════
+       RESPONSIVE TWEAKS
+    ════════════════════════════════════════════ */
+    @media (max-width: 600px) {
+      .section-benefits, .section-models, .section-financing, .section-contact { padding: 60px 0; }
+      .hero { padding: 80px 20px 50px; }
+    }
   </style>
 </head>
+<body>
 
-<body class="bg-zinc-950 text-white font-sans antialiased">
+  <!-- ════════ FLOATING WHATSAPP ════════ -->
+  <a
+    class="wa-float"
+    href="https://wa.me/56912345678?text=Hola%20Felipe%2C%20quiero%20cotizar%20una%20DFSK%20SUV%20en%20la%20Regi%C3%B3n%20de%20Coquimbo"
+    target="_blank"
+    rel="noopener"
+    aria-label="Contactar a Felipe por WhatsApp"
+  >
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span>Cotizar con Felipe</span>
+  </a>
 
-  <!-- ============================================================
-       NAVBAR INDEXABLE
-  ============================================================ -->
-  <header class="sticky top-0 z-50 bg-zinc-950/95 backdrop-blur-sm border-b border-zinc-800">
-    <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between" aria-label="Navegación principal">
-      <!-- Logo -->
-      <a href="index.html" class="flex items-center gap-2.5" aria-label="Felipe Núñez Automotora – Inicio">
-        <span class="w-8 h-8 rounded-full bg-brand-500 flex items-center justify-center text-sm font-bold text-zinc-950">FN</span>
-        <span class="logo-text font-semibold text-base tracking-tight">Felipe Núñez <span class="text-brand-500">Autos</span></span>
+  <!-- ════════ HEADER ════════ -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="DFSK Coquimbo inicio">
+        <span>DFSK</span>
+        <span class="logo-badge">Coquimbo</span>
       </a>
-
-      <!-- Nav Links Desktop -->
-      <ul class="hidden md:flex items-center gap-7 text-sm text-zinc-400" role="list">
-        <li><a href="index.html" class="nav-link text-white font-medium" aria-current="page">Inicio</a></li>
-        <li><a href="modelos-dfsk.html" class="nav-link hover:text-white">Modelos DFSK</a></li>
-        <li><a href="preguntas-frecuentes.html" class="nav-link hover:text-white">Preguntas Frecuentes</a></li>
-        <li>
-          <a href="landing-campana.html" class="btn-primary bg-brand-500 text-zinc-950 font-semibold px-4 py-2 rounded-lg text-sm hover:bg-brand-600">
-            Cotizar Ahora
-          </a>
-        </li>
-      </ul>
-
-      <!-- Mobile: CTA -->
-      <a href="landing-campana.html" class="md:hidden btn-primary bg-brand-500 text-zinc-950 font-semibold px-3.5 py-1.5 rounded-lg text-sm hover:bg-brand-600">
-        Cotizar
-      </a>
-    </nav>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="modelos-dfsk.html" class="hide-sm">Modelos</a>
+        <a href="#financiamiento" class="hide-sm">Financiamiento</a>
+        <a href="preguntas-frecuentes.html" class="hide-sm">FAQ</a>
+        <a href="#contacto" class="hide-sm">Contacto</a>
+        <a
+          href="https://wa.me/56912345678?text=Hola%20Felipe%2C%20quiero%20cotizar%20una%20DFSK%20SUV"
+          class="nav-cta"
+          target="_blank"
+          rel="noopener"
+        >Cotizar ahora</a>
+      </nav>
+    </div>
   </header>
 
   <main>
+    <!-- ════════ HERO ════════ -->
+    <section class="hero" id="inicio" aria-label="Sección principal">
+      <div class="hero-bg" aria-hidden="true"></div>
 
-    <!-- ============================================================
-         HERO SECTION — H1 Principal
-    ============================================================ -->
-    <section class="relative overflow-hidden bg-zinc-950 pt-20 pb-24 px-4" aria-labelledby="hero-heading">
-      <div class="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-950 opacity-80"></div>
-      <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500/5 rounded-full blur-3xl pointer-events-none"></div>
+      <!-- IMAGEN HERO — coloca tu foto en assets/img/ y descomenta:
+      <div class="hero-car" style="background-image:url('assets/img/dfsk-hero.png');background-size:contain;background-repeat:no-repeat;background-position:bottom right;opacity:1;"></div>
+      -->
+      <div class="hero-car" aria-hidden="true"></div>
 
-      <div class="relative max-w-5xl mx-auto text-center">
-        <p class="text-brand-500 text-sm font-semibold uppercase tracking-widest mb-4">
-          Región de Coquimbo · Ovalle · La Serena
-        </p>
-        <h1 id="hero-heading" class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
-          Venta de Autos en<br />
-          <span class="text-brand-500">Coquimbo</span> que Trabajan<br />
-          tan Duro como Tú
-        </h1>
-        <p class="text-zinc-400 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-          Distribuidores oficiales de <strong class="text-white">DFSK</strong> y <strong class="text-white">Subaru</strong> en la IV Región.
-          Financiamiento en el acto, garantía de fábrica y test drive sin compromiso en Ovalle, La Serena y Coquimbo.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="landing-campana.html" class="btn-primary bg-brand-500 hover:bg-brand-600 text-zinc-950 font-bold px-8 py-4 rounded-xl text-base">
-            Ver Cotización Gratis →
-          </a>
-          <a href="modelos-dfsk.html" class="border border-zinc-700 hover:border-zinc-500 text-white px-8 py-4 rounded-xl text-base font-medium transition-colors duration-200">
-            Ver Modelos DFSK
-          </a>
-        </div>
-      </div>
-    </section>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-eyebrow" aria-label="Región de Coquimbo, Chile">
+            <span>La Serena · Coquimbo · Ovalle — Región de Coquimbo</span>
+          </div>
 
-    <!-- ============================================================
-         PILARES DE CONFIANZA — H2
-    ============================================================ -->
-    <section class="bg-zinc-900/60 border-y border-zinc-800 py-14 px-4" aria-labelledby="pilares-heading">
-      <div class="max-w-5xl mx-auto">
-        <h2 id="pilares-heading" class="sr-only">Por qué elegir Felipe Núñez Autos</h2>
-        <ul class="grid grid-cols-2 md:grid-cols-4 gap-6" role="list">
-          <li class="text-center">
-            <div class="text-3xl mb-2" aria-hidden="true">🛡️</div>
-            <h3 class="font-semibold text-white text-sm mb-1">Garantía de Fábrica</h3>
-            <p class="text-zinc-400 text-xs leading-relaxed">Hasta 3 años en modelos seleccionados DFSK y Subaru</p>
-          </li>
-          <li class="text-center">
-            <div class="text-3xl mb-2" aria-hidden="true">💳</div>
-            <h3 class="font-semibold text-white text-sm mb-1">Financiamiento al Instante</h3>
-            <p class="text-zinc-400 text-xs leading-relaxed">Aprobación rápida con bancos y cajas de compensación</p>
-          </li>
-          <li class="text-center">
-            <div class="text-3xl mb-2" aria-hidden="true">🏎️</div>
-            <h3 class="font-semibold text-white text-sm mb-1">Test Drive Gratis</h3>
-            <p class="text-zinc-400 text-xs leading-relaxed">Prueba tu auto sin compromiso en Ovalle y La Serena</p>
-          </li>
-          <li class="text-center">
-            <div class="text-3xl mb-2" aria-hidden="true">📍</div>
-            <h3 class="font-semibold text-white text-sm mb-1">IV Región Completa</h3>
-            <p class="text-zinc-400 text-xs leading-relaxed">Atendemos Ovalle, La Serena, Coquimbo y comunas cercanas</p>
-          </li>
-        </ul>
-      </div>
-    </section>
+          <h1 class="hero-title">
+            El SUV Familiar<br>
+            que <em>tu familia</em><br>
+            se merece
+          </h1>
 
-    <!-- ============================================================
-         MARCAS — H2
-    ============================================================ -->
-    <section class="py-20 px-4 bg-zinc-950" aria-labelledby="marcas-heading">
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 id="marcas-heading" class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-            Nuestras Marcas en <span class="text-brand-500">Coquimbo</span>
-          </h2>
-          <p class="text-zinc-400 max-w-xl mx-auto">
-            Representantes autorizados de las marcas más confiables para trabajo y familia en la IV Región de Chile.
+          <p class="hero-sub">
+            <strong>DFSK 580 (7 asientos) y 600 (181 HP Turbo)</strong> — con financiamiento
+            inteligente, cuotas hasta 45% más bajas y garantía de 5 años.
+            Asesoría personalizada con Felipe Núñez, directo desde Coquimbo.
           </p>
+
+          <div class="hero-ctas">
+            <a
+              href="https://wa.me/56912345678?text=Hola%20Felipe%2C%20quiero%20cotizar%20una%20DFSK%20SUV%20en%20Coquimbo"
+              class="btn-wa"
+              target="_blank"
+              rel="noopener"
+              aria-label="Cotizar por WhatsApp con Felipe Núñez"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Cotizar con Felipe
+            </a>
+            <a href="#modelos" class="btn-outline" aria-label="Ver modelos DFSK disponibles">
+              Ver Modelos
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+          </div>
+
+          <div class="hero-stats" aria-label="Datos clave DFSK">
+            <div class="hero-stat">
+              <strong>5 años</strong>
+              <span>Garantía oficial</span>
+            </div>
+            <div class="hero-stat">
+              <strong>45%</strong>
+              <span>Menos en cuotas</span>
+            </div>
+            <div class="hero-stat">
+              <strong>24 hrs</strong>
+              <span>Tasación retoma</span>
+            </div>
+            <div class="hero-stat">
+              <strong>20%</strong>
+              <span>Pie mínimo</span>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="grid md:grid-cols-2 gap-6">
-          <!-- DFSK Card -->
-          <article class="card-hover bg-zinc-900 border border-zinc-800 rounded-2xl p-8" itemscope itemtype="https://schema.org/Brand">
-            <div class="flex items-start justify-between mb-6">
-              <div>
-                <h3 class="text-2xl font-bold text-white mb-1" itemprop="name">DFSK</h3>
-                <p class="text-brand-500 text-sm font-medium">Camionetas de Trabajo · IV Región</p>
-              </div>
-              <span class="bg-brand-500/10 text-brand-500 text-xs font-semibold px-3 py-1 rounded-full border border-brand-500/20">Disponible</span>
-            </div>
-            <p class="text-zinc-400 text-sm leading-relaxed mb-6">
-              Las camionetas DFSK son la opción N°1 para trabajo pesado en la Región de Coquimbo. 
-              Motor robusto, alta capacidad de carga y el mejor precio del mercado en Ovalle y La Serena.
-            </p>
-            <ul class="space-y-2 mb-6 text-sm text-zinc-300">
-              <li class="flex items-center gap-2"><span class="text-brand-500">✓</span> Truck CD C22 – Carga 875 kg</li>
-              <li class="flex items-center gap-2"><span class="text-brand-500">✓</span> Truck CD C32 – Carga 1.200 kg</li>
-              <li class="flex items-center gap-2"><span class="text-brand-500">✓</span> Garantía 3 años / 100.000 km</li>
-            </ul>
-            <a href="modelos-dfsk.html" class="inline-block text-brand-500 text-sm font-semibold hover:underline">
-              Ver fichas técnicas →
-            </a>
+    <!-- ════════ URGENCY BAR ════════ -->
+    <div class="urgency-bar" role="alert">
+      ⚡ Stock limitado en la Región de Coquimbo · <span>Entrega inmediata sujeto a disponibilidad</span>
+    </div>
+
+    <!-- ════════ BENEFITS ════════ -->
+    <section class="section-benefits" id="beneficios" aria-labelledby="benefits-title">
+      <div class="container">
+        <div class="benefits-header fade-in">
+          <div class="section-tag">Por qué elegirnos</div>
+          <h2 class="section-title" id="benefits-title">La ventaja de comprar<br>con Felipe Núñez</h2>
+          <p class="section-sub">Asesoría VIP sin presiones. Tu próximo SUV, al mejor precio de la región.</p>
+        </div>
+        <div class="benefits-grid">
+          <article class="benefit-card fade-in">
+            <div class="benefit-icon" aria-hidden="true">⚡</div>
+            <h3 class="benefit-title">Respuesta en menos de 1 hora</h3>
+            <p class="benefit-desc">Escríbeme y tendrás cotización personalizada con el precio real, sin letra chica, antes de que pase una hora.</p>
           </article>
-
-          <!-- Subaru Card -->
-          <article class="card-hover bg-zinc-900 border border-zinc-800 rounded-2xl p-8" itemscope itemtype="https://schema.org/Brand">
-            <div class="flex items-start justify-between mb-6">
-              <div>
-                <h3 class="text-2xl font-bold text-white mb-1" itemprop="name">Subaru</h3>
-                <p class="text-brand-500 text-sm font-medium">SUV y Sedán · AWD Permanente</p>
-              </div>
-              <span class="bg-brand-500/10 text-brand-500 text-xs font-semibold px-3 py-1 rounded-full border border-brand-500/20">Disponible</span>
-            </div>
-            <p class="text-zinc-400 text-sm leading-relaxed mb-6">
-              Subaru en la Región de Coquimbo: la elección definitiva para terreno y ruta. 
-              Sistema AWD simétrico permanente, ideal para los caminos de la IV Región.
-            </p>
-            <ul class="space-y-2 mb-6 text-sm text-zinc-300">
-              <li class="flex items-center gap-2"><span class="text-brand-500">✓</span> AWD Simétrico Permanente</li>
-              <li class="flex items-center gap-2"><span class="text-brand-500">✓</span> Motor Boxer de alta eficiencia</li>
-              <li class="flex items-center gap-2"><span class="text-brand-500">✓</span> Seguridad 5 estrellas NCAP</li>
-            </ul>
-            <a href="landing-campana.html" class="inline-block text-brand-500 text-sm font-semibold hover:underline">
-              Cotizar Subaru →
-            </a>
+          <article class="benefit-card fade-in">
+            <div class="benefit-icon" aria-hidden="true">💰</div>
+            <h3 class="benefit-title">Gestión de crédito express</h3>
+            <p class="benefit-desc">Te acompaño en todo el proceso de financiamiento. Cuotas hasta 45% más bajas que crédito bancario tradicional.</p>
+          </article>
+          <article class="benefit-card fade-in">
+            <div class="benefit-icon" aria-hidden="true">🔄</div>
+            <h3 class="benefit-title">Recibimos tu auto usado</h3>
+            <p class="benefit-desc">Tasación de tu vehículo en 24 horas. Sin complicaciones: lo ponemos en parte de pago directo.</p>
+          </article>
+          <article class="benefit-card fade-in">
+            <div class="benefit-icon" aria-hidden="true">🛡️</div>
+            <h3 class="benefit-title">Garantía 5 años / 100.000 km</h3>
+            <p class="benefit-desc">Red autorizada en toda Chile. Tranquilidad total para ti y tu familia desde el primer kilómetro.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         ZONA COBERTURA — H2 SEO Local
-    ============================================================ -->
-    <section class="py-20 px-4 bg-zinc-900/40 border-t border-zinc-800" aria-labelledby="cobertura-heading">
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 id="cobertura-heading" class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-            Venta de Autos en Toda la IV Región
-          </h2>
-          <p class="text-zinc-400 max-w-2xl mx-auto">
-            Desde Ovalle hasta La Serena y Coquimbo, te atendemos donde estés.
-            Coordinamos entrega a domicilio y test drives en tu ciudad.
-          </p>
+    <!-- ════════ MODELS ════════ -->
+    <section class="section-models" id="modelos" aria-labelledby="models-title">
+      <div class="container">
+        <div class="models-header fade-in">
+          <div class="section-tag">Modelos disponibles</div>
+          <h2 class="section-title" id="models-title">DFSK 580 y 600<br>¿Cuál es el tuyo?</h2>
+          <p class="section-sub">Ambos con garantía oficial, financiamiento accesible y entrega en la Región de Coquimbo.</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 text-center">
-            <h3 class="text-white font-bold text-lg mb-1">Ovalle</h3>
-            <p class="text-zinc-400 text-sm">Sede principal · Callegari Automotores</p>
+        <div class="models-grid">
+
+          <!-- DFSK SUV 600 -->
+          <article class="model-card featured fade-in" aria-label="DFSK SUV 600">
+            <div class="model-img" style="position:relative;">
+              <span class="model-badge">Más potente</span>
+              <!-- Reemplazar por: <img src="assets/img/dfsk-600.jpg" alt="DFSK SUV 600 en Coquimbo" loading="lazy" width="560" height="315"> -->
+              <div class="model-img-inner" aria-hidden="true">
+                <svg viewBox="0 0 80 40" fill="none" stroke="white" stroke-width="1.5">
+                  <path d="M8 28 Q10 20 20 18 L28 10 Q34 8 52 8 Q62 8 68 18 L72 22 Q74 24 74 28" />
+                  <rect x="4" y="28" width="72" height="6" rx="2"/>
+                  <circle cx="18" cy="34" r="5" fill="none" stroke="white" stroke-width="1.5"/>
+                  <circle cx="62" cy="34" r="5" fill="none" stroke="white" stroke-width="1.5"/>
+                </svg>
+                <span>DFSK SUV 600</span>
+              </div>
+            </div>
+            <div class="model-body">
+              <h3 class="model-name">DFSK SUV 600</h3>
+              <p class="model-tagline">6 pasajeros · 3 filas · 181 HP Turbo</p>
+              <div class="model-specs" role="list">
+                <div class="spec-row" role="listitem">
+                  <span class="spec-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    Pasajeros
+                  </span>
+                  <span class="spec-value highlight">6 (2+2+2)</span>
+                </div>
+                <div class="spec-row" role="listitem">
+                  <span class="spec-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22V12M2 7l10-5 10 5v10L12 22 2 17z"/></svg>
+                    Motor
+                  </span>
+                  <span class="spec-value highlight">1.5L Turbo — 181 HP</span>
+                </div>
+                <div class="spec-row" role="listitem">
+                  <span class="spec-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                    Pantalla
+                  </span>
+                  <span class="spec-value">12.3" táctil</span>
+                </div>
+                <div class="spec-row" role="listitem">
+                  <span class="spec-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 013 3v7a3 3 0 01-6 0V5a3 3 0 013-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v3M8 22h8"/></svg>
+                    Conectividad
+                  </span>
+                  <span class="spec-value">CarPlay · Android Auto</span>
+                </div>
+                <div class="spec-row" role="listitem">
+                  <span class="spec-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Garantía
+                  </span>
+                  <span class="spec-value">5 años / 100.000 km</span>
+                </div>
+              </div>
+              <div class="model-cta">
+                <a
+                  href="https://wa.me/56912345678?text=Hola%20Felipe%2C%20quiero%20cotizar%20el%20DFSK%20SUV%20600%20en%20Coquimbo"
+                  class="btn-primary"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Cotizar DFSK SUV 600 por WhatsApp"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  Cotizar DFSK 600
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- DFSK SUV 580 -->
+          <article class="model-card fade-in" aria-label="DFSK SUV 580">
+            <div class="model-img" style="position:relative;">
+              <span class="model-badge" style="background:var(--c-blue-l);color:#fff;">7 asientos</span>
+              <!-- Reemplazar por: <img src="assets/img/dfsk-580.jpg" alt="DFSK SUV 580 en La Serena" loading="lazy" width="560" height="315"> -->
+              <div class="model-img-inner" aria-hidden="true">
+                <svg viewBox="0 0 80 40" fill="none" stroke="white" stroke-width="1.5">
+                  <path d="M6 28 Q8 19 18 17 L26 9 Q33 7 54 7 Q65 7 70 17 L74 22 Q76 24 76 28" />
+                  <rect x="2" y="28" width="76" height="6" rx="2"/>
+                  <circle cx="16" cy="34" r="5" fill="none" stroke="white" stroke-width="1.5"/>
+                  <circle cx="64" cy="34" r="5" fill="none" stroke="white" stroke-width="1.5"/>
+                </svg>
+                <span>DFSK SUV 580</span>
+              </div>
+            </div>
+            <div class="model-body">
+              <h3 class="model-name">DFSK SUV 580</h3>
+              <p class="model-tagline">7 pasajeros · 3 filas · Terreno y ciudad</p>
+              <div class="model-specs" role="list">
+                <div class="spec-row" role="listitem">
+                  <span class="spec-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    Pasajeros
+                  </span>
+                  <span class="spec-value highlight">7 — 3 corridas</span>
+                </div>
+                <div class="spec-row" role="listitem">
+                  <span class="spec-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22V12M2 7l10-5 10 5v10L12 22 2 17z"/></svg>
+                    Motor
+                  </span>
+                  <span class="spec-value highlight">1.8L — 138 HP</span>
+                </div>
+                <div class="spec-row" role="listitem">
+                  <span class="spec-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+                    Despeje
+                  </span>
+                  <span class="spec-value">230 mm</span>
+                </div>
+                <div class="spec-row" role="listitem">
+                  <span class="spec-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                    Ideal para
+                  </span>
+                  <span class="spec-value">Familias grandes</span>
+                </div>
+                <div class="spec-row" role="listitem">
+                  <span class="spec-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Garantía
+                  </span>
+                  <span class="spec-value">5 años / 100.000 km</span>
+                </div>
+              </div>
+              <div class="model-cta">
+                <a
+                  href="https://wa.me/56912345678?text=Hola%20Felipe%2C%20quiero%20cotizar%20el%20DFSK%20SUV%20580%20en%20Coquimbo"
+                  class="btn-primary"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Cotizar DFSK SUV 580 por WhatsApp"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  Cotizar DFSK 580
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════ FINANCING ════════ -->
+    <section class="section-financing" id="financiamiento" aria-labelledby="financing-title">
+      <div class="container">
+        <div class="financing-inner">
+          <!-- Left: Steps -->
+          <div>
+            <div class="fade-in">
+              <div class="section-tag">Compra Inteligente</div>
+              <h2 class="section-title" id="financing-title">Cuotas hasta 45%<br>más bajas</h2>
+              <p class="section-sub">Sin trámites engorrosos. Te llevo de la mano en los 3 pasos.</p>
+            </div>
+            <ol class="steps-list" aria-label="Proceso de financiamiento en 3 pasos">
+              <li class="step fade-in">
+                <div class="step-num" aria-hidden="true">1</div>
+                <div class="step-content">
+                  <h3 class="step-title">Cotiza sin compromiso</h3>
+                  <p class="step-desc">Escríbeme por WhatsApp con el modelo que te interesa. En menos de 1 hora tendrás una simulación real con cuota mensual exacta según tu renta.</p>
+                </div>
+              </li>
+              <li class="step fade-in">
+                <div class="step-num" aria-hidden="true">2</div>
+                <div class="step-content">
+                  <h3 class="step-title">Aprobación express</h3>
+                  <p class="step-desc">Gestiono tu crédito con las mejores condiciones del mercado. Solo necesitas tu liquidación de sueldo y cédula de identidad vigente.</p>
+                </div>
+              </li>
+              <li class="step fade-in">
+                <div class="step-num" aria-hidden="true">3</div>
+                <div class="step-content">
+                  <h3 class="step-title">Entrega en Coquimbo</h3>
+                  <p class="step-desc">Firmamos los documentos y coordinas la entrega de tu nuevo SUV en La Serena, Coquimbo u Ovalle — donde más te acomode.</p>
+                </div>
+              </li>
+            </ol>
           </div>
-          <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 text-center">
-            <h3 class="text-white font-bold text-lg mb-1">La Serena</h3>
-            <p class="text-zinc-400 text-sm">Atención coordinada · Test drive disponible</p>
-          </div>
-          <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 text-center">
-            <h3 class="text-white font-bold text-lg mb-1">Coquimbo</h3>
-            <p class="text-zinc-400 text-sm">Entrega a domicilio · Financiamiento regional</p>
+
+          <!-- Right: Requirements + Retoma -->
+          <div>
+            <div class="requisites-card fade-in">
+              <h3>Requisitos mínimos</h3>
+              <ul class="req-list" aria-label="Requisitos para financiamiento">
+                <li class="req-item">
+                  <span class="req-icon" aria-hidden="true">✓</span>
+                  <span><strong>Renta líquida:</strong> $750.000 mínimo (dependiente o independiente)</span>
+                </li>
+                <li class="req-item">
+                  <span class="req-icon" aria-hidden="true">✓</span>
+                  <span><strong>Antigüedad laboral:</strong> 12 meses mínimo en el trabajo actual</span>
+                </li>
+                <li class="req-item">
+                  <span class="req-icon" aria-hidden="true">✓</span>
+                  <span><strong>Pie mínimo:</strong> desde el 20% del valor del vehículo</span>
+                </li>
+                <li class="req-item">
+                  <span class="req-icon" aria-hidden="true">✓</span>
+                  <span><strong>Documentos:</strong> Cédula vigente + 3 últimas liquidaciones</span>
+                </li>
+                <li class="req-item">
+                  <span class="req-icon" aria-hidden="true">✓</span>
+                  <span>Sin aval. Sin garantías adicionales en la mayoría de los casos</span>
+                </li>
+              </ul>
+
+              <div class="retoma-banner" role="note" aria-label="Opción de retoma con tu auto usado">
+                <span class="retoma-icon" aria-hidden="true">🔄</span>
+                <div class="retoma-text">
+                  <strong>¿Tienes auto usado?</strong>
+                  <span>Ponemos tu vehículo en parte de pago. Tasación en 24 horas, sin vueltas. Reduce el pie y baja más tu cuota.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="guarantee-strip fade-in" role="note" aria-label="Garantía DFSK">
+              <span class="g-icon" aria-hidden="true">🛡️</span>
+              <div>
+                <strong>Garantía 5 años o 100.000 km</strong>
+                <span>Red de servicio técnico autorizado en todo Chile</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         CTA FINAL — Conversión
-    ============================================================ -->
-    <section class="py-24 px-4 bg-zinc-950 border-t border-zinc-800" aria-labelledby="cta-heading">
-      <div class="max-w-2xl mx-auto text-center">
-        <h2 id="cta-heading" class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-          ¿Listo para encontrar tu próximo auto<br />en <span class="text-brand-500">Coquimbo</span>?
-        </h2>
-        <p class="text-zinc-400 mb-8 text-lg">
-          Cotización sin costo, sin burocracia. Te respondemos en menos de 2 horas.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="landing-campana.html" class="btn-primary bg-brand-500 hover:bg-brand-600 text-zinc-950 font-bold px-8 py-4 rounded-xl text-base">
-            Cotizar Ahora — Es Gratis
-          </a>
-          <a href="https://wa.me/56912345678?text=Hola%20Felipe%2C%20me%20interesa%20un%20auto%20en%20Coquimbo" 
-             target="_blank" rel="noopener noreferrer"
-             class="border border-zinc-700 hover:border-zinc-500 text-white px-8 py-4 rounded-xl text-base font-medium transition-colors duration-200">
-            WhatsApp Directo
-          </a>
+    <!-- ════════ CONTACT / FORM ════════ -->
+    <section class="section-contact" id="contacto" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-inner">
+          <!-- Left -->
+          <div class="fade-in">
+            <div class="section-tag">Contacto directo</div>
+            <h2 class="section-title" id="contact-title">Hablemos sin<br>intermediarios</h2>
+            <p class="section-sub">
+              Soy Felipe Núñez, Asesor Comercial VIP. Mi trabajo es darte el mejor precio y la mejor experiencia de compra en toda la Región de Coquimbo.
+            </p>
+
+            <div class="advisor-card" aria-label="Perfil de Felipe Núñez">
+              <div class="advisor-avatar" aria-hidden="true">👤</div>
+              <div class="advisor-info">
+                <strong>Felipe Núñez</strong>
+                <span>Asesor Comercial VIP · DFSK Coquimbo</span>
+              </div>
+            </div>
+
+            <ul class="contact-methods" aria-label="Formas de contacto">
+              <li class="contact-method">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.0 .18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+                <a href="https://wa.me/56912345678" target="_blank" rel="noopener" aria-label="Llamar o escribir a Felipe por WhatsApp">+56 9 1234 5678 (WhatsApp)</a>
+              </li>
+              <li class="contact-method">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span>felipe@dfsk-coquimbo.cl</span>
+              </li>
+              <li class="contact-method">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Atención en La Serena · Coquimbo · Ovalle</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right: Form -->
+          <div class="fade-in">
+            <div class="form-card" id="form-container">
+              <div id="form-fields">
+                <h3 class="form-title">Solicita tu cotización gratis</h3>
+                <p class="form-subtitle">Felipe te responde en menos de 1 hora, sin presiones.</p>
+                <form id="contact-form" novalidate aria-label="Formulario de cotización DFSK">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="nombre">Nombre completo *</label>
+                      <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Tu nombre"
+                        required
+                        autocomplete="name"
+                        aria-required="true"
+                      >
+                    </div>
+                    <div class="form-group">
+                      <label for="telefono">Teléfono / WhatsApp *</label>
+                      <input
+                        type="tel"
+                        id="telefono"
+                        name="telefono"
+                        placeholder="+56 9 XXXX XXXX"
+                        required
+                        autocomplete="tel"
+                        aria-required="true"
+                      >
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="modelo">Modelo de interés *</label>
+                    <select id="modelo" name="modelo" required aria-required="true">
+                      <option value="" disabled selected>Selecciona un modelo</option>
+                      <option value="DFSK SUV 600 (6 pasajeros, 181 HP Turbo)">DFSK SUV 600 — 6 pasajeros, 181 HP Turbo</option>
+                      <option value="DFSK SUV 580 (7 pasajeros, 1.8L)">DFSK SUV 580 — 7 pasajeros, 1.8L</option>
+                      <option value="Ambos modelos">Quiero comparar ambos</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="pie">Pie disponible aproximado</label>
+                    <select id="pie" name="pie">
+                      <option value="" disabled selected>¿Cuánto tienes de pie? (opcional)</option>
+                      <option value="20% del valor">20% del valor (mínimo)</option>
+                      <option value="Entre 20% y 30%">Entre 20% y 30%</option>
+                      <option value="Entre 30% y 50%">Entre 30% y 50%</option>
+                      <option value="Más del 50%">Más del 50%</option>
+                      <option value="Tengo auto para parte de pago">Tengo auto para parte de pago</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn-submit" aria-label="Enviar formulario de cotización">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Quiero mi cotización gratis
+                  </button>
+                  <p class="form-privacy">
+                    Al enviar aceptas que Felipe Núñez se contacte contigo por WhatsApp o teléfono. No compartimos tu información con terceros.
+                  </p>
+                </form>
+              </div>
+              <!-- Success state (shown after submit) -->
+              <div class="form-success" id="form-success" aria-live="polite">
+                <span class="success-icon" aria-hidden="true">✅</span>
+                <strong>¡Listo! Felipe te escribe pronto.</strong>
+                <p>Recibirás respuesta en menos de 1 hora vía WhatsApp con tu cotización personalizada.</p>
+                <a
+                  href="https://wa.me/56912345678?text=Hola%20Felipe%2C%20acabo%20de%20enviar%20el%20formulario%20de%20cotización"
+                  class="btn-wa"
+                  style="margin-top:8px;"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Escribir ahora a Felipe por WhatsApp"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  Escribir ahora a Felipe
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
-  <footer class="bg-zinc-900 border-t border-zinc-800 py-10 px-4" role="contentinfo">
-    <div class="max-w-5xl mx-auto grid sm:grid-cols-3 gap-8 text-sm text-zinc-400">
-      <div>
-        <p class="text-white font-semibold mb-2">Felipe Núñez Autos</p>
-        <p>Distribuidor oficial DFSK y Subaru<br />Región de Coquimbo, Chile</p>
-      </div>
-      <nav aria-label="Navegación secundaria">
-        <p class="text-white font-semibold mb-2">Páginas</p>
-        <ul class="space-y-1.5">
-          <li><a href="index.html" class="hover:text-white transition-colors">Inicio</a></li>
-          <li><a href="modelos-dfsk.html" class="hover:text-white transition-colors">Modelos DFSK</a></li>
-          <li><a href="preguntas-frecuentes.html" class="hover:text-white transition-colors">Preguntas Frecuentes</a></li>
-          <li><a href="landing-campana.html" class="hover:text-white transition-colors">Cotizar</a></li>
-        </ul>
+  <!-- ════════ FOOTER ════════ -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">
+        © 2026 <strong>Felipe Núñez · Asesor DFSK Coquimbo</strong> — La Serena, Coquimbo, Ovalle, Región de Coquimbo, Chile.
+      </p>
+      <nav class="footer-links" aria-label="Navegación del pie de página">
+        <a href="#inicio">Inicio</a>
+        <a href="modelos-dfsk.html">Modelos DFSK</a>
+        <a href="#financiamiento">Financiamiento</a>
+        <a href="preguntas-frecuentes.html">FAQ</a>
+        <a href="#contacto">Contacto</a>
       </nav>
-      <div>
-        <p class="text-white font-semibold mb-2">Contacto</p>
-        <p>Ovalle, Región de Coquimbo<br />
-          <a href="tel:+56912345678" class="hover:text-white transition-colors">+569 1234 5678</a>
-        </p>
-      </div>
-    </div>
-    <div class="max-w-5xl mx-auto mt-8 pt-6 border-t border-zinc-800 text-center text-xs text-zinc-600">
-      <p>© 2026 Felipe Núñez Automotora · Ovalle, La Serena y Coquimbo, Chile</p>
     </div>
   </footer>
+
+  <!-- ════════════════════════════════════
+       VANILLA JS — PRODUCTION OPTIMIZED
+  ════════════════════════════════════ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ── Header scroll effect ── */
+      var header = document.getElementById('header');
+      var lastScroll = 0;
+
+      function onScroll() {
+        var y = window.scrollY;
+        if (y > 40) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+        lastScroll = y;
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      /* ── Intersection Observer — fade-in ── */
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.fade-in').forEach(function (el) {
+        io.observe(el);
+      });
+
+      /* ── Form: guardar lead + abrir WhatsApp ── */
+      var form = document.getElementById('contact-form');
+      var formFields = document.getElementById('form-fields');
+      var formSuccess = document.getElementById('form-success');
+      var API_LEADS = 'api/leads.php';
+
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          var nombre  = document.getElementById('nombre').value.trim();
+          var telefono = document.getElementById('telefono').value.trim();
+          var modelo  = document.getElementById('modelo').value;
+          var pie     = document.getElementById('pie').value;
+          var submitBtn = form.querySelector('button[type="submit"]');
+
+          /* Basic validation */
+          if (!nombre || !telefono || !modelo) {
+            var firstEmpty = !nombre
+              ? document.getElementById('nombre')
+              : (!telefono ? document.getElementById('telefono') : document.getElementById('modelo'));
+            firstEmpty.focus();
+            firstEmpty.style.borderColor = '#dc2626';
+            setTimeout(function () { firstEmpty.style.borderColor = ''; }, 2400);
+            return;
+          }
+
+          /* Build WhatsApp message */
+          var msg = 'Hola Felipe, me llamo *' + nombre + '* y quiero cotizar el *' + modelo + '*.' +
+            (pie ? ' Tengo disponible: ' + pie + '.' : '') +
+            ' Mi teléfono es ' + telefono + '. ¿Me puedes ayudar?';
+
+          var waURL = 'https://wa.me/56912345678?text=' + encodeURIComponent(msg);
+
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando…';
+          }
+
+          fetch(API_LEADS, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              nombre: nombre,
+              telefono: telefono,
+              modelo: modelo,
+              pie: pie || null,
+              fuente: 'formulario'
+            })
+          }).catch(function () {
+            /* Si falla el backend, igual dejamos continuar a WhatsApp */
+          }).finally(function () {
+            formFields.style.display = 'none';
+            formSuccess.style.display = 'flex';
+
+            setTimeout(function () {
+              window.open(waURL, '_blank', 'noopener,noreferrer');
+            }, 800);
+
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Quiero mi cotización gratis';
+            }
+          });
+        });
+
+        /* Remove error border on input */
+        ['nombre', 'telefono', 'modelo'].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) {
+            el.addEventListener('input', function () {
+              el.style.borderColor = '';
+            });
+          }
+        });
+      }
+
+      /* ── Smooth scroll for anchor links ── */
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var target = document.querySelector(a.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+    })();
+  </script>
 
 </body>
 </html>

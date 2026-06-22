@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>CRM Leads · Felipe Núñez DFSK</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #111827;
+      --panel-2: #1a2332;
+      --border: rgba(255,255,255,.08);
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --gold: #c9a84c;
+      --gold-soft: rgba(201,168,76,.15);
+      --wa: #25d366;
+      --blue: #2563eb;
+      --red: #ef4444;
+      --green: #22c55e;
+      --yellow: #eab308;
+      --radius: 12px;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .hidden { display: none !important; }
+
+    /* Login */
+    .login-wrap {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(circle at top right, rgba(201,168,76,.12), transparent 40%),
+        var(--bg);
+    }
+    .login-card {
+      width: 100%;
+      max-width: 420px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px 28px;
+      box-shadow: 0 24px 80px rgba(0,0,0,.35);
+    }
+    .login-badge {
+      display: inline-block;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--gold-soft);
+      border: 1px solid rgba(201,168,76,.25);
+      padding: 5px 10px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .login-card h1 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      margin-bottom: 6px;
+    }
+    .login-card p {
+      color: var(--muted);
+      font-size: .92rem;
+      line-height: 1.55;
+      margin-bottom: 24px;
+    }
+    .field { margin-bottom: 16px; }
+    .field label {
+      display: block;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 7px;
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font: inherit;
+      padding: 12px 14px;
+      transition: border-color .2s ease;
+    }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: rgba(201,168,76,.45);
+    }
+    .field textarea { min-height: 90px; resize: vertical; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: none;
+      border-radius: 10px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    .btn-primary {
+      width: 100%;
+      background: var(--gold);
+      color: #111827;
+      padding: 13px 18px;
+    }
+    .btn-primary:hover { opacity: .95; }
+    .btn-secondary {
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      font-size: .88rem;
+    }
+    .btn-wa {
+      background: var(--wa);
+      color: #fff;
+      padding: 8px 12px;
+      font-size: .82rem;
+    }
+    .btn-danger {
+      background: rgba(239,68,68,.12);
+      color: #fca5a5;
+      border: 1px solid rgba(239,68,68,.25);
+      padding: 8px 12px;
+      font-size: .82rem;
+    }
+    .error-msg {
+      margin-top: 12px;
+      color: #fca5a5;
+      font-size: .85rem;
+      min-height: 1.2em;
+    }
+
+    /* Dashboard */
+    .app { min-height: 100vh; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(11,18,32,.88);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner,
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .topbar-inner {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand strong { display: block; font-size: 1rem; }
+    .brand span { color: var(--muted); font-size: .78rem; }
+    .topbar-actions { display: flex; gap: 10px; align-items: center; }
+    .content { padding: 24px 20px 40px; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    @media (max-width: 900px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .stats { grid-template-columns: 1fr; } }
+
+    .stat-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .stat-card strong {
+      display: block;
+      font-size: 1.6rem;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-card span { color: var(--muted); font-size: .82rem; }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+    .toolbar-left,
+    .toolbar-right {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .search {
+      min-width: 240px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      padding: 10px 12px;
+      font: inherit;
+    }
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .filter-tab {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: .82rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .filter-tab.active {
+      color: var(--gold);
+      border-color: rgba(201,168,76,.35);
+      background: var(--gold-soft);
+    }
+
+    .table-wrap {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .88rem;
+    }
+    th, td {
+      padding: 14px 12px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      color: var(--muted);
+      font-size: .74rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,.02);
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(255,255,255,.02); }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .badge-nuevo { background: rgba(37,99,235,.15); color: #93c5fd; }
+    .badge-contactado { background: rgba(234,179,8,.15); color: #fde047; }
+    .badge-cotizado { background: rgba(201,168,76,.15); color: var(--gold); }
+    .badge-vendido { background: rgba(34,197,94,.15); color: #86efac; }
+    .badge-descartado { background: rgba(107,114,128,.15); color: #d1d5db; }
+
+    .source {
+      color: var(--muted);
+      font-size: .78rem;
+      text-transform: capitalize;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .empty {
+      text-align: center;
+      padding: 48px 20px;
+      color: var(--muted);
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.65);
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      z-index: 50;
+    }
+    .modal {
+      width: 100%;
+      max-width: 520px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      max-height: 90vh;
+      overflow: auto;
+    }
+    .modal h2 {
+      font-size: 1.15rem;
+      margin-bottom: 18px;
+    }
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 560px) { .form-grid { grid-template-columns: 1fr; } }
+
+    .mobile-cards { display: none; }
+    @media (max-width: 860px) {
+      .table-wrap table { display: none; }
+      .mobile-cards {
+        display: grid;
+        gap: 12px;
+        padding: 12px;
+      }
+      .lead-card {
+        background: var(--panel-2);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 14px;
+      }
+      .lead-card-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      .lead-card-head strong { font-size: .98rem; }
+      .lead-meta {
+        color: var(--muted);
+        font-size: .82rem;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <section id="login-view" class="login-wrap">
+    <div class="login-card">
+      <div class="login-badge">Acceso privado</div>
+      <h1>CRM Leads DFSK</h1>
+      <p>Gestión de clientes para Felipe Núñez. Ingresa tu clave para ver cotizaciones y leads de WhatsApp.</p>
+      <form id="login-form">
+        <div class="field">
+          <label for="password">Clave de acceso</label>
+          <input type="password" id="password" name="password" placeholder="Ingresa tu clave" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn-primary">Entrar al dashboard</button>
+        <p class="error-msg" id="login-error" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <div id="app-view" class="app hidden">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <strong>CRM Leads · Felipe Núñez</strong>
+          <span>DFSK Coquimbo · Región de Coquimbo</span>
+        </div>
+        <div class="topbar-actions">
+          <button type="button" class="btn btn-secondary" id="refresh-btn">Actualizar</button>
+          <button type="button" class="btn btn-secondary" id="logout-btn">Salir</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="stats" id="stats">
+        <div class="stat-card"><strong id="stat-total">0</strong><span>Total leads</span></div>
+        <div class="stat-card"><strong id="stat-nuevos">0</strong><span>Nuevos</span></div>
+        <div class="stat-card"><strong id="stat-contactados">0</strong><span>Contactados</span></div>
+        <div class="stat-card"><strong id="stat-cotizados">0</strong><span>Cotizados</span></div>
+        <div class="stat-card"><strong id="stat-vendidos">0</strong><span>Vendidos</span></div>
+      </div>
+
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <input type="search" id="search-input" class="search" placeholder="Buscar por nombre, teléfono o modelo…">
+          <div class="filter-tabs" id="filter-tabs">
+            <button type="button" class="filter-tab active" data-estado="">Todos</button>
+            <button type="button" class="filter-tab" data-estado="nuevo">Nuevos</button>
+            <button type="button" class="filter-tab" data-estado="contactado">Contactados</button>
+            <button type="button" class="filter-tab" data-estado="cotizado">Cotizados</button>
+            <button type="button" class="filter-tab" data-estado="vendido">Vendidos</button>
+          </div>
+        </div>
+        <div class="toolbar-right">
+          <button type="button" class="btn btn-primary" id="add-lead-btn" style="width:auto;padding:10px 16px;">+ Agregar lead</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Modelo</th>
+              <th>Fuente</th>
+              <th>Estado</th>
+              <th>Fecha</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="leads-body"></tbody>
+        </table>
+        <div class="mobile-cards" id="leads-cards"></div>
+        <div class="empty hidden" id="empty-state">No hay leads todavía. Los formularios de la web caerán aquí automáticamente.</div>
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal-backdrop" class="modal-backdrop hidden" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h2 id="modal-title">Agregar lead</h2>
+      <form id="lead-form">
+        <input type="hidden" id="lead-id">
+        <div class="form-grid">
+          <div class="field">
+            <label for="lead-nombre">Nombre *</label>
+            <input type="text" id="lead-nombre" required>
+          </div>
+          <div class="field">
+            <label for="lead-telefono">Teléfono / WhatsApp *</label>
+            <input type="tel" id="lead-telefono" required>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="lead-modelo">Modelo</label>
+            <select id="lead-modelo">
+              <option value="">Sin definir</option>
+              <option value="DFSK SUV 600">DFSK SUV 600</option>
+              <option value="DFSK SUV 580">DFSK SUV 580</option>
+              <option value="Ambos modelos">Ambos modelos</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="lead-fuente">Fuente</label>
+            <select id="lead-fuente">
+              <option value="whatsapp">WhatsApp</option>
+              <option value="manual">Manual</option>
+              <option value="formulario">Formulario web</option>
+              <option value="landing">Landing campaña</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="lead-estado">Estado</label>
+            <select id="lead-estado">
+              <option value="nuevo">Nuevo</option>
+              <option value="contactado">Contactado</option>
+              <option value="cotizado">Cotizado</option>
+              <option value="vendido">Vendido</option>
+              <option value="descartado">Descartado</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="lead-pie">Pie disponible</label>
+            <input type="text" id="lead-pie" placeholder="Ej: 20% del valor">
+          </div>
+        </div>
+        <div class="field">
+          <label for="lead-notas">Notas</label>
+          <textarea id="lead-notas" placeholder="Conversación, objeciones, próximo paso…"></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="modal-cancel">Cancelar</button>
+          <button type="submit" class="btn btn-primary" style="width:auto;padding:10px 16px;">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var API_AUTH = '../api/auth.php';
+      var API_LEADS = '../api/leads.php';
+      var WA_NUMBER = '56912345678';
+
+      var state = {
+        leads: [],
+        filterEstado: '',
+        search: '',
+      };
+
+      var loginView = document.getElementById('login-view');
+      var appView = document.getElementById('app-view');
+      var loginForm = document.getElementById('login-form');
+      var loginError = document.getElementById('login-error');
+      var leadsBody = document.getElementById('leads-body');
+      var leadsCards = document.getElementById('leads-cards');
+      var emptyState = document.getElementById('empty-state');
+      var modalBackdrop = document.getElementById('modal-backdrop');
+      var leadForm = document.getElementById('lead-form');
+
+      function api(path, options) {
+        return fetch(path, Object.assign({
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json' },
+        }, options || {})).then(function (res) {
+          return res.json().then(function (data) {
+            if (!res.ok) throw new Error(data.error || 'Error de servidor');
+            return data;
+          });
+        });
+      }
+
+      function formatDate(value) {
+        if (!value) return '—';
+        var d = new Date(value.replace(' ', 'T'));
+        if (isNaN(d.getTime())) return value;
+        return d.toLocaleString('es-CL', {
+          day: '2-digit', month: 'short', year: 'numeric',
+          hour: '2-digit', minute: '2-digit'
+        });
+      }
+
+      function badgeClass(estado) {
+        return 'badge badge-' + estado;
+      }
+
+      function waLink(telefono, nombre) {
+        var clean = String(telefono).replace(/\D/g, '');
+        if (clean.startsWith('56')) clean = clean;
+        else if (clean.startsWith('9')) clean = '56' + clean;
+        var text = 'Hola ' + nombre + ', te escribe Felipe de DFSK Coquimbo.';
+        return 'https://wa.me/' + clean + '?text=' + encodeURIComponent(text);
+      }
+
+      function showLogin() {
+        loginView.classList.remove('hidden');
+        appView.classList.add('hidden');
+      }
+
+      function showApp() {
+        loginView.classList.add('hidden');
+        appView.classList.remove('hidden');
+      }
+
+      function openModal(lead) {
+        document.getElementById('modal-title').textContent = lead ? 'Editar lead' : 'Agregar lead';
+        document.getElementById('lead-id').value = lead ? lead.id : '';
+        document.getElementById('lead-nombre').value = lead ? lead.nombre : '';
+        document.getElementById('lead-telefono').value = lead ? lead.telefono : '';
+        document.getElementById('lead-modelo').value = lead ? (lead.modelo || '') : '';
+        document.getElementById('lead-fuente').value = lead ? lead.fuente : 'whatsapp';
+        document.getElementById('lead-estado').value = lead ? lead.estado : 'nuevo';
+        document.getElementById('lead-pie').value = lead ? (lead.pie || '') : '';
+        document.getElementById('lead-notas').value = lead ? (lead.notas || '') : '';
+        modalBackdrop.classList.remove('hidden');
+        modalBackdrop.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeModal() {
+        modalBackdrop.classList.add('hidden');
+        modalBackdrop.setAttribute('aria-hidden', 'true');
+        leadForm.reset();
+        document.getElementById('lead-id').value = '';
+      }
+
+      function renderStats(stats) {
+        document.getElementById('stat-total').textContent = stats.total || 0;
+        document.getElementById('stat-nuevos').textContent = stats.nuevos || 0;
+        document.getElementById('stat-contactados').textContent = stats.contactados || 0;
+        document.getElementById('stat-cotizados').textContent = stats.cotizados || 0;
+        document.getElementById('stat-vendidos').textContent = stats.vendidos || 0;
+      }
+
+      function renderActions(lead) {
+        return '<div class="actions">' +
+          '<a class="btn btn-wa" href="' + waLink(lead.telefono, lead.nombre) + '" target="_blank" rel="noopener">WhatsApp</a>' +
+          '<button type="button" class="btn btn-secondary" data-action="edit" data-id="' + lead.id + '">Editar</button>' +
+          '<button type="button" class="btn btn-danger" data-action="delete" data-id="' + lead.id + '">Eliminar</button>' +
+        '</div>';
+      }
+
+      function renderLeads() {
+        var filtered = state.leads.filter(function (lead) {
+          if (state.filterEstado && lead.estado !== state.filterEstado) return false;
+          if (!state.search) return true;
+          var q = state.search.toLowerCase();
+          return [lead.nombre, lead.telefono, lead.modelo, lead.notas, lead.fuente]
+            .join(' ').toLowerCase().indexOf(q) !== -1;
+        });
+
+        if (!filtered.length) {
+          leadsBody.innerHTML = '';
+          leadsCards.innerHTML = '';
+          emptyState.classList.remove('hidden');
+          return;
+        }
+
+        emptyState.classList.add('hidden');
+
+        leadsBody.innerHTML = filtered.map(function (lead) {
+          return '<tr>' +
+            '<td><strong>' + escapeHtml(lead.nombre) + '</strong><br><span class="source">' + escapeHtml(lead.telefono) + '</span></td>' +
+            '<td>' + escapeHtml(lead.modelo || '—') + (lead.pie ? '<br><span class="source">Pie: ' + escapeHtml(lead.pie) + '</span>' : '') + '</td>' +
+            '<td><span class="source">' + escapeHtml(lead.fuente) + '</span></td>' +
+            '<td><span class="' + badgeClass(lead.estado) + '">' + escapeHtml(lead.estado) + '</span></td>' +
+            '<td>' + formatDate(lead.created_at) + '</td>' +
+            '<td>' + renderActions(lead) + '</td>' +
+          '</tr>';
+        }).join('');
+
+        leadsCards.innerHTML = filtered.map(function (lead) {
+          return '<article class="lead-card">' +
+            '<div class="lead-card-head">' +
+              '<strong>' + escapeHtml(lead.nombre) + '</strong>' +
+              '<span class="' + badgeClass(lead.estado) + '">' + escapeHtml(lead.estado) + '</span>' +
+            '</div>' +
+            '<div class="lead-meta">' +
+              escapeHtml(lead.telefono) + '<br>' +
+              (lead.modelo ? escapeHtml(lead.modelo) + '<br>' : '') +
+              'Fuente: ' + escapeHtml(lead.fuente) + '<br>' +
+              formatDate(lead.created_at) +
+            '</div>' +
+            renderActions(lead) +
+          '</article>';
+        }).join('');
+      }
+
+      function escapeHtml(str) {
+        return String(str || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      function loadLeads() {
+        var url = API_LEADS;
+        var params = [];
+        if (state.filterEstado) params.push('estado=' + encodeURIComponent(state.filterEstado));
+        if (state.search) params.push('q=' + encodeURIComponent(state.search));
+        if (params.length) url += '?' + params.join('&');
+
+        return api(url).then(function (data) {
+          state.leads = data.leads || [];
+          renderStats(data.stats || {});
+          renderLeads();
+        });
+      }
+
+      function checkAuth() {
+        return api(API_AUTH + '?action=check').then(function (data) {
+          if (data.authenticated) {
+            showApp();
+            return loadLeads();
+          }
+          showLogin();
+        }).catch(function () {
+          showLogin();
+        });
+      }
+
+      loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        loginError.textContent = '';
+        var password = document.getElementById('password').value;
+
+        api(API_AUTH, {
+          method: 'POST',
+          body: JSON.stringify({ action: 'login', password: password }),
+        }).then(function () {
+          document.getElementById('password').value = '';
+          showApp();
+          return loadLeads();
+        }).catch(function (err) {
+          loginError.textContent = err.message || 'Clave incorrecta';
+        });
+      });
+
+      document.getElementById('logout-btn').addEventListener('click', function () {
+        api(API_AUTH, {
+          method: 'POST',
+          body: JSON.stringify({ action: 'logout' }),
+        }).finally(function () {
+          showLogin();
+        });
+      });
+
+      document.getElementById('refresh-btn').addEventListener('click', loadLeads);
+      document.getElementById('add-lead-btn').addEventListener('click', function () { openModal(null); });
+      document.getElementById('modal-cancel').addEventListener('click', closeModal);
+      modalBackdrop.addEventListener('click', function (e) {
+        if (e.target === modalBackdrop) closeModal();
+      });
+
+      document.getElementById('filter-tabs').addEventListener('click', function (e) {
+        var btn = e.target.closest('.filter-tab');
+        if (!btn) return;
+        document.querySelectorAll('.filter-tab').forEach(function (el) { el.classList.remove('active'); });
+        btn.classList.add('active');
+        state.filterEstado = btn.dataset.estado || '';
+        loadLeads();
+      });
+
+      var searchTimer;
+      document.getElementById('search-input').addEventListener('input', function (e) {
+        clearTimeout(searchTimer);
+        var value = e.target.value.trim();
+        searchTimer = setTimeout(function () {
+          state.search = value;
+          loadLeads();
+        }, 300);
+      });
+
+      function handleTableAction(e) {
+        var btn = e.target.closest('[data-action]');
+        if (!btn) return;
+        var id = Number(btn.dataset.id);
+        var lead = state.leads.find(function (item) { return item.id === id; });
+        if (!lead) return;
+
+        if (btn.dataset.action === 'edit') {
+          openModal(lead);
+          return;
+        }
+
+        if (btn.dataset.action === 'delete') {
+          if (!confirm('¿Eliminar el lead de ' + lead.nombre + '?')) return;
+          api(API_LEADS, {
+            method: 'DELETE',
+            body: JSON.stringify({ id: id }),
+          }).then(loadLeads).catch(function (err) {
+            alert(err.message || 'No se pudo eliminar');
+          });
+        }
+      }
+
+      leadsBody.addEventListener('click', handleTableAction);
+      leadsCards.addEventListener('click', handleTableAction);
+
+      leadForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var id = document.getElementById('lead-id').value;
+        var payload = {
+          nombre: document.getElementById('lead-nombre').value.trim(),
+          telefono: document.getElementById('lead-telefono').value.trim(),
+          modelo: document.getElementById('lead-modelo').value,
+          fuente: document.getElementById('lead-fuente').value,
+          estado: document.getElementById('lead-estado').value,
+          pie: document.getElementById('lead-pie').value.trim(),
+          notas: document.getElementById('lead-notas').value.trim(),
+        };
+
+        var request = id
+          ? api(API_LEADS, { method: 'PUT', body: JSON.stringify(Object.assign({ id: Number(id) }, payload)) })
+          : api(API_LEADS, { method: 'POST', body: JSON.stringify(payload) });
+
+        request.then(function () {
+          closeModal();
+          return loadLeads();
+        }).catch(function (err) {
+          alert(err.message || 'No se pudo guardar');
+        });
+      });
+
+      checkAuth();
+    })();
+  </script>
+</body>
+</html>

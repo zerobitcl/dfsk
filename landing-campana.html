@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cotiza tu Auto DFSK o Subaru en Coquimbo | Oferta Especial</title>
-  <meta name="description" content="Cotiza tu auto nuevo en la Región de Coquimbo. Modelos DFSK y Subaru con financiamiento inmediato. Respuesta en menos de 2 horas. Sin burocracia." />
-  <meta name="robots" content="noindex, nofollow" />
+  <title>Cotiza tu Camioneta DFSK en Ovalle | Oferta Meta Ads</title>
+  <meta name="description" content="DFSK D1 para trabajo y Z9 premium en Ovalle. Pie desde $3.200.000. Retoma desde 2016. Taller y repuestos locales. Cotiza ahora con Felipe Núñez." />
+  <meta name="robots" content="noindex" />
 
   <!-- Open Graph para Meta Ads -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Tu Próxima Camioneta DFSK en Coquimbo – Cotiza Ahora" />
-  <meta property="og:description" content="Modelos de trabajo con garantía de fábrica. Financiamiento rápido. Atendemos toda la IV Región." />
+  <meta property="og:title" content="Camioneta DFSK Ovalle – Cotiza Ahora" />
+  <meta property="og:description" content="D1 trabajo o Z9 premium. Pie desde $3.200.000. Beneficios de cierre incluidos." />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -94,40 +94,41 @@
           <!-- Copy lado izquierdo -->
           <div>
             <p class="text-brand-500 text-xs font-bold uppercase tracking-widest mb-4">
-              Oferta Exclusiva · IV Región de Chile
+              Oferta exclusiva · Ovalle y IV Región
             </p>
             <h1 id="hero-lp-heading" class="text-4xl sm:text-5xl font-bold tracking-tight leading-tight mb-5">
               Tu Camioneta<br />
-              <span class="text-brand-500">DFSK o Subaru</span><br />
-              en Coquimbo
+              <span class="text-brand-500">DFSK D1 o Z9</span><br />
+              en Ovalle
             </h1>
             <p class="text-zinc-300 text-lg mb-8 leading-relaxed max-w-md">
-              Financiamiento en el acto. Garantía de fábrica. 
-              Entrega en Ovalle, La Serena y Coquimbo.
+              <strong class="text-white">D1</strong> para trabajo (motor, chasis y caja Nissan) o
+              <strong class="text-white">Z9</strong> premium (cámara 540°, cuero).
+              Taller y repuestos en Ovalle, retoma desde 2016 y pie desde <strong class="text-white">$3.200.000</strong>.
               <strong class="text-white block mt-2">Respondemos en menos de 2 horas.</strong>
             </p>
 
             <!-- 4 Pilares de confianza -->
             <div class="grid grid-cols-2 gap-3">
               <div class="pillar trust-badge bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-4" style="animation-delay:0.05s">
-                <div class="text-brand-500 text-xl mb-1">🛡️</div>
-                <p class="text-white text-sm font-semibold">Garantía Oficial</p>
-                <p class="text-zinc-400 text-xs mt-0.5">3 años / 100.000 km</p>
+                <div class="text-brand-500 text-xl mb-1">🔧</div>
+                <p class="text-white text-sm font-semibold">Taller Ovalle</p>
+                <p class="text-zinc-400 text-xs mt-0.5">Repuestos locales</p>
               </div>
               <div class="pillar trust-badge bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-4" style="animation-delay:0.1s">
                 <div class="text-brand-500 text-xl mb-1">💳</div>
                 <p class="text-white text-sm font-semibold">Financiamiento</p>
-                <p class="text-zinc-400 text-xs mt-0.5">Aprobación inmediata</p>
+                <p class="text-zinc-400 text-xs mt-0.5">60 o 48 cuotas</p>
               </div>
               <div class="pillar trust-badge bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-4" style="animation-delay:0.15s">
-                <div class="text-brand-500 text-xl mb-1">📍</div>
-                <p class="text-white text-sm font-semibold">IV Región</p>
-                <p class="text-zinc-400 text-xs mt-0.5">Ovalle · La Serena · Coquimbo</p>
+                <div class="text-brand-500 text-xl mb-1">🔄</div>
+                <p class="text-white text-sm font-semibold">Retoma</p>
+                <p class="text-zinc-400 text-xs mt-0.5">Desde 2016 · máx. 100k km</p>
               </div>
               <div class="pillar trust-badge bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-4" style="animation-delay:0.2s">
-                <div class="text-brand-500 text-xl mb-1">🏎️</div>
-                <p class="text-white text-sm font-semibold">Test Drive</p>
-                <p class="text-zinc-400 text-xs mt-0.5">Sin compromiso · Gratis</p>
+                <div class="text-brand-500 text-xl mb-1">🎁</div>
+                <p class="text-white text-sm font-semibold">Beneficios cierre</p>
+                <p class="text-zinc-400 text-xs mt-0.5">Patente, kit, pisos goma</p>
               </div>
             </div>
           </div>
@@ -141,6 +142,7 @@
               </div>
 
               <form id="cotizacion-form" action="#" method="POST" novalidate class="space-y-4">
+                <input type="hidden" id="origen_lead" name="origen" value="Campana_MetaAds">
                 <!-- Nombre -->
                 <div>
                   <label for="nombre" class="block text-xs font-semibold text-zinc-300 uppercase tracking-wide mb-1.5">
@@ -193,16 +195,10 @@
                     Modelo de interés
                   </label>
                   <select id="modelo" name="modelo" class="form-input w-full rounded-lg px-4 py-3 text-sm">
-                    <option value="">¿Qué auto te interesa?</option>
-                    <optgroup label="DFSK">
-                      <option value="dfsk-c22">DFSK Truck CD C22</option>
-                      <option value="dfsk-c32">DFSK Truck CD C32</option>
-                    </optgroup>
-                    <optgroup label="Subaru">
-                      <option value="subaru-forester">Subaru Forester</option>
-                      <option value="subaru-outback">Subaru Outback</option>
-                      <option value="subaru-impreza">Subaru Impreza</option>
-                    </optgroup>
+                    <option value="">¿Qué camioneta te interesa?</option>
+                    <option value="DFSK D1">DFSK D1 — Trabajo (motor/chasis/caja Nissan)</option>
+                    <option value="DFSK Z9">DFSK Z9 — Premium (cámara 540°, cuero)</option>
+                    <option value="Ambos modelos">Quiero comparar D1 y Z9</option>
                     <option value="otro">Otro / No sé aún</option>
                   </select>
                 </div>
@@ -294,6 +290,7 @@
   <script>
     const form = document.getElementById('cotizacion-form');
     const API_LEADS = 'api/leads.php';
+    const WA_NUMBER = '56912345678';
 
     if (form) {
       form.addEventListener('submit', function(e) {
@@ -304,6 +301,7 @@
         const ciudad = form.querySelector('#ciudad').value;
         const modelo = form.querySelector('#modelo').value;
         const mensaje = form.querySelector('#mensaje').value.trim();
+        const origen = form.querySelector('#origen_lead').value;
 
         if (!nombre || !telefono) {
           btn.textContent = 'Completa nombre y teléfono';
@@ -325,6 +323,13 @@
           mensaje ? 'Consulta: ' + mensaje : ''
         ].filter(Boolean).join(' | ');
 
+        const waMsg = 'Hola Felipe, me llamo *' + nombre + '* y quiero cotizar' +
+          (modelo ? ' el *' + modelo + '*' : ' una camioneta DFSK') +
+          '. Mi teléfono es ' + telefono + '.' +
+          ' Origen: ' + origen + '. ¿Me puedes ayudar?';
+
+        const waURL = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(waMsg);
+
         fetch(API_LEADS, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -333,13 +338,15 @@
             telefono,
             modelo: modelo || null,
             fuente: 'landing',
+            origen: origen,
             notas: notas || null
           })
-        }).catch(function () {
-          /* Continúa aunque falle el guardado */
-        }).finally(function () {
-          btn.textContent = '✓ Enviado — Te contactamos pronto';
+        }).catch(function () {}).finally(function () {
+          btn.textContent = '✓ Enviado — Abriendo WhatsApp…';
           btn.classList.add('opacity-70', 'cursor-not-allowed');
+          setTimeout(function () {
+            window.open(waURL, '_blank', 'noopener,noreferrer');
+          }, 600);
         });
       });
     }

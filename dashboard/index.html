@@ -287,11 +287,18 @@
       text-transform: uppercase;
       letter-spacing: .04em;
     }
-    .badge-nuevo { background: rgba(37,99,235,.15); color: #93c5fd; }
+    .badge-ingresado { background: rgba(37,99,235,.15); color: #93c5fd; }
     .badge-contactado { background: rgba(234,179,8,.15); color: #fde047; }
-    .badge-cotizado { background: rgba(201,168,76,.15); color: var(--gold); }
-    .badge-vendido { background: rgba(34,197,94,.15); color: #86efac; }
-    .badge-descartado { background: rgba(107,114,128,.15); color: #d1d5db; }
+    .badge-en_veremos { background: rgba(168,85,247,.15); color: #d8b4fe; }
+    .badge-reunion_agendada { background: rgba(14,165,233,.15); color: #7dd3fc; }
+    .badge-cotizacion_enviada { background: rgba(201,168,76,.15); color: var(--gold); }
+    .badge-concreto { background: rgba(34,197,94,.15); color: #86efac; }
+    .badge-perdido { background: rgba(107,114,128,.15); color: #d1d5db; }
+
+    .badge-origen-organico { background: rgba(34,197,94,.12); color: #86efac; }
+    .badge-origen-pagado { background: rgba(239,68,68,.12); color: #fca5a5; }
+    .badge-origen-whatsapp { background: rgba(37,211,102,.12); color: #6ee7b7; }
+    .badge-origen-manual { background: rgba(107,114,128,.12); color: #d1d5db; }
 
     .source {
       color: var(--muted);
@@ -401,7 +408,7 @@
       <div class="topbar-inner">
         <div class="brand">
           <strong>CRM Leads · Felipe Núñez</strong>
-          <span>DFSK Coquimbo · Región de Coquimbo</span>
+          <span>Camionetas DFSK · Ovalle</span>
         </div>
         <div class="topbar-actions">
           <button type="button" class="btn btn-secondary" id="refresh-btn">Actualizar</button>
@@ -413,10 +420,10 @@
     <main class="content">
       <div class="stats" id="stats">
         <div class="stat-card"><strong id="stat-total">0</strong><span>Total leads</span></div>
-        <div class="stat-card"><strong id="stat-nuevos">0</strong><span>Nuevos</span></div>
-        <div class="stat-card"><strong id="stat-contactados">0</strong><span>Contactados</span></div>
-        <div class="stat-card"><strong id="stat-cotizados">0</strong><span>Cotizados</span></div>
-        <div class="stat-card"><strong id="stat-vendidos">0</strong><span>Vendidos</span></div>
+        <div class="stat-card"><strong id="stat-organicos">0</strong><span>Orgánicos (SEO)</span></div>
+        <div class="stat-card"><strong id="stat-pagados">0</strong><span>Pagados (Ads)</span></div>
+        <div class="stat-card"><strong id="stat-ingresados">0</strong><span>Ingresados</span></div>
+        <div class="stat-card"><strong id="stat-concretos">0</strong><span>Concretos</span></div>
       </div>
 
       <div class="toolbar">
@@ -424,10 +431,20 @@
           <input type="search" id="search-input" class="search" placeholder="Buscar por nombre, teléfono o modelo…">
           <div class="filter-tabs" id="filter-tabs">
             <button type="button" class="filter-tab active" data-estado="">Todos</button>
-            <button type="button" class="filter-tab" data-estado="nuevo">Nuevos</button>
-            <button type="button" class="filter-tab" data-estado="contactado">Contactados</button>
-            <button type="button" class="filter-tab" data-estado="cotizado">Cotizados</button>
-            <button type="button" class="filter-tab" data-estado="vendido">Vendidos</button>
+            <button type="button" class="filter-tab" data-estado="ingresado">Ingresado</button>
+            <button type="button" class="filter-tab" data-estado="contactado">Contactado</button>
+            <button type="button" class="filter-tab" data-estado="en_veremos">En veremos</button>
+            <button type="button" class="filter-tab" data-estado="reunion_agendada">Reunión</button>
+            <button type="button" class="filter-tab" data-estado="cotizacion_enviada">Cotización</button>
+            <button type="button" class="filter-tab" data-estado="concreto">Concreto</button>
+            <button type="button" class="filter-tab" data-estado="perdido">Perdido</button>
+          </div>
+          <div class="filter-tabs" id="filter-origen" style="margin-top:8px;">
+            <button type="button" class="filter-tab active" data-origen="">Todos los orígenes</button>
+            <button type="button" class="filter-tab" data-origen="SEO_Organico">Orgánico</button>
+            <button type="button" class="filter-tab" data-origen="Campana_MetaAds">Pagado</button>
+            <button type="button" class="filter-tab" data-origen="whatsapp">WhatsApp</button>
+            <button type="button" class="filter-tab" data-origen="manual">Manual</button>
           </div>
         </div>
         <div class="toolbar-right">
@@ -441,7 +458,7 @@
             <tr>
               <th>Cliente</th>
               <th>Modelo</th>
-              <th>Fuente</th>
+              <th>Origen</th>
               <th>Estado</th>
               <th>Fecha</th>
               <th>Acciones</th>
@@ -476,19 +493,19 @@
             <label for="lead-modelo">Modelo</label>
             <select id="lead-modelo">
               <option value="">Sin definir</option>
-              <option value="DFSK SUV 600">DFSK SUV 600</option>
-              <option value="DFSK SUV 580">DFSK SUV 580</option>
+              <option value="DFSK D1">DFSK D1</option>
+              <option value="DFSK Z9">DFSK Z9</option>
               <option value="Ambos modelos">Ambos modelos</option>
               <option value="Otro">Otro</option>
             </select>
           </div>
           <div class="field">
-            <label for="lead-fuente">Fuente</label>
-            <select id="lead-fuente">
+            <label for="lead-origen">Origen</label>
+            <select id="lead-origen">
               <option value="whatsapp">WhatsApp</option>
               <option value="manual">Manual</option>
-              <option value="formulario">Formulario web</option>
-              <option value="landing">Landing campaña</option>
+              <option value="SEO_Organico">Orgánico (SEO)</option>
+              <option value="Campana_MetaAds">Pagado (Meta Ads)</option>
             </select>
           </div>
         </div>
@@ -496,16 +513,18 @@
           <div class="field">
             <label for="lead-estado">Estado</label>
             <select id="lead-estado">
-              <option value="nuevo">Nuevo</option>
+              <option value="ingresado">Ingresado</option>
               <option value="contactado">Contactado</option>
-              <option value="cotizado">Cotizado</option>
-              <option value="vendido">Vendido</option>
-              <option value="descartado">Descartado</option>
+              <option value="en_veremos">En veremos</option>
+              <option value="reunion_agendada">Reunión agendada</option>
+              <option value="cotizacion_enviada">Cotización enviada</option>
+              <option value="concreto">Concreto</option>
+              <option value="perdido">Perdido</option>
             </select>
           </div>
           <div class="field">
             <label for="lead-pie">Pie disponible</label>
-            <input type="text" id="lead-pie" placeholder="Ej: 20% del valor">
+            <input type="text" id="lead-pie" placeholder="Ej: Desde $3.200.000">
           </div>
         </div>
         <div class="field">
@@ -531,6 +550,7 @@
       var state = {
         leads: [],
         filterEstado: '',
+        filterOrigen: '',
         search: '',
       };
 
@@ -566,8 +586,36 @@
         });
       }
 
-      function badgeClass(estado) {
-        return 'badge badge-' + estado;
+      var ESTADO_LABELS = {
+        ingresado: 'Ingresado',
+        contactado: 'Contactado',
+        en_veremos: 'En veremos',
+        reunion_agendada: 'Reunión agendada',
+        cotizacion_enviada: 'Cotización enviada',
+        concreto: 'Concreto',
+        perdido: 'Perdido'
+      };
+
+      var ORIGEN_LABELS = {
+        SEO_Organico: 'Orgánico',
+        Campana_MetaAds: 'Pagado',
+        whatsapp: 'WhatsApp',
+        manual: 'Manual'
+      };
+
+      function estadoLabel(estado) {
+        return ESTADO_LABELS[estado] || estado;
+      }
+
+      function origenLabel(origen) {
+        return ORIGEN_LABELS[origen] || origen;
+      }
+
+      function origenBadgeClass(origen) {
+        if (origen === 'SEO_Organico') return 'badge badge-origen-organico';
+        if (origen === 'Campana_MetaAds') return 'badge badge-origen-pagado';
+        if (origen === 'whatsapp') return 'badge badge-origen-whatsapp';
+        return 'badge badge-origen-manual';
       }
 
       function waLink(telefono, nombre) {
@@ -594,8 +642,8 @@
         document.getElementById('lead-nombre').value = lead ? lead.nombre : '';
         document.getElementById('lead-telefono').value = lead ? lead.telefono : '';
         document.getElementById('lead-modelo').value = lead ? (lead.modelo || '') : '';
-        document.getElementById('lead-fuente').value = lead ? lead.fuente : 'whatsapp';
-        document.getElementById('lead-estado').value = lead ? lead.estado : 'nuevo';
+        document.getElementById('lead-origen').value = lead ? (lead.origen || 'whatsapp') : 'whatsapp';
+        document.getElementById('lead-estado').value = lead ? lead.estado : 'ingresado';
         document.getElementById('lead-pie').value = lead ? (lead.pie || '') : '';
         document.getElementById('lead-notas').value = lead ? (lead.notas || '') : '';
         modalBackdrop.classList.remove('hidden');
@@ -609,12 +657,16 @@
         document.getElementById('lead-id').value = '';
       }
 
+      function badgeClass(estado) {
+        return 'badge badge-' + estado;
+      }
+
       function renderStats(stats) {
         document.getElementById('stat-total').textContent = stats.total || 0;
-        document.getElementById('stat-nuevos').textContent = stats.nuevos || 0;
-        document.getElementById('stat-contactados').textContent = stats.contactados || 0;
-        document.getElementById('stat-cotizados').textContent = stats.cotizados || 0;
-        document.getElementById('stat-vendidos').textContent = stats.vendidos || 0;
+        document.getElementById('stat-organicos').textContent = stats.organicos || 0;
+        document.getElementById('stat-pagados').textContent = stats.pagados || 0;
+        document.getElementById('stat-ingresados').textContent = stats.ingresados || 0;
+        document.getElementById('stat-concretos').textContent = stats.concretos || 0;
       }
 
       function renderActions(lead) {
@@ -628,9 +680,10 @@
       function renderLeads() {
         var filtered = state.leads.filter(function (lead) {
           if (state.filterEstado && lead.estado !== state.filterEstado) return false;
+          if (state.filterOrigen && lead.origen !== state.filterOrigen) return false;
           if (!state.search) return true;
           var q = state.search.toLowerCase();
-          return [lead.nombre, lead.telefono, lead.modelo, lead.notas, lead.fuente]
+          return [lead.nombre, lead.telefono, lead.modelo, lead.notas, lead.origen, lead.estado_label, lead.origen_label]
             .join(' ').toLowerCase().indexOf(q) !== -1;
         });
 
@@ -647,8 +700,8 @@
           return '<tr>' +
             '<td><strong>' + escapeHtml(lead.nombre) + '</strong><br><span class="source">' + escapeHtml(lead.telefono) + '</span></td>' +
             '<td>' + escapeHtml(lead.modelo || '—') + (lead.pie ? '<br><span class="source">Pie: ' + escapeHtml(lead.pie) + '</span>' : '') + '</td>' +
-            '<td><span class="source">' + escapeHtml(lead.fuente) + '</span></td>' +
-            '<td><span class="' + badgeClass(lead.estado) + '">' + escapeHtml(lead.estado) + '</span></td>' +
+            '<td><span class="' + origenBadgeClass(lead.origen) + '">' + escapeHtml(lead.origen_label || origenLabel(lead.origen)) + '</span></td>' +
+            '<td><span class="' + badgeClass(lead.estado) + '">' + escapeHtml(lead.estado_label || estadoLabel(lead.estado)) + '</span></td>' +
             '<td>' + formatDate(lead.created_at) + '</td>' +
             '<td>' + renderActions(lead) + '</td>' +
           '</tr>';
@@ -658,12 +711,12 @@
           return '<article class="lead-card">' +
             '<div class="lead-card-head">' +
               '<strong>' + escapeHtml(lead.nombre) + '</strong>' +
-              '<span class="' + badgeClass(lead.estado) + '">' + escapeHtml(lead.estado) + '</span>' +
+              '<span class="' + badgeClass(lead.estado) + '">' + escapeHtml(lead.estado_label || estadoLabel(lead.estado)) + '</span>' +
             '</div>' +
             '<div class="lead-meta">' +
               escapeHtml(lead.telefono) + '<br>' +
               (lead.modelo ? escapeHtml(lead.modelo) + '<br>' : '') +
-              'Fuente: ' + escapeHtml(lead.fuente) + '<br>' +
+              'Origen: ' + escapeHtml(lead.origen_label || origenLabel(lead.origen)) + '<br>' +
               formatDate(lead.created_at) +
             '</div>' +
             renderActions(lead) +
@@ -683,6 +736,7 @@
         var url = API_LEADS;
         var params = [];
         if (state.filterEstado) params.push('estado=' + encodeURIComponent(state.filterEstado));
+        if (state.filterOrigen) params.push('origen=' + encodeURIComponent(state.filterOrigen));
         if (state.search) params.push('q=' + encodeURIComponent(state.search));
         if (params.length) url += '?' + params.join('&');
 
@@ -740,10 +794,19 @@
 
       document.getElementById('filter-tabs').addEventListener('click', function (e) {
         var btn = e.target.closest('.filter-tab');
-        if (!btn) return;
-        document.querySelectorAll('.filter-tab').forEach(function (el) { el.classList.remove('active'); });
+        if (!btn || btn.parentElement.id !== 'filter-tabs') return;
+        document.querySelectorAll('#filter-tabs .filter-tab').forEach(function (el) { el.classList.remove('active'); });
         btn.classList.add('active');
         state.filterEstado = btn.dataset.estado || '';
+        loadLeads();
+      });
+
+      document.getElementById('filter-origen').addEventListener('click', function (e) {
+        var btn = e.target.closest('.filter-tab');
+        if (!btn) return;
+        document.querySelectorAll('#filter-origen .filter-tab').forEach(function (el) { el.classList.remove('active'); });
+        btn.classList.add('active');
+        state.filterOrigen = btn.dataset.origen || '';
         loadLeads();
       });
 
@@ -790,10 +853,11 @@
           nombre: document.getElementById('lead-nombre').value.trim(),
           telefono: document.getElementById('lead-telefono').value.trim(),
           modelo: document.getElementById('lead-modelo').value,
-          fuente: document.getElementById('lead-fuente').value,
+          origen: document.getElementById('lead-origen').value,
           estado: document.getElementById('lead-estado').value,
           pie: document.getElementById('lead-pie').value.trim(),
           notas: document.getElementById('lead-notas').value.trim(),
+          fuente: document.getElementById('lead-origen').value === 'Campana_MetaAds' ? 'landing' : 'manual',
         };
 
         var request = id

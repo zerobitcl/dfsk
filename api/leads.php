@@ -6,13 +6,30 @@ require_once __DIR__ . '/db.php';
 $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 $pdo = getDb();
 
-$allowedEstados = ['nuevo', 'contactado', 'cotizado', 'vendido', 'descartado'];
+$allowedEstados = [
+    'ingresado',
+    'contactado',
+    'en_veremos',
+    'reunion_agendada',
+    'cotizacion_enviada',
+    'concreto',
+    'perdido',
+];
+
+$allowedOrigenes = [
+    'SEO_Organico',
+    'Campana_MetaAds',
+    'whatsapp',
+    'manual',
+];
+
 $allowedFuentes = ['formulario', 'whatsapp', 'landing', 'manual'];
 
 if ($method === 'GET') {
     requireAuth();
 
-    $estado = sanitizeText($_GET['estado'] ?? null, 30);
+    $estado = sanitizeText($_GET['estado'] ?? null, 40);
+    $origen = sanitizeText($_GET['origen'] ?? null, 40);
     $q = sanitizeText($_GET['q'] ?? null, 80);
 
     $sql = 'SELECT * FROM leads WHERE 1=1';
@@ -23,8 +40,13 @@ if ($method === 'GET') {
         $params['estado'] = $estado;
     }
 
+    if ($origen && in_array($origen, $allowedOrigenes, true)) {
+        $sql .= ' AND origen = :origen';
+        $params['origen'] = $origen;
+    }
+
     if ($q) {
-        $sql .= ' AND (nombre LIKE :q OR telefono LIKE :q OR modelo LIKE :q OR notas LIKE :q)';
+        $sql .= ' AND (nombre LIKE :q OR telefono LIKE :q OR modelo LIKE :q OR notas LIKE :q OR origen LIKE :q)';
         $params['q'] = '%' . $q . '%';
     }
 
@@ -37,23 +59,34 @@ if ($method === 'GET') {
     $statsStmt = $pdo->query(
         'SELECT
             COUNT(*) AS total,
-            SUM(CASE WHEN estado = "nuevo" THEN 1 ELSE 0 END) AS nuevos,
+            SUM(CASE WHEN estado = "ingresado" THEN 1 ELSE 0 END) AS ingresados,
             SUM(CASE WHEN estado = "contactado" THEN 1 ELSE 0 END) AS contactados,
-            SUM(CASE WHEN estado = "cotizado" THEN 1 ELSE 0 END) AS cotizados,
-            SUM(CASE WHEN estado = "vendido" THEN 1 ELSE 0 END) AS vendidos
+            SUM(CASE WHEN estado = "cotizacion_enviada" THEN 1 ELSE 0 END) AS cotizaciones,
+            SUM(CASE WHEN estado = "concreto" THEN 1 ELSE 0 END) AS concretos,
+            SUM(CASE WHEN origen = "SEO_Organico" THEN 1 ELSE 0 END) AS organicos,
+            SUM(CASE WHEN origen = "Campana_MetaAds" THEN 1 ELSE 0 END) AS pagados
          FROM leads'
     );
     $stats = $statsStmt->fetch() ?: [];
 
+    $leads = array_map(function (array $row) {
+        $lead = leadToArray($row);
+        $lead['origen_label'] = origenLabel($lead['origen']);
+        $lead['estado_label'] = estadoLabel($lead['estado']);
+        return $lead;
+    }, $rows);
+
     jsonResponse([
         'ok' => true,
-        'leads' => array_map('leadToArray', $rows),
+        'leads' => $leads,
         'stats' => [
             'total' => (int) ($stats['total'] ?? 0),
-            'nuevos' => (int) ($stats['nuevos'] ?? 0),
+            'ingresados' => (int) ($stats['ingresados'] ?? 0),
             'contactados' => (int) ($stats['contactados'] ?? 0),
-            'cotizados' => (int) ($stats['cotizados'] ?? 0),
-            'vendidos' => (int) ($stats['vendidos'] ?? 0),
+            'cotizaciones' => (int) ($stats['cotizaciones'] ?? 0),
+            'concretos' => (int) ($stats['concretos'] ?? 0),
+            'organicos' => (int) ($stats['organicos'] ?? 0),
+            'pagados' => (int) ($stats['pagados'] ?? 0),
         ],
     ]);
 }
@@ -70,6 +103,7 @@ if ($method === 'POST') {
     $pie = sanitizeText($input['pie'] ?? null, 120);
     $notas = sanitizeText($input['notas'] ?? null, 2000);
     $fuente = sanitizeText($input['fuente'] ?? 'formulario', 30) ?? 'formulario';
+    $origen = sanitizeText($input['origen'] ?? $input['origen_lead'] ?? null, 40);
 
     if (!$nombre || !$telefono) {
         jsonResponse(['ok' => false, 'error' => 'Nombre y teléfono son obligatorios'], 422);
@@ -79,16 +113,24 @@ if ($method === 'POST') {
         $fuente = 'formulario';
     }
 
-    $estado = sanitizeText($input['estado'] ?? 'nuevo', 30) ?? 'nuevo';
+    if (!$origen || !in_array($origen, $allowedOrigenes, true)) {
+        $origen = match ($fuente) {
+            'landing' => 'Campana_MetaAds',
+            'whatsapp' => 'whatsapp',
+            default => 'SEO_Organico',
+        };
+    }
+
+    $estado = sanitizeText($input['estado'] ?? 'ingresado', 40) ?? 'ingresado';
     if (!in_array($estado, $allowedEstados, true)) {
-        $estado = 'nuevo';
+        $estado = 'ingresado';
     }
 
     $now = nowIso();
 
     $stmt = $pdo->prepare(
-        'INSERT INTO leads (nombre, telefono, modelo, pie, fuente, estado, notas, created_at, updated_at)
-         VALUES (:nombre, :telefono, :modelo, :pie, :fuente, :estado, :notas, :created_at, :updated_at)'
+        'INSERT INTO leads (nombre, telefono, modelo, pie, fuente, origen, estado, notas, created_at, updated_at)
+         VALUES (:nombre, :telefono, :modelo, :pie, :fuente, :origen, :estado, :notas, :created_at, :updated_at)'
     );
 
     $stmt->execute([
@@ -97,6 +139,7 @@ if ($method === 'POST') {
         'modelo' => $modelo,
         'pie' => $pie,
         'fuente' => $fuente,
+        'origen' => $origen,
         'estado' => $estado,
         'notas' => $notas,
         'created_at' => $now,
@@ -131,8 +174,9 @@ if ($method === 'PUT' || $method === 'PATCH') {
     $modelo = array_key_exists('modelo', $input) ? sanitizeText($input['modelo'], 120) : $lead['modelo'];
     $pie = array_key_exists('pie', $input) ? sanitizeText($input['pie'], 120) : $lead['pie'];
     $notas = array_key_exists('notas', $input) ? sanitizeText($input['notas'], 2000) : $lead['notas'];
-    $estado = array_key_exists('estado', $input) ? sanitizeText($input['estado'], 30) : $lead['estado'];
+    $estado = array_key_exists('estado', $input) ? sanitizeText($input['estado'], 40) : $lead['estado'];
     $fuente = array_key_exists('fuente', $input) ? sanitizeText($input['fuente'], 30) : $lead['fuente'];
+    $origen = array_key_exists('origen', $input) ? sanitizeText($input['origen'], 40) : ($lead['origen'] ?? 'manual');
 
     if (!$nombre || !$telefono) {
         jsonResponse(['ok' => false, 'error' => 'Nombre y teléfono son obligatorios'], 422);
@@ -146,6 +190,10 @@ if ($method === 'PUT' || $method === 'PATCH') {
         jsonResponse(['ok' => false, 'error' => 'Fuente no válida'], 422);
     }
 
+    if ($origen && !in_array($origen, $allowedOrigenes, true)) {
+        jsonResponse(['ok' => false, 'error' => 'Origen no válido'], 422);
+    }
+
     $stmt = $pdo->prepare(
         'UPDATE leads SET
             nombre = :nombre,
@@ -153,6 +201,7 @@ if ($method === 'PUT' || $method === 'PATCH') {
             modelo = :modelo,
             pie = :pie,
             fuente = :fuente,
+            origen = :origen,
             estado = :estado,
             notas = :notas,
             updated_at = :updated_at
@@ -166,6 +215,7 @@ if ($method === 'PUT' || $method === 'PATCH') {
         'modelo' => $modelo,
         'pie' => $pie,
         'fuente' => $fuente,
+        'origen' => $origen,
         'estado' => $estado,
         'notas' => $notas,
         'updated_at' => nowIso(),

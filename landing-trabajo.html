@@ -21,7 +21,7 @@
             sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'system-ui', 'sans-serif'],
           },
           colors: {
-            brand: { 500: '#d97706', 600: '#b45309', 700: '#92400e' }
+            brand: { 400: '#e8c97a', 500: '#c9a84c', 600: '#a3863a', 700: '#8a6f2d' }
           }
         }
       }
@@ -30,7 +30,7 @@
   <style>
     html { scroll-behavior: smooth; }
     .btn-cta { transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease; }
-    .btn-cta:hover { transform: scale(1.02); box-shadow: 0 0 30px rgba(217,119,6,0.4); }
+    .btn-cta:hover { transform: scale(1.02); box-shadow: 0 0 30px rgba(201,168,76,0.4); }
     .form-input {
       background: rgba(39,39,42,0.8);
       border: 1px solid #3f3f46;
@@ -39,8 +39,8 @@
     }
     .form-input:focus {
       outline: none;
-      border-color: #d97706;
-      box-shadow: 0 0 0 3px rgba(217,119,6,0.15);
+      border-color: #c9a84c;
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
     }
     .form-input::placeholder { color: #71717a; }
     .hero-img-wrapper::after {
@@ -60,7 +60,7 @@
       to   { opacity: 1; transform: translateY(0); }
     }
     .callegari-seal img { height: 28px; width: auto; max-width: 110px; object-fit: contain; }
-    .callegari-seal-fallback { display: none; font-size: .65rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #d97706; }
+    .callegari-seal-fallback { display: none; font-size: .65rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #c9a84c; }
   </style>
 </head>
 
@@ -90,7 +90,7 @@
       <!-- Imagen de fondo -->
       <div class="hero-img-wrapper absolute inset-0">
         <img 
-          src="assets/img/image_5f369d.jpg" 
+          src="assets/img/banner-trabajo.jpg" 
           alt="DFSK D1 cargada en una faena de trabajo en la Región de Coquimbo" 
           class="w-full h-full object-cover object-center"
           loading="eager"
@@ -212,7 +212,7 @@
                 <!-- Submit -->
                 <button 
                   type="submit"
-                  class="btn-cta w-full bg-brand-500 hover:bg-brand-600 text-zinc-950 font-bold py-4 rounded-xl text-base mt-2"
+                  class="btn-cta w-full bg-brand-500 hover:bg-brand-400 text-zinc-950 font-bold py-4 rounded-xl text-base mt-2"
                   aria-describedby="form-disclaimer"
                 >
                   Quiero mi DFSK D1 de Trabajo →

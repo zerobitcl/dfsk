@@ -1,4 +1,4 @@
-CARPETA DE IMÁGENES – Felipe Núñez · Callegari Automotriz
+﻿CARPETA DE IMÁGENES – Felipe Núñez · Callegari Automotriz
 =========================================================
 
 IMÁGENES DISPONIBLES (DFSK D1)
@@ -30,9 +30,10 @@ RECOMENDACIONES
 
 PENDIENTE (otras landings)
 ---------------------------
-  banner-campana.jpg    → landing-campana.html
-  banner-aspiracional   → landing-aspiracional.html
-  banner-retoma.jpg     → landing-retoma.html
-  banner-oferta.jpg     → landing-oferta.html
+  Imágenes banner específicas por ángulo Meta Ads (opcional).
 
-  Mientras no existan, cada landing muestra fallback en degradado oscuro.
+SEO — DOMINIO CANÓNICO
+-----------------------
+  https://www.felipecallegari.cl
+  robots.txt · sitemap.xml en raíz del proyecto
+  NAP: Covarrubias 340, 1840000 Ovalle · +56 9 8548 0881

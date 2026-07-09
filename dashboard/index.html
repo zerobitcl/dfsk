@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es-CL">
 <head>
   <meta charset="UTF-8">
@@ -545,7 +545,7 @@
 
       var API_AUTH = '../api/auth.php';
       var API_LEADS = '../api/leads.php';
-      var WA_NUMBER = '56912345678';
+      var OFFICIAL_TEL = '+56985480881';
 
       var state = {
         leads: [],
@@ -622,7 +622,7 @@
         var clean = String(telefono).replace(/\D/g, '');
         if (clean.startsWith('56')) clean = clean;
         else if (clean.startsWith('9')) clean = '56' + clean;
-        var text = 'Hola ' + nombre + ', te escribe Felipe de DFSK Coquimbo.';
+        var text = 'Hola ' + nombre + ', te escribe Felipe de Callegari Automotriz (DFSK Ovalle).';
         return 'https://wa.me/' + clean + '?text=' + encodeURIComponent(text);
       }
 

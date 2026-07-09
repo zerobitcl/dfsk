@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /data/
+Disallow: /landing-
+
+Sitemap: https://www.felipecallegari.cl/sitemap.xml

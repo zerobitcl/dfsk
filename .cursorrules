@@ -1,0 +1,11 @@
+[CONTEXTO_TECNICO]
+- Entorno de desarrollo: Windows 11.
+- Infraestructura de despliegue: Hostinger Cloud dedicado (Sitios estáticos de alto rendimiento).
+- Stack tecnológico: HTML5 semántico, Tailwind CSS (CDN), Vanilla JS, PHP 8.x (API transaccional local con SQLite).
+- Catálogo comercial: Exclusivamente camionetas DFSK D1 (Enfoque trabajo/faena) y DFSK Z9 (Premium). Eliminar por completo modelos C22, C32 u otros del código.
+
+[REGLAS_DE_EJECUCION_FRONTEND]
+1. Message Match Absoluto: El H1 y los Trust Badges Above the Fold deben coincidir exactamente con el ángulo del anuncio de Meta Ads.
+2. Atribución sin Fugas: Todo formulario debe inyectar de forma obligatoria el campo hidden de origen como 'Campana_MetaAds' y usar el campo 'notas' para especificar la variante de la landing.
+3. Interceptación limpia: El JS de los formularios debe validar campos obligatorios, enviar el JSON mediante POST a 'api/leads.php', registrar el lead en el CRM y abrir WhatsApp en una pestaña nueva con el texto pre-formateado.
+4. Cero dependencias: Prohibido instalar librerías pesadas de JS o frameworks SPA. Mantener el sitio ultra-ligero para carga móvil en redes 4G/5G de la Región de Coquimbo.

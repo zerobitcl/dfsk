@@ -280,7 +280,7 @@
     .callegari-seal img {
       height: 26px;
       width: auto;
-      max-width: 110px;
+      max-width: 140px;
       object-fit: contain;
       filter: brightness(1.05);
     }
@@ -355,10 +355,9 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      /* Reemplazar con: background-image: url('hero-dfsk.jpg'); */
       background:
-        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(26,75,140,.45) 0%, transparent 65%),
-        linear-gradient(135deg, #080e1a 0%, #0d1a2e 50%, #080e1a 100%);
+        linear-gradient(to right, rgba(8,14,26,0.92) 0%, rgba(8,14,26,0.55) 45%, rgba(8,14,26,0.25) 100%),
+        url('assets/img/Banner.webp') center/cover no-repeat;
     }
     /* Grid decorativo */
     .hero-bg::after {
@@ -559,12 +558,29 @@
     .model-img {
       position: relative;
       aspect-ratio: 16/9;
-      /* background-image: url('dfsk-600.jpg'); background-size: cover; background-position: center; */
       background: linear-gradient(135deg, #0f1e38 0%, #1a3255 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
+    }
+    .model-img > img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .model-img-logo {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      width: 48px;
+      height: auto;
+      opacity: .7;
+      z-index: 2;
+      pointer-events: none;
     }
     .model-img-inner {
       display: flex;
@@ -867,8 +883,8 @@
         </a>
         <div class="callegari-seal callegari-seal--header" aria-label="Callegari Automotora — concesionario oficial">
           <img
-            src="assets/img/callegari-logo.png"
-            alt="Callegari Automotora"
+            src="assets/img/logo-callegari.png"
+            alt="Callegari Automotriz"
             width="110"
             height="32"
             loading="eager"
@@ -900,11 +916,6 @@
     <section class="hero" id="inicio" aria-label="Sección principal">
       <div class="hero-bg" aria-hidden="true"></div>
 
-      <!-- IMAGEN HERO — coloca tu foto en assets/img/ y descomenta:
-      <div class="hero-car" style="background-image:url('assets/img/dfsk-hero.png');background-size:contain;background-repeat:no-repeat;background-position:bottom right;opacity:1;"></div>
-      -->
-      <div class="hero-car" aria-hidden="true"></div>
-
       <div class="container">
         <div class="hero-content">
           <div class="hero-eyebrow" aria-label="Ovalle, Región de Coquimbo">
@@ -913,7 +924,7 @@
 
           <div class="callegari-hero-seal" aria-label="Venta oficial Callegari Automotora">
             <img
-              src="assets/img/callegari-logo.png"
+              src="assets/img/logo-callegari.png"
               alt="Callegari Automotora"
               width="120"
               height="36"
@@ -1025,17 +1036,23 @@
 
           <!-- DFSK D1 -->
           <article class="model-card featured fade-in" aria-label="DFSK D1">
-            <div class="model-img" style="position:relative;">
+            <div class="model-img">
               <span class="model-badge">Para trabajo</span>
-              <div class="model-img-inner" aria-hidden="true">
-                <svg viewBox="0 0 80 40" fill="none" stroke="white" stroke-width="1.5">
-                  <path d="M6 26 Q8 18 20 16 L30 10 Q40 8 58 8 Q68 8 74 18 L78 24 Q80 26 80 28" />
-                  <rect x="2" y="28" width="76" height="7" rx="2"/>
-                  <circle cx="18" cy="35" r="5" fill="none" stroke="white" stroke-width="1.5"/>
-                  <circle cx="64" cy="35" r="5" fill="none" stroke="white" stroke-width="1.5"/>
-                </svg>
-                <span>DFSK D1</span>
-              </div>
+              <img
+                src="assets/img/cementod1.webp"
+                alt="DFSK D1 en obra — camioneta de trabajo Callegari Ovalle"
+                loading="lazy"
+                width="640"
+                height="360"
+              />
+              <img
+                src="assets/img/logo-dfsk.png"
+                alt=""
+                aria-hidden="true"
+                class="model-img-logo"
+                width="48"
+                height="48"
+              />
             </div>
             <div class="model-body">
               <h3 class="model-name">DFSK D1</h3>
@@ -1347,8 +1364,8 @@
       <div>
         <div class="footer-callegari" aria-label="Callegari Automotora">
           <img
-            src="assets/img/callegari-logo.png"
-            alt="Callegari Automotora"
+            src="assets/img/logo-callegari.png"
+            alt="Callegari Automotriz"
             width="100"
             height="28"
             loading="lazy"

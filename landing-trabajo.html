@@ -11,6 +11,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="DFSK D1 · La Camioneta Lista para el Trabajo Pesado" />
   <meta property="og:description" content="815kg de carga, remolque 3 toneladas, motor Nissan. Rendimiento superior al mejor precio del mercado." />
+  <meta property="og:image" content="assets/img/Banner.webp" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -59,8 +60,22 @@
       from { opacity: 0; transform: translateY(12px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .callegari-seal img { height: 28px; width: auto; max-width: 110px; object-fit: contain; }
+    .callegari-seal img { height: 28px; width: auto; max-width: 140px; object-fit: contain; }
     .callegari-seal-fallback { display: none; font-size: .65rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #c9a84c; }
+    .hero-dfsk-logo {
+      position: absolute;
+      top: 5rem;
+      right: 1.5rem;
+      z-index: 5;
+      width: clamp(72px, 12vw, 110px);
+      opacity: .35;
+      pointer-events: none;
+    }
+    @media (max-width: 767px) { .hero-dfsk-logo { top: 4.5rem; right: 1rem; opacity: .25; } }
+    .terrain-card { transition: transform 0.25s ease, border-color 0.25s ease; }
+    .terrain-card:hover { transform: translateY(-4px); border-color: rgba(201,168,76,.4); }
+    .terrain-card img { transition: transform 0.4s ease; }
+    .terrain-card:hover img { transform: scale(1.04); }
   </style>
 </head>
 
@@ -72,9 +87,9 @@
       <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
         <div class="callegari-seal inline-flex items-center gap-2 px-3 py-1.5 border border-zinc-700 rounded-lg bg-zinc-900/80" aria-label="Callegari Automotora">
           <img
-            src="assets/img/callegari-logo.png"
-            alt="Callegari Automotora"
-            width="110"
+            src="assets/img/logo-callegari.png"
+            alt="Callegari Automotriz"
+            width="140"
             height="28"
             loading="eager"
             onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
@@ -87,17 +102,28 @@
 
     <section class="relative min-h-screen flex items-center overflow-hidden" aria-labelledby="hero-lp-heading">
 
-      <!-- Imagen de fondo -->
+      <!-- Imagen de fondo principal -->
       <div class="hero-img-wrapper absolute inset-0">
         <img 
-          src="assets/img/banner-trabajo.jpg" 
-          alt="DFSK D1 cargada en una faena de trabajo en la Región de Coquimbo" 
-          class="w-full h-full object-cover object-center"
+          src="assets/img/Banner.webp" 
+          alt="DFSK D1 en faena de trabajo — Región de Coquimbo" 
+          class="w-full h-full object-cover object-[center_40%] md:object-center"
           loading="eager"
           fetchpriority="high"
           onerror="this.parentElement.style.background='linear-gradient(135deg, #18181b 0%, #09090b 100%)'; this.style.display='none';"
         />
       </div>
+
+      <!-- Logo DFSK decorativo -->
+      <img
+        src="assets/img/logo-dfsk.png"
+        alt=""
+        aria-hidden="true"
+        class="hero-dfsk-logo"
+        width="110"
+        height="110"
+        loading="eager"
+      />
 
       <!-- Overlay gradiente oscuro -->
       <div class="absolute inset-0 bg-gradient-to-br from-zinc-950/80 via-zinc-950/40 to-transparent pointer-events-none"></div>
@@ -247,6 +273,72 @@
       </div>
     </section>
 
+    <!-- GALERÍA TERRENO — D1 en acción real -->
+    <section class="bg-zinc-950 border-t border-zinc-800 py-16 px-4" aria-labelledby="terrain-heading">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+          <p class="text-brand-500 text-xs font-bold uppercase tracking-widest mb-3">Terreno real · IV Región</p>
+          <h2 id="terrain-heading" class="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
+            La D1 rinde donde la necesitas
+          </h2>
+          <p class="text-zinc-400 text-sm max-w-xl mx-auto">
+            Agua, cemento, polvo o tierra — probada en las condiciones de faena de Ovalle y la Región de Coquimbo.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          <article class="terrain-card group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+            <img
+              src="assets/img/aguad1.webp"
+              alt="DFSK D1 cruzando agua en faena"
+              class="w-full aspect-[4/3] object-cover"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent"></div>
+            <p class="absolute bottom-3 left-3 right-3 text-xs sm:text-sm font-semibold text-white">Cruza badenes y zanjas</p>
+          </article>
+          <article class="terrain-card group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+            <img
+              src="assets/img/cementod1.webp"
+              alt="DFSK D1 en obra y construcción"
+              class="w-full aspect-[4/3] object-cover"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent"></div>
+            <p class="absolute bottom-3 left-3 right-3 text-xs sm:text-sm font-semibold text-white">Obra y construcción</p>
+          </article>
+          <article class="terrain-card group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+            <img
+              src="assets/img/polvod1.webp"
+              alt="DFSK D1 en camino de polvo y tierra"
+              class="w-full aspect-[4/3] object-cover"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent"></div>
+            <p class="absolute bottom-3 left-3 right-3 text-xs sm:text-sm font-semibold text-white">Polvo y caminos rurales</p>
+          </article>
+          <article class="terrain-card group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+            <img
+              src="assets/img/tierrad1.webp"
+              alt="DFSK D1 en terreno agrícola"
+              class="w-full aspect-[4/3] object-cover"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent"></div>
+            <p class="absolute bottom-3 left-3 right-3 text-xs sm:text-sm font-semibold text-white">Campo y agricultura</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- SOCIAL PROOF -->
     <section class="bg-zinc-900 border-t border-zinc-800 py-12 px-4" aria-label="Prueba social">
       <div class="max-w-4xl mx-auto grid sm:grid-cols-3 gap-6 text-center">
@@ -271,10 +363,10 @@
   <footer class="bg-zinc-950 border-t border-zinc-800 py-8 px-4 text-center" role="contentinfo">
     <div class="flex items-center justify-center gap-3 mb-3" aria-label="Callegari Automotora">
       <img
-        src="assets/img/callegari-logo.png"
-        alt="Callegari Automotora"
-        width="100"
-        height="26"
+        src="assets/img/logo-callegari.png"
+        alt="Callegari Automotriz"
+        width="120"
+        height="28"
         loading="lazy"
         class="opacity-80"
         onerror="this.style.display='none';"

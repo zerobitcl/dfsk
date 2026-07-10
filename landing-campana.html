@@ -324,8 +324,8 @@
             var mensaje = f.querySelector('#mensaje').value.trim();
             return [ciudad ? 'Ciudad: ' + ciudad : '', mensaje ? 'Consulta: ' + mensaje : ''].filter(Boolean).join(' | ');
           },
-          waMsg: function (f, nombre, telefono, modelo, origen) {
-            return 'Hola Felipe, me llamo *' + nombre + '* y quiero cotizar' + (modelo ? ' el *' + modelo + '*' : ' una camioneta DFSK') + '. Mi teléfono es ' + telefono + '. Origen: ' + origen + '.';
+          waMsg: function (f, nombre, telefono, modelo) {
+            return 'Hola Felipe, me llamo *' + nombre + '* y quiero cotizar' + (modelo ? ' el *' + modelo + '*' : ' una camioneta DFSK') + '. Mi teléfono es ' + telefono + '.';
           }
         });
       });

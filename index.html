@@ -12,7 +12,8 @@
   <meta name="robots" content="index, follow">
   <meta name="author" content="Felipe Núñez - Asesor Comercial Callegari Automotriz">
   <link rel="canonical" href="https://www.felipecallegari.cl/">
-  <link rel="icon" href="assets/img/logo-callegari.png" type="image/png">
+  <link rel="icon" href="assets/img/logo-dfsk.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/logo-dfsk.png">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <!-- ═══ OPEN GRAPH ═══ -->
@@ -78,7 +79,8 @@
           "@type": "Person",
           "name": "Felipe Núñez",
           "jobTitle": "Asesor Comercial",
-          "telephone": "+56985480881"
+          "telephone": "+56985480881",
+          "image": "https://www.felipecallegari.cl/assets/img/foto%20felipe.webp"
         }
       },
       {
@@ -96,6 +98,7 @@
         "name": "DFSK Z9",
         "brand": {"@type": "Brand", "name": "DFSK"},
         "description": "Camioneta premium con cámara 540°, tapiz de cuero y equipamiento de alto nivel.",
+        "image": "https://www.felipecallegari.cl/assets/img/z9%20tierra.webp",
         "offers": {"@type": "Offer", "seller": {"@id": "https://www.felipecallegari.cl/#dealer"}, "priceCurrency": "CLP", "availability": "https://schema.org/InStock"}
       },
       {
@@ -261,6 +264,11 @@
       font-size: 1.25rem;
       font-weight: 900;
       letter-spacing: -.03em;
+    }
+    .logo-dfsk {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
     }
     .logo-badge {
       background: var(--c-gold);
@@ -599,23 +607,13 @@
       justify-content: center;
       overflow: hidden;
     }
-    .model-img > img {
+    .model-img > img:first-of-type {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
-    }
-    .model-img-logo {
-      position: absolute;
-      bottom: 12px;
-      right: 12px;
-      width: 48px;
-      height: auto;
-      opacity: .7;
-      z-index: 2;
-      pointer-events: none;
     }
     .model-img-inner {
       display: flex;
@@ -777,6 +775,13 @@
       justify-content: center;
       font-size: 1.4rem;
       flex-shrink: 0;
+      overflow: hidden;
+    }
+    .advisor-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
     }
     .advisor-info strong { display: block; font-size: .95rem; font-weight: 800; }
     .advisor-info span { font-size: .8rem; color: var(--c-gold); font-weight: 600; }
@@ -879,6 +884,16 @@
       justify-content: space-between;
       gap: 16px;
     }
+    .footer-phone {
+      font-size: .95rem;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+    .footer-phone a {
+      color: var(--c-gold);
+      transition: opacity var(--tr);
+    }
+    .footer-phone a:hover { opacity: .85; }
     .footer-copy { font-size: .8rem; color: var(--c-gray-500); }
     .footer-copy strong { color: var(--c-gold); }
     .footer-links { display: flex; gap: 20px; }
@@ -912,8 +927,15 @@
   <header class="header" id="header">
     <div class="header-inner">
       <div class="header-brand">
-        <a href="#" class="logo" aria-label="Felipe Callegari — DFSK Ovalle">
-          <span>DFSK</span>
+        <a href="#inicio" class="logo" aria-label="DFSK Ovalle — Felipe Callegari">
+          <img
+            src="assets/img/logo-dfsk.png"
+            alt="DFSK"
+            class="logo-dfsk"
+            width="40"
+            height="40"
+            loading="eager"
+          >
           <span class="logo-badge">Ovalle</span>
         </a>
         <div class="callegari-seal callegari-seal--header" aria-label="Callegari Automotora — concesionario oficial">
@@ -967,7 +989,7 @@
               loading="eager"
               onerror="this.style.display='none';"
             >
-            <span>Venta oficial · Callegari Automotriz · Covarrubias 340, Ovalle</span>
+            <span>Venta oficial · Callegari Automotriz · Ovalle</span>
           </div>
 
           <h1 class="hero-title">
@@ -1081,14 +1103,6 @@
                 width="640"
                 height="360"
               />
-              <img
-                src="assets/img/logo-dfsk.png"
-                alt=""
-                aria-hidden="true"
-                class="model-img-logo"
-                width="48"
-                height="48"
-              />
             </div>
             <div class="model-body">
               <h3 class="model-name">DFSK D1</h3>
@@ -1130,17 +1144,15 @@
 
           <!-- DFSK Z9 -->
           <article class="model-card fade-in" aria-label="DFSK Z9">
-            <div class="model-img" style="position:relative;">
+            <div class="model-img">
               <span class="model-badge" style="background:var(--c-blue-l);color:#fff;">Premium</span>
-              <div class="model-img-inner" aria-hidden="true">
-                <svg viewBox="0 0 80 40" fill="none" stroke="white" stroke-width="1.5">
-                  <path d="M8 26 Q10 17 22 15 L32 9 Q42 7 56 7 Q66 7 72 17 L76 23 Q78 25 78 28" />
-                  <rect x="4" y="28" width="72" height="7" rx="2"/>
-                  <circle cx="20" cy="35" r="5" fill="none" stroke="white" stroke-width="1.5"/>
-                  <circle cx="62" cy="35" r="5" fill="none" stroke="white" stroke-width="1.5"/>
-                </svg>
-                <span>DFSK Z9</span>
-              </div>
+              <img
+                src="assets/img/z9 tierra.webp"
+                alt="DFSK Z9 en terreno — camioneta premium Callegari Ovalle"
+                loading="lazy"
+                width="640"
+                height="360"
+              />
             </div>
             <div class="model-body">
               <h3 class="model-name">DFSK Z9</h3>
@@ -1281,7 +1293,15 @@
             </p>
 
             <div class="advisor-card" aria-label="Perfil de Felipe Núñez">
-              <div class="advisor-avatar" aria-hidden="true">👤</div>
+              <div class="advisor-avatar">
+                <img
+                  src="assets/img/foto felipe.webp"
+                  alt="Felipe Núñez — Asesor Comercial Callegari Automotriz"
+                  width="52"
+                  height="52"
+                  loading="lazy"
+                >
+              </div>
               <div class="advisor-info">
                 <strong>Felipe Núñez</strong>
                 <span>Asesor Comercial · Callegari Automotriz · Ovalle</span>
@@ -1407,8 +1427,13 @@
             loading="lazy"
             onerror="this.style.display='none';"
           >
-          <span>Concesionario oficial · Callegari Automotriz · Covarrubias 340, Ovalle</span>
+          <span>Concesionario oficial · Callegari Automotriz · Ovalle</span>
         </div>
+        <p class="footer-phone">
+          <a href="tel:+56985480881" aria-label="Llamar +56 9 8548 0881">+56 9 8548 0881</a>
+          ·
+          <a href="https://wa.me/56985480881" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </p>
         <p class="footer-copy">
           © 2026 <strong>Felipe Callegari · Callegari Automotriz</strong> — www.felipecallegari.cl · Región de Coquimbo, Chile.
         </p>
@@ -1494,8 +1519,7 @@
           /* Build WhatsApp message */
           var msg = 'Hola Felipe, me llamo *' + nombre + '* y quiero cotizar el *' + modelo + '*.' +
             (pie ? ' Tengo disponible: ' + pie + '.' : '') +
-            ' Mi teléfono es ' + telefono + '.' +
-            ' Origen: ' + origen + '. ¿Me puedes ayudar?';
+            ' Mi teléfono es ' + telefono + '. ¿Me puedes ayudar?';
 
           if (submitBtn) {
             submitBtn.disabled = true;

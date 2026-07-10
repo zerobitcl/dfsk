@@ -1,36 +1,38 @@
 ﻿CARPETA DE IMÁGENES – Felipe Núñez · Callegari Automotriz
 =========================================================
 
-IMÁGENES DISPONIBLES (DFSK D1)
--------------------------------
+LOGOS Y MARCA
+-------------
+• logo-callegari.png — Header y footer de todas las páginas.
+• logo-dfsk.png — Logo DFSK en header del home y watermark hero landing-trabajo.
 
-• logo-callegari.png
-  Logo Callegari Automotriz — header y footer de todas las páginas.
-
-• logo-dfsk.png
-  Emblema DFSK — watermark decorativo en hero y tarjetas de modelo.
-
-• Banner.webp
-  Hero principal — landing-trabajo.html e index.html.
-  ~252 KB WebP. Usar con overlay oscuro (ya aplicado en CSS).
-
+DFSK D1
+-------
+• Banner.webp — Hero index.html (home SEO).
+• bannerB.webp — Hero exclusivo landing-trabajo.html (Meta Ads D1 faena).
 • aguad1.webp — D1 cruzando agua / badenes
-• cementod1.webp — D1 en obra y construcción
+• cementod1.webp — D1 en obra (tarjeta D1 index + modelos)
 • polvod1.webp — D1 en camino de polvo
 • tierrad1.webp — D1 en terreno agrícola
 
-  Galería de terreno en landing-trabajo.html.
-  Tarjeta D1 en index.html usa cementod1.webp.
+DFSK Z9
+-------
+• z9 tierra.webp — Tarjeta Z9 en index y modelos (acción en terreno).
+• z9 callegari.jpg — Z9 en tierra, galería modelos.
+• z9wild.jpg — Z9 outdoor, galería modelos.
+• z9 outdoor.webp — Z9 aventura, galería modelos.
+• interior-dfsk-z9.webp — Interior cuero, galería modelos.
+
+EQUIPO
+------
+• foto felipe.webp — Avatar asesor en sección contacto index.html.
+• foto felipe full.png — Respaldo alta resolución (no usado en web).
 
 RECOMENDACIONES
-----------------
+---------------
 • Mantener WebP para rendimiento móvil 4G/5G.
 • Comprimir nuevas imágenes con https://squoosh.app antes de subir.
-• Al agregar imágenes Z9, usar el mismo patrón de nomenclatura.
-
-PENDIENTE (otras landings)
----------------------------
-  Imágenes banner específicas por ángulo Meta Ads (opcional).
+• Evitar espacios en nombres de archivo en futuras cargas (usar guiones).
 
 SEO — DOMINIO CANÓNICO
 -----------------------

@@ -265,10 +265,24 @@
       font-weight: 900;
       letter-spacing: -.03em;
     }
+    .logo-dfsk-wrap {
+      width: 56px;
+      height: 56px;
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .logo-dfsk {
-      height: 38px;
+      height: 128px;
       width: auto;
+      flex-shrink: 0;
       object-fit: contain;
+    }
+    @media (max-width: 480px) {
+      .logo-dfsk-wrap { width: 48px; height: 48px; }
+      .logo-dfsk { height: 110px; }
     }
     .logo-badge {
       background: var(--c-gold);
@@ -781,7 +795,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
+      object-position: center 22%;
     }
     .advisor-info strong { display: block; font-size: .95rem; font-weight: 800; }
     .advisor-info span { font-size: .8rem; color: var(--c-gold); font-weight: 600; }
@@ -928,14 +942,16 @@
     <div class="header-inner">
       <div class="header-brand">
         <a href="#inicio" class="logo" aria-label="DFSK Ovalle — Felipe Callegari">
-          <img
-            src="assets/img/logo-dfsk.png"
-            alt="DFSK"
-            class="logo-dfsk"
-            width="40"
-            height="40"
-            loading="eager"
-          >
+          <span class="logo-dfsk-wrap">
+            <img
+              src="assets/img/logo-dfsk.png"
+              alt="DFSK"
+              class="logo-dfsk"
+              width="56"
+              height="56"
+              loading="eager"
+            >
+          </span>
           <span class="logo-badge">Ovalle</span>
         </a>
         <div class="callegari-seal callegari-seal--header" aria-label="Callegari Automotora — concesionario oficial">

@@ -109,7 +109,7 @@
             sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'system-ui', 'sans-serif'],
           },
           colors: {
-            brand: { 500: '#d97706', 600: '#b45309' }
+            brand: { 400: '#e8c97a', 500: '#c9a84c', 600: '#a3863a' }
           }
         }
       }
@@ -123,14 +123,12 @@
 
     /* Acordeón con <details> nativo — cero JS */
     details.faq-item {
-      border-bottom: 1px solid #27272a;
+      border-bottom: 1px solid rgba(255,255,255,.06);
       transition: background-color 0.2s ease;
     }
+    details.faq-item:last-child { border-bottom: none; }
     details.faq-item[open] {
-      background-color: rgba(39,39,42,0.4);
-      border-radius: 0.75rem;
-      border-color: transparent;
-      margin-bottom: 0.25rem;
+      background-color: rgba(201,168,76,0.06);
     }
     details.faq-item summary {
       list-style: none;
@@ -141,20 +139,27 @@
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      padding: 1.25rem 1rem;
+      padding: 1.25rem 1.25rem;
     }
     details.faq-item summary::-webkit-details-marker { display: none; }
     details.faq-item summary .icon {
       flex-shrink: 0;
       width: 1.25rem;
       height: 1.25rem;
-      color: #d97706;
+      color: #c9a84c;
       transition: transform 0.25s ease;
     }
     details.faq-item[open] summary .icon { transform: rotate(45deg); }
     details.faq-item .faq-body {
-      padding: 0 1rem 1.25rem;
+      padding: 0 1.25rem 1.25rem;
       animation: accordionDown 0.2s ease;
+    }
+    .faq-visual-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .faq-visual-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.35);
     }
     @keyframes accordionDown {
       from { opacity: 0; transform: translateY(-6px); }
@@ -176,12 +181,12 @@
         <li><a href="modelos-dfsk.html" class="nav-link hover:text-white">Modelos</a></li>
         <li><a href="preguntas-frecuentes.html" class="nav-link text-white font-medium" aria-current="page">FAQ</a></li>
         <li>
-          <a href="index.html#contacto" class="btn-primary bg-brand-500 text-zinc-950 font-semibold px-4 py-2 rounded-lg text-sm hover:bg-brand-600">
+          <a href="index.html#contacto" class="btn-primary bg-brand-500 text-zinc-950 font-semibold px-4 py-2 rounded-lg text-sm hover:bg-brand-400">
             Cotizar
           </a>
         </li>
       </ul>
-      <a href="index.html#contacto" class="md:hidden btn-primary bg-brand-500 text-zinc-950 font-semibold px-3.5 py-1.5 rounded-lg text-sm hover:bg-brand-600">
+      <a href="index.html#contacto" class="md:hidden btn-primary bg-brand-500 text-zinc-950 font-semibold px-3.5 py-1.5 rounded-lg text-sm hover:bg-brand-400">
         Cotizar
       </a>
     </nav>
@@ -202,29 +207,88 @@
     </ol>
   </nav>
 
-  <main class="max-w-3xl mx-auto px-4 sm:px-6 pb-24">
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 pb-24">
 
-    <!-- Encabezado de página -->
-    <header class="py-12 text-center">
-      <p class="text-brand-500 text-xs font-bold uppercase tracking-widest mb-3">Centro de Ayuda</p>
-      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-        Preguntas Frecuentes<br class="hidden sm:block" /> <span class="text-brand-500">DFSK en Ovalle</span>
-      </h1>
-      <p class="text-zinc-400 text-lg max-w-xl mx-auto leading-relaxed">
-        Financiamiento, garantías, test drive y diferencias entre D1 y Z9.
-        Callegari Automotriz · Covarrubias 340, Ovalle.
-      </p>
+    <!-- Hero con imagen -->
+    <header class="relative rounded-2xl overflow-hidden mb-10 mt-2">
+      <div class="absolute inset-0">
+        <img
+          src="assets/img/Banner.webp"
+          alt=""
+          aria-hidden="true"
+          class="w-full h-full object-cover object-center"
+          loading="eager"
+          width="1200"
+          height="400"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-zinc-950/95 via-zinc-950/80 to-zinc-950/50"></div>
+      </div>
+      <div class="relative z-10 px-6 sm:px-10 py-12 sm:py-14 text-center sm:text-left max-w-2xl">
+        <p class="text-brand-500 text-xs font-bold uppercase tracking-widest mb-3">Centro de Ayuda · Callegari Automotriz</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+          Preguntas Frecuentes<br class="hidden sm:block" />
+          <span class="text-brand-500">DFSK en Ovalle</span>
+        </h1>
+        <p class="text-zinc-300 text-base sm:text-lg leading-relaxed">
+          Financiamiento, garantías, test drive y diferencias entre D1 y Z9.
+          Asesoría directa con Felipe Núñez.
+        </p>
+      </div>
     </header>
 
+    <!-- Strip visual — rompe el bloque de texto -->
+    <div class="grid grid-cols-3 gap-3 sm:gap-4 mb-12">
+      <a href="modelos-dfsk.html" class="faq-visual-card group relative aspect-[4/3] rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900">
+        <img
+          src="assets/img/cementod1.webp"
+          alt="DFSK D1 — camioneta de trabajo"
+          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+          width="320"
+          height="240"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent"></div>
+        <span class="absolute bottom-2 left-2 right-2 text-xs font-bold text-white">DFSK D1 · Trabajo</span>
+      </a>
+      <a href="modelos-dfsk.html" class="faq-visual-card group relative aspect-[4/3] rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900">
+        <img
+          src="assets/img/z9 tierra.webp"
+          alt="DFSK Z9 — camioneta premium"
+          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+          width="320"
+          height="240"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent"></div>
+        <span class="absolute bottom-2 left-2 right-2 text-xs font-bold text-white">DFSK Z9 · Premium</span>
+      </a>
+      <a href="index.html#contacto" class="faq-visual-card group relative aspect-[4/3] rounded-xl overflow-hidden border border-brand-500/25 bg-zinc-900">
+        <img
+          src="assets/img/foto felipe.webp"
+          alt="Felipe Núñez — Asesor Comercial"
+          class="w-full h-full object-cover object-[center_22%] transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+          width="320"
+          height="240"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/30 to-transparent"></div>
+        <span class="absolute bottom-2 left-2 right-2 text-xs font-bold text-brand-400">Felipe te asesora</span>
+      </a>
+    </div>
+
+    <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-10 items-start">
+
+    <div>
     <!-- ============================================================
          SECCIÓN: FINANCIAMIENTO
     ============================================================ -->
     <section aria-labelledby="financiamiento-heading" class="mb-10">
-      <h2 id="financiamiento-heading" class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-5 px-1">
+      <h2 id="financiamiento-heading" class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-4 px-1">
         Financiamiento Automotriz en la IV Región
       </h2>
 
-      <details class="faq-item rounded-xl">
+      <div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
+      <details class="faq-item">
         <summary>
           <h3 class="text-white font-semibold text-sm sm:text-base pr-2">
             ¿Ofrecen financiamiento en Ovalle y la Región de Coquimbo?
@@ -244,7 +308,7 @@
         </div>
       </details>
 
-      <details class="faq-item rounded-xl">
+      <details class="faq-item">
         <summary>
           <h3 class="text-white font-semibold text-sm sm:text-base pr-2">
             ¿Qué documentos necesito para comprar un auto en cuotas?
@@ -264,7 +328,7 @@
         </div>
       </details>
 
-      <details class="faq-item rounded-xl">
+      <details class="faq-item">
         <summary>
           <h3 class="text-white font-semibold text-sm sm:text-base pr-2">
             ¿Puedo usar mi auto actual como parte de pago?
@@ -281,17 +345,34 @@
           </p>
         </div>
       </details>
+      </div>
     </section>
+
+    <!-- Imagen intermedia — solo móvil -->
+    <figure class="lg:hidden relative aspect-[21/9] rounded-2xl overflow-hidden border border-zinc-800 mb-10">
+      <img
+        src="assets/img/interior-dfsk-z9.webp"
+        alt="Interior DFSK Z9 — tapiz de cuero y equipamiento premium"
+        class="w-full h-full object-cover"
+        loading="lazy"
+        width="800"
+        height="340"
+      />
+      <figcaption class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-zinc-950/90 to-transparent px-4 py-3 text-xs text-zinc-300">
+        DFSK Z9 · Interior premium con tapiz de cuero
+      </figcaption>
+    </figure>
 
     <!-- ============================================================
          SECCIÓN: GARANTÍAS
     ============================================================ -->
     <section aria-labelledby="garantias-heading" class="mb-10">
-      <h2 id="garantias-heading" class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-5 px-1">
+      <h2 id="garantias-heading" class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-4 px-1">
         Garantías y Modelos DFSK
       </h2>
 
-      <details class="faq-item rounded-xl">
+      <div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
+      <details class="faq-item">
         <summary>
           <h3 class="text-white font-semibold text-sm sm:text-base pr-2">
             ¿Cuánto dura la garantía de los modelos DFSK?
@@ -309,7 +390,7 @@
         </div>
       </details>
 
-      <details class="faq-item rounded-xl">
+      <details class="faq-item">
         <summary>
           <h3 class="text-white font-semibold text-sm sm:text-base pr-2">
             ¿Cuál es la diferencia entre la DFSK D1 y la DFSK Z9?
@@ -328,17 +409,19 @@
           </div>
         </div>
       </details>
+      </div>
     </section>
 
     <!-- ============================================================
          SECCIÓN: TEST DRIVE
     ============================================================ -->
     <section aria-labelledby="testdrive-heading" class="mb-12">
-      <h2 id="testdrive-heading" class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-5 px-1">
+      <h2 id="testdrive-heading" class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-4 px-1">
         Test Drive en Callegari, Ovalle
       </h2>
 
-      <details class="faq-item rounded-xl">
+      <div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
+      <details class="faq-item">
         <summary>
           <h3 class="text-white font-semibold text-sm sm:text-base pr-2">
             ¿Cómo agendo un test drive en Callegari, Ovalle?
@@ -358,7 +441,7 @@
         </div>
       </details>
 
-      <details class="faq-item rounded-xl">
+      <details class="faq-item">
         <summary>
           <h3 class="text-white font-semibold text-sm sm:text-base pr-2">
             ¿Hacen entrega de autos a domicilio en La Serena y Coquimbo?
@@ -376,14 +459,71 @@
           </p>
         </div>
       </details>
+      </div>
     </section>
 
+    </div>
+
+    <!-- Columna visual — desktop -->
+    <aside class="hidden lg:block sticky top-24 space-y-4" aria-label="Galería DFSK">
+      <figure class="faq-visual-card relative rounded-2xl overflow-hidden border border-zinc-800">
+        <img
+          src="assets/img/cementod1.webp"
+          alt="DFSK D1 en obra"
+          class="w-full aspect-[4/3] object-cover"
+          loading="lazy"
+          width="280"
+          height="210"
+        />
+        <figcaption class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-zinc-950/95 to-transparent px-4 py-3">
+          <span class="text-xs font-bold text-white block">DFSK D1</span>
+          <span class="text-[11px] text-zinc-400">815 kg · Motor Nissan</span>
+        </figcaption>
+      </figure>
+      <figure class="faq-visual-card relative rounded-2xl overflow-hidden border border-zinc-800">
+        <img
+          src="assets/img/interior-dfsk-z9.webp"
+          alt="Interior DFSK Z9"
+          class="w-full aspect-[4/3] object-cover"
+          loading="lazy"
+          width="280"
+          height="210"
+        />
+        <figcaption class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-zinc-950/95 to-transparent px-4 py-3">
+          <span class="text-xs font-bold text-white block">DFSK Z9</span>
+          <span class="text-[11px] text-zinc-400">Cuero · Cámara 540°</span>
+        </figcaption>
+      </figure>
+      <figure class="faq-visual-card relative rounded-2xl overflow-hidden border border-brand-500/25">
+        <img
+          src="assets/img/z9wild.jpg"
+          alt="DFSK Z9 outdoor"
+          class="w-full aspect-[4/3] object-cover"
+          loading="lazy"
+          width="280"
+          height="210"
+        />
+        <figcaption class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-zinc-950/95 to-transparent px-4 py-3">
+          <span class="text-xs font-bold text-brand-400 block">Aventura IV Región</span>
+          <span class="text-[11px] text-zinc-400">Test drive sin compromiso</span>
+        </figcaption>
+      </figure>
+      <a
+        href="index.html#contacto"
+        class="block text-center bg-brand-500 hover:bg-brand-400 text-zinc-950 font-bold text-sm py-3 rounded-xl btn-primary transition-colors"
+      >
+        Cotizar con Felipe →
+      </a>
+    </aside>
+
+    </div>
+
     <!-- CTA Bloque -->
-    <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 text-center">
+    <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 text-center mt-4">
       <h2 class="text-xl font-bold mb-2">¿No encontraste tu respuesta?</h2>
       <p class="text-zinc-400 text-sm mb-6">Escríbenos directamente. Respondemos en menos de 2 horas.</p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="index.html#contacto" class="btn-primary bg-brand-500 hover:bg-brand-600 text-zinc-950 font-bold px-6 py-3 rounded-xl text-sm">
+        <a href="index.html#contacto" class="btn-primary bg-brand-500 hover:bg-brand-400 text-zinc-950 font-bold px-6 py-3 rounded-xl text-sm">
           Solicitar cotización
         </a>
         <a href="https://wa.me/56985480881?text=Hola%20Felipe%2C%20tengo%20una%20consulta"

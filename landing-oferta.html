@@ -43,15 +43,22 @@
       box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
     }
     .form-input::placeholder { color: #71717a; }
+    /* Fondo interior atenuado: atmósfera sin delatar artefactos IA */
+    .hero-img-wrapper { background: #09090b; }
+    .hero-img-wrapper img {
+      opacity: 0.52;
+      filter: blur(2px) saturate(0.68) brightness(0.78);
+      transform: scale(1.05);
+    }
     .hero-img-wrapper::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, rgba(9,9,11,0.85) 35%, rgba(9,9,11,0.2) 100%);
+      background: linear-gradient(to right, rgba(9,9,11,0.78) 28%, rgba(9,9,11,0.48) 100%);
     }
     @media (max-width: 767px) {
       .hero-img-wrapper::after {
-        background: linear-gradient(to bottom, rgba(9,9,11,0.3) 0%, rgba(9,9,11,0.97) 60%);
+        background: linear-gradient(to bottom, rgba(9,9,11,0.5) 0%, rgba(9,9,11,0.9) 58%);
       }
     }
     .trust-badge { animation: fadeUp 0.5s ease both; }
@@ -90,17 +97,16 @@
       <!-- Imagen de fondo -->
       <div class="hero-img-wrapper absolute inset-0">
         <img 
-          src="assets/img/banner-oferta.jpg" 
-          alt="Entrega de una DFSK D1 con todos los trámites incluidos en la Región de Coquimbo" 
-          class="w-full h-full object-cover object-center"
+          src="assets/img/interior-dfsk-z9.webp" 
+          alt=""
+          aria-hidden="true"
+          class="w-full h-full object-cover object-[center_40%]"
           loading="eager"
           fetchpriority="high"
-          onerror="this.parentElement.style.background='linear-gradient(135deg, #18181b 0%, #09090b 100%)'; this.style.display='none';"
         />
       </div>
 
-      <!-- Overlay gradiente oscuro -->
-      <div class="absolute inset-0 bg-gradient-to-br from-zinc-950/80 via-zinc-950/40 to-transparent pointer-events-none"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-zinc-950/55 via-zinc-950/25 to-transparent pointer-events-none"></div>
 
       <!-- Contenido -->
       <div class="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-0">

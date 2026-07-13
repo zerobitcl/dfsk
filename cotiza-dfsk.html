@@ -328,7 +328,7 @@
           notas: function (f) {
             var ciudad = f.querySelector('#ciudad').value;
             var mensaje = f.querySelector('#mensaje').value.trim();
-            return [ciudad ? 'Ciudad: ' + ciudad : '', mensaje ? 'Consulta: ' + mensaje : ''].filter(Boolean).join(' | ');
+            return ['Campaña: Cotización DFSK', ciudad ? 'Ciudad: ' + ciudad : '', mensaje ? 'Consulta: ' + mensaje : ''].filter(Boolean).join(' | ');
           },
           waMsg: function (f, nombre, telefono, modelo) {
             return 'Hola Felipe, me llamo *' + nombre + '* y quiero cotizar' + (modelo ? ' el *' + modelo + '*' : ' una camioneta DFSK') + '. Mi teléfono es ' + telefono + '.';

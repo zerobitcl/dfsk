@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DFSK D1 en Ovalle | Cotiza tu Camioneta · Felipe Núñez</title>
-  <meta name="description" content="DFSK D1 en Ovalle: 815 kg de carga, motor/chasis/caja Nissan, taller local. Pie desde $3.200.000. Cotiza con Felipe Núñez, Callegari Automotriz." />
+  <title>DFSK D1 en Ovalle | Ficha, Specs y Cotización · Felipe Núñez</title>
+  <meta name="description" content="Ficha DFSK D1 en Ovalle: 815 kg de carga, remolque 3 ton, motor/chasis/caja Nissan, pantalla 9', cámara 360°. Pie desde $3.200.000. Cotiza con Felipe Núñez." />
   <meta name="robots" content="noindex" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <link rel="icon" href="assets/img/logo-dfsk.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/img/logo-dfsk.png" />
 
-  <!-- Open Graph para Meta Ads -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="DFSK D1 en Ovalle · Cotiza Ahora" />
-  <meta property="og:description" content="815 kg de carga, plataforma Nissan, taller y repuestos en Ovalle. Pie desde $3.200.000." />
+  <meta property="og:title" content="DFSK D1 en Ovalle · Ficha y Cotización" />
+  <meta property="og:description" content="815 kg de carga, plataforma Nissan, taller en Ovalle. Pie desde $3.200.000." />
   <meta property="og:image" content="https://www.felipecallegari.cl/assets/img/DFSK-D1.webp" />
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -68,6 +66,12 @@
     .callegari-seal-fallback { display: none; font-size: .65rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #c9a84c; }
     .pillar { transition: border-color 0.2s ease; }
     .pillar:hover { border-color: #c9a84c; }
+    .spec-row { border-bottom: 1px solid rgba(63,63,70,.7); }
+    .spec-row:last-child { border-bottom: none; }
+    .terrain-card { transition: transform 0.25s ease, border-color 0.25s ease; }
+    .terrain-card:hover { transform: translateY(-4px); border-color: rgba(201,168,76,.4); }
+    .terrain-card img { transition: transform 0.4s ease; }
+    .terrain-card:hover img { transform: scale(1.04); }
   </style>
 </head>
 
@@ -87,12 +91,18 @@
           >
           <span class="callegari-seal-fallback">Callegari Automotora</span>
         </div>
-        <p class="text-zinc-500 text-xs hidden sm:block">Felipe Núñez · Asesor Comercial</p>
+        <nav class="hidden sm:flex items-center gap-5 text-xs text-zinc-400" aria-label="Secciones">
+          <a href="#ficha" class="hover:text-brand-500 transition-colors">Ficha</a>
+          <a href="#equipamiento" class="hover:text-brand-500 transition-colors">Equipamiento</a>
+          <a href="#galeria" class="hover:text-brand-500 transition-colors">Galería</a>
+          <a href="#cotizar" class="text-brand-500 font-semibold hover:text-brand-400 transition-colors">Cotizar</a>
+        </nav>
+        <p class="text-zinc-500 text-xs sm:hidden">Felipe Núñez · Asesor</p>
       </div>
     </div>
 
-    <section class="relative min-h-screen flex items-center overflow-hidden" aria-labelledby="hero-lp-heading">
-
+    <!-- HERO + FORM -->
+    <section id="cotizar" class="relative min-h-screen flex items-center overflow-hidden" aria-labelledby="hero-lp-heading">
       <div class="hero-img-wrapper absolute inset-0">
         <img
           src="assets/img/DFSK-D1.webp"
@@ -102,50 +112,32 @@
           fetchpriority="high"
         />
       </div>
-
       <div class="absolute inset-0 bg-gradient-to-br from-zinc-950/50 via-transparent to-transparent pointer-events-none"></div>
 
       <div class="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-0">
         <div class="grid md:grid-cols-2 gap-12 items-center min-h-screen md:min-h-0 py-12">
-
           <div>
             <p class="text-brand-500 text-xs font-bold uppercase tracking-widest mb-4">
               Camioneta DFSK D1 · Ovalle y IV Región
             </p>
             <h1 id="hero-lp-heading" class="text-4xl sm:text-5xl font-bold tracking-tight leading-tight mb-5">
-              Cotiza tu<br />
-              <span class="text-brand-500">DFSK D1</span><br />
-              en Ovalle
+              La <span class="text-brand-500">DFSK D1</span><br />
+              en detalle
             </h1>
-            <p class="text-zinc-300 text-lg mb-8 leading-relaxed max-w-md">
-              La camioneta DFSK con <strong class="text-white">815 kg de carga</strong>,
-              plataforma <strong class="text-white">motor, chasis y caja Nissan</strong>,
-              y postventa real en Ovalle.
-              <strong class="text-white block mt-2">Pie desde $3.200.000 · Garantía 3 años / 100.000 km.</strong>
+            <p class="text-zinc-300 text-lg mb-6 leading-relaxed max-w-md">
+              815 kg de carga, remolque de 3 toneladas y plataforma
+              <strong class="text-white">motor, chasis y caja Nissan</strong>.
+              Taller y repuestos en Ovalle.
             </p>
-
-            <div class="grid grid-cols-2 gap-3 max-w-md">
-              <div class="pillar trust-badge bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-4" style="animation-delay:0.05s">
-                <p class="text-brand-500 text-xl font-bold mb-0.5">815 kg</p>
-                <p class="text-white text-sm font-semibold">Carga útil</p>
-                <p class="text-zinc-400 text-xs mt-0.5">Lista para faena</p>
-              </div>
-              <div class="pillar trust-badge bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-4" style="animation-delay:0.1s">
-                <p class="text-brand-500 text-xl font-bold mb-0.5">Nissan</p>
-                <p class="text-white text-sm font-semibold">Plataforma</p>
-                <p class="text-zinc-400 text-xs mt-0.5">Motor · chasis · caja</p>
-              </div>
-              <div class="pillar trust-badge bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-4" style="animation-delay:0.15s">
-                <p class="text-brand-500 text-xl font-bold mb-0.5">$3.2M</p>
-                <p class="text-white text-sm font-semibold">Pie desde</p>
-                <p class="text-zinc-400 text-xs mt-0.5">Crédito a tu medida</p>
-              </div>
-              <div class="pillar trust-badge bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-4" style="animation-delay:0.2s">
-                <p class="text-brand-500 text-xl font-bold mb-0.5">Ovalle</p>
-                <p class="text-white text-sm font-semibold">Taller local</p>
-                <p class="text-zinc-400 text-xs mt-0.5">Repuestos DFSK</p>
-              </div>
+            <div class="flex flex-wrap gap-2.5 mb-6">
+              <span class="trust-badge inline-flex items-center gap-1.5 bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-full px-4 py-2 text-sm font-semibold text-white">815 kg carga</span>
+              <span class="trust-badge inline-flex items-center gap-1.5 bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-full px-4 py-2 text-sm font-semibold text-white" style="animation-delay:0.08s">Motor Nissan</span>
+              <span class="trust-badge inline-flex items-center gap-1.5 bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-full px-4 py-2 text-sm font-semibold text-white" style="animation-delay:0.12s">Pie desde $3.2M</span>
             </div>
+            <a href="#ficha" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-500 hover:text-brand-400 transition-colors">
+              Ver ficha técnica completa
+              <span aria-hidden="true">↓</span>
+            </a>
           </div>
 
           <div class="trust-badge" style="animation-delay:0.1s">
@@ -164,36 +156,16 @@
                   <label for="nombre" class="block text-xs font-semibold text-zinc-300 uppercase tracking-wide mb-1.5">
                     Nombre completo <span class="text-brand-500">*</span>
                   </label>
-                  <input
-                    type="text"
-                    id="nombre"
-                    name="nombre"
-                    required
-                    autocomplete="name"
-                    placeholder="Ej: Juan González"
-                    class="form-input w-full rounded-lg px-4 py-3 text-sm"
-                  />
+                  <input type="text" id="nombre" name="nombre" required autocomplete="name" placeholder="Ej: Juan González" class="form-input w-full rounded-lg px-4 py-3 text-sm" />
                 </div>
-
                 <div>
                   <label for="telefono" class="block text-xs font-semibold text-zinc-300 uppercase tracking-wide mb-1.5">
                     WhatsApp / Teléfono <span class="text-brand-500">*</span>
                   </label>
-                  <input
-                    type="tel"
-                    id="telefono"
-                    name="telefono"
-                    required
-                    autocomplete="tel"
-                    placeholder="+56 9 1234 5678"
-                    class="form-input w-full rounded-lg px-4 py-3 text-sm"
-                  />
+                  <input type="tel" id="telefono" name="telefono" required autocomplete="tel" placeholder="+56 9 1234 5678" class="form-input w-full rounded-lg px-4 py-3 text-sm" />
                 </div>
-
                 <div>
-                  <label for="ciudad" class="block text-xs font-semibold text-zinc-300 uppercase tracking-wide mb-1.5">
-                    Tu Ciudad
-                  </label>
+                  <label for="ciudad" class="block text-xs font-semibold text-zinc-300 uppercase tracking-wide mb-1.5">Tu Ciudad</label>
                   <select id="ciudad" name="ciudad" class="form-input w-full rounded-lg px-4 py-3 text-sm">
                     <option value="">Selecciona tu ciudad</option>
                     <option value="ovalle">Ovalle</option>
@@ -202,11 +174,8 @@
                     <option value="otra">Otra ciudad IV Región</option>
                   </select>
                 </div>
-
                 <div>
-                  <label for="uso" class="block text-xs font-semibold text-zinc-300 uppercase tracking-wide mb-1.5">
-                    ¿Para qué la necesitas?
-                  </label>
+                  <label for="uso" class="block text-xs font-semibold text-zinc-300 uppercase tracking-wide mb-1.5">¿Para qué la necesitas?</label>
                   <select id="uso" name="uso" class="form-input w-full rounded-lg px-4 py-3 text-sm">
                     <option value="">Selecciona una opción</option>
                     <option value="trabajo">Trabajo / faena</option>
@@ -215,71 +184,267 @@
                     <option value="no-se">Aún no sé</option>
                   </select>
                 </div>
-
-                <button
-                  type="submit"
-                  class="btn-cta w-full bg-brand-500 hover:bg-brand-400 text-zinc-950 font-bold py-4 rounded-xl text-base mt-2"
-                  aria-describedby="form-disclaimer"
-                >
+                <button type="submit" class="btn-cta w-full bg-brand-500 hover:bg-brand-400 text-zinc-950 font-bold py-4 rounded-xl text-base mt-2" aria-describedby="form-disclaimer">
                   Quiero Cotizar la D1 →
                 </button>
-
                 <p id="form-disclaimer" class="text-center text-xs text-zinc-600 leading-relaxed">
-                  Al enviar, aceptas ser contactado por Felipe Núñez Autos.<br />
-                  Sin spam. Solo te llamamos si lo pediste.
+                  Al enviar, aceptas ser contactado por Felipe Núñez Autos.<br />Sin spam. Solo te llamamos si lo pediste.
                 </p>
               </form>
 
               <div class="mt-5 pt-5 border-t border-zinc-800 text-center">
                 <p class="text-zinc-500 text-xs mb-2">¿Prefieres escribir directamente?</p>
-                <a
-                  href="tel:+56985480881"
-                  class="inline-flex items-center gap-2 text-sm text-white font-semibold hover:text-brand-500 transition-colors duration-200"
-                  aria-label="WhatsApp +56 9 8548 0881"
-                >
-                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                  </svg>
+                <a href="tel:+56985480881" class="inline-flex items-center gap-2 text-sm text-white font-semibold hover:text-brand-500 transition-colors duration-200" aria-label="WhatsApp +56 9 8548 0881">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                   WhatsApp +56 9 8548 0881
                 </a>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <section class="bg-zinc-900 border-t border-zinc-800 py-12 px-4" aria-label="Datos clave DFSK D1">
-      <div class="max-w-4xl mx-auto grid sm:grid-cols-3 gap-6 text-center">
-        <div>
-          <p class="text-3xl font-bold text-brand-500 mb-1">815 kg</p>
-          <p class="text-zinc-400 text-sm">Capacidad de carga</p>
+    <!-- FICHA TÉCNICA -->
+    <section id="ficha" class="bg-zinc-900 border-t border-zinc-800 py-16 px-4" aria-labelledby="ficha-heading">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+          <p class="text-brand-500 text-xs font-bold uppercase tracking-widest mb-3">Ficha técnica</p>
+          <h2 id="ficha-heading" class="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
+            Lo que importa de la DFSK D1
+          </h2>
+          <p class="text-zinc-400 text-sm max-w-xl mx-auto">
+            Datos claros para decidir: carga, remolque, plataforma y respaldo local en Ovalle.
+          </p>
         </div>
-        <div>
-          <p class="text-3xl font-bold text-brand-500 mb-1">3 ton</p>
-          <p class="text-zinc-400 text-sm">Capacidad de remolque</p>
-        </div>
-        <div>
-          <p class="text-3xl font-bold text-brand-500 mb-1">3 años</p>
-          <p class="text-zinc-400 text-sm">Garantía / 100.000 km</p>
+
+        <div class="grid lg:grid-cols-2 gap-8 items-start">
+          <div class="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950">
+            <img
+              src="assets/img/DFSK-D1.webp"
+              alt="DFSK D1 vista frontal"
+              class="w-full aspect-[4/3] object-cover object-center"
+              loading="lazy"
+              width="800"
+              height="600"
+            />
+          </div>
+
+          <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-8">
+            <dl>
+              <div class="spec-row flex justify-between gap-4 py-3.5">
+                <dt class="text-zinc-400 text-sm">Modelo</dt>
+                <dd class="text-white text-sm font-semibold text-right">DFSK D1</dd>
+              </div>
+              <div class="spec-row flex justify-between gap-4 py-3.5">
+                <dt class="text-zinc-400 text-sm">Uso ideal</dt>
+                <dd class="text-white text-sm font-semibold text-right">Faena, construcción, campo, reparto</dd>
+              </div>
+              <div class="spec-row flex justify-between gap-4 py-3.5">
+                <dt class="text-zinc-400 text-sm">Capacidad de carga</dt>
+                <dd class="text-brand-500 text-sm font-bold text-right">815 kg</dd>
+              </div>
+              <div class="spec-row flex justify-between gap-4 py-3.5">
+                <dt class="text-zinc-400 text-sm">Capacidad de remolque</dt>
+                <dd class="text-brand-500 text-sm font-bold text-right">3 toneladas</dd>
+              </div>
+              <div class="spec-row flex justify-between gap-4 py-3.5">
+                <dt class="text-zinc-400 text-sm">Plataforma</dt>
+                <dd class="text-white text-sm font-semibold text-right">Motor, chasis y caja Nissan</dd>
+              </div>
+              <div class="spec-row flex justify-between gap-4 py-3.5">
+                <dt class="text-zinc-400 text-sm">Transmisión</dt>
+                <dd class="text-white text-sm font-semibold text-right">Mecánica o automática</dd>
+              </div>
+              <div class="spec-row flex justify-between gap-4 py-3.5">
+                <dt class="text-zinc-400 text-sm">Pie desde</dt>
+                <dd class="text-brand-500 text-sm font-bold text-right">$3.200.000</dd>
+              </div>
+              <div class="spec-row flex justify-between gap-4 py-3.5">
+                <dt class="text-zinc-400 text-sm">Garantía</dt>
+                <dd class="text-white text-sm font-semibold text-right">3 años / 100.000 km</dd>
+              </div>
+              <div class="spec-row flex justify-between gap-4 py-3.5">
+                <dt class="text-zinc-400 text-sm">Postventa</dt>
+                <dd class="text-white text-sm font-semibold text-right">Taller y repuestos en Ovalle</dd>
+              </div>
+            </dl>
+            <a href="#cotizar" class="btn-cta mt-6 block w-full text-center bg-brand-500 hover:bg-brand-400 text-zinc-950 font-bold py-3.5 rounded-xl text-sm">
+              Cotizar con estos datos →
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- EQUIPAMIENTO -->
+    <section id="equipamiento" class="bg-zinc-950 border-t border-zinc-800 py-16 px-4" aria-labelledby="equip-heading">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+          <p class="text-brand-500 text-xs font-bold uppercase tracking-widest mb-3">Equipamiento</p>
+          <h2 id="equip-heading" class="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
+            Confort y tecnología a bordo
+          </h2>
+          <p class="text-zinc-400 text-sm max-w-xl mx-auto">
+            No es solo carga: la D1 viene lista para el día a día en la IV Región.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <article class="pillar bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <p class="text-brand-500 text-xs font-bold uppercase tracking-wider mb-2">Multimedia</p>
+            <h3 class="text-white font-bold text-lg mb-1">Pantalla 9"</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">Pantalla multimedia central para mapas, música y conectividad en ruta.</p>
+          </article>
+          <article class="pillar bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <p class="text-brand-500 text-xs font-bold uppercase tracking-wider mb-2">Seguridad</p>
+            <h3 class="text-white font-bold text-lg mb-1">Cámara 360°</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">Visión perimetral para maniobras en obra, estacionamientos y caminos angostos.</p>
+          </article>
+          <article class="pillar bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <p class="text-brand-500 text-xs font-bold uppercase tracking-wider mb-2">Interior</p>
+            <h3 class="text-white font-bold text-lg mb-1">Asientos ecocuero</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">Tapiz resistente, fácil de limpiar después de un día de faena o viaje.</p>
+          </article>
+          <article class="pillar bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <p class="text-brand-500 text-xs font-bold uppercase tracking-wider mb-2">Confort</p>
+            <h3 class="text-white font-bold text-lg mb-1">Climatizador</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">Climatizador automático para el calor de Ovalle y la costa de Coquimbo.</p>
+          </article>
+          <article class="pillar bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <p class="text-brand-500 text-xs font-bold uppercase tracking-wider mb-2">Arranque</p>
+            <h3 class="text-white font-bold text-lg mb-1">Botón de encendido</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">Encendido práctico, sin llave tradicional en cada salida.</p>
+          </article>
+          <article class="pillar bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <p class="text-brand-500 text-xs font-bold uppercase tracking-wider mb-2">Transmisión</p>
+            <h3 class="text-white font-bold text-lg mb-1">Mecánica o automática</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">Eliges según tu estilo de manejo y el tipo de trabajo que haces.</p>
+          </article>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-2 gap-4 items-stretch">
+          <figure class="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 aspect-[16/10] md:aspect-auto md:min-h-[280px]">
+            <img
+              src="assets/img/interior.jpg"
+              alt="Interior DFSK — cabina y tablero"
+              class="w-full h-full object-cover"
+              loading="lazy"
+              width="800"
+              height="500"
+            />
+            <figcaption class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-zinc-950/95 to-transparent px-4 py-3 text-sm text-zinc-200">
+              Cabina: pantalla, consola y acabados listos para el uso diario
+            </figcaption>
+          </figure>
+          <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 sm:p-8 flex flex-col justify-center">
+            <h3 class="text-xl font-bold text-white mb-3">¿Trabajo o uso mixto?</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed mb-5">
+              La D1 rinde en faena (campo, construcción, comercio) y también como camioneta familiar
+              con buen equipamiento. Si dudas entre D1 y Z9, Felipe te orienta según presupuesto y uso real.
+            </p>
+            <ul class="space-y-2.5 text-sm text-zinc-300 mb-6">
+              <li class="flex gap-2"><span class="text-brand-500 font-bold">✓</span> Carga 815 kg y remolque 3 ton</li>
+              <li class="flex gap-2"><span class="text-brand-500 font-bold">✓</span> Plataforma Nissan probada</li>
+              <li class="flex gap-2"><span class="text-brand-500 font-bold">✓</span> Postventa en Covarrubias 340, Ovalle</li>
+            </ul>
+            <a href="#cotizar" class="text-brand-500 text-sm font-semibold hover:text-brand-400 transition-colors">Pedir cotización personalizada →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="bg-zinc-900 border-t border-zinc-800 py-16 px-4" aria-labelledby="galeria-heading">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+          <p class="text-brand-500 text-xs font-bold uppercase tracking-widest mb-3">En terreno</p>
+          <h2 id="galeria-heading" class="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
+            La D1 donde la vas a usar
+          </h2>
+          <p class="text-zinc-400 text-sm max-w-xl mx-auto">
+            Agua, obra, polvo y campo — condiciones reales de la Región de Coquimbo.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          <article class="terrain-card group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950">
+            <img src="assets/img/aguad1.webp" alt="DFSK D1 cruzando agua" class="w-full aspect-[4/3] object-cover" loading="lazy" width="400" height="300" />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent"></div>
+            <p class="absolute bottom-3 left-3 right-3 text-xs sm:text-sm font-semibold text-white">Badenes y zanjas</p>
+          </article>
+          <article class="terrain-card group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950">
+            <img src="assets/img/cementod1.webp" alt="DFSK D1 en obra" class="w-full aspect-[4/3] object-cover" loading="lazy" width="400" height="300" />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent"></div>
+            <p class="absolute bottom-3 left-3 right-3 text-xs sm:text-sm font-semibold text-white">Obra y construcción</p>
+          </article>
+          <article class="terrain-card group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950">
+            <img src="assets/img/polvod1.webp" alt="DFSK D1 en polvo" class="w-full aspect-[4/3] object-cover" loading="lazy" width="400" height="300" />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent"></div>
+            <p class="absolute bottom-3 left-3 right-3 text-xs sm:text-sm font-semibold text-white">Polvo y caminos rurales</p>
+          </article>
+          <article class="terrain-card group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950">
+            <img src="assets/img/tierrad1.webp" alt="DFSK D1 en campo" class="w-full aspect-[4/3] object-cover" loading="lazy" width="400" height="300" />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent"></div>
+            <p class="absolute bottom-3 left-3 right-3 text-xs sm:text-sm font-semibold text-white">Campo y agricultura</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPRA EN OVALLE -->
+    <section class="bg-zinc-950 border-t border-zinc-800 py-16 px-4" aria-labelledby="compra-heading">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+          <p class="text-brand-500 text-xs font-bold uppercase tracking-widest mb-3">Compra en Ovalle</p>
+          <h2 id="compra-heading" class="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
+            Cómo te acompañamos
+          </h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <p class="text-brand-500 text-2xl font-bold mb-2">01</p>
+            <h3 class="text-white font-bold mb-1">Financiamiento</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">Pie desde $3.200.000. Crédito a tu medida en 48 o 60 cuotas.</p>
+          </div>
+          <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <p class="text-brand-500 text-2xl font-bold mb-2">02</p>
+            <h3 class="text-white font-bold mb-1">Parte de pago</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">Recibimos tu usado (2016+, máx. 100.000 km) para bajar el pie.</p>
+          </div>
+          <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <p class="text-brand-500 text-2xl font-bold mb-2">03</p>
+            <h3 class="text-white font-bold mb-1">Garantía oficial</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">3 años o 100.000 km. Servicio en Callegari Automotriz Ovalle.</p>
+          </div>
+          <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <p class="text-brand-500 text-2xl font-bold mb-2">04</p>
+            <h3 class="text-white font-bold mb-1">Taller local</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">Repuestos y mantención en Covarrubias 340, sin viajar a Santiago.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="bg-zinc-900 border-t border-zinc-800 py-14 px-4" aria-label="Cotizar DFSK D1">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
+          ¿Listo para cotizar tu D1?
+        </h2>
+        <p class="text-zinc-400 text-sm mb-8 max-w-lg mx-auto">
+          Felipe Núñez te responde en menos de 2 horas con pie, cuotas y disponibilidad en Ovalle.
+        </p>
+        <a href="#cotizar" class="btn-cta inline-flex items-center justify-center bg-brand-500 hover:bg-brand-400 text-zinc-950 font-bold px-8 py-4 rounded-xl text-base">
+          Volver al formulario →
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer class="bg-zinc-950 border-t border-zinc-800 py-8 px-4 text-center" role="contentinfo">
     <div class="flex items-center justify-center gap-3 mb-3" aria-label="Callegari Automotora">
-      <img
-        src="assets/img/logo-callegari.png"
-        alt="Callegari Automotora"
-        width="100"
-        height="26"
-        loading="lazy"
-        class="opacity-80"
-        onerror="this.style.display='none';"
-      >
+      <img src="assets/img/logo-callegari.png" alt="Callegari Automotora" width="100" height="26" loading="lazy" class="opacity-80" onerror="this.style.display='none';" />
       <span class="text-zinc-500 text-xs">Callegari Automotriz · Covarrubias 340, Ovalle</span>
     </div>
     <p class="text-zinc-600 text-xs">
@@ -309,6 +474,5 @@
       });
     }
   </script>
-
 </body>
 </html>

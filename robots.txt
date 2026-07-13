@@ -4,6 +4,10 @@ Allow: /
 Disallow: /api/
 Disallow: /dashboard/
 Disallow: /data/
-Disallow: /landing-
+Disallow: /estrena-dfsk-d1.html
+Disallow: /dfsk-d1-trabajo.html
+Disallow: /oferta-gastos-cierre.html
+Disallow: /parte-de-pago-dfsk.html
+Disallow: /cotiza-dfsk.html
 
 Sitemap: https://www.felipecallegari.cl/sitemap.xml

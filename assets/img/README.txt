@@ -4,12 +4,12 @@
 LOGOS Y MARCA
 -------------
 • logo-callegari.png — Header y footer de todas las páginas.
-• logo-dfsk.png — Logo DFSK en header del home y watermark hero landing-trabajo.
+• logo-dfsk.png — Logo DFSK en header del home y watermark hero dfsk-d1-trabajo.
 
 DFSK D1
 -------
 • Banner.webp — Hero index.html (home SEO).
-• bannerB.webp — Hero exclusivo landing-trabajo.html (Meta Ads D1 faena).
+• bannerB.webp — Hero exclusivo dfsk-d1-trabajo.html (Meta Ads D1 faena).
 • aguad1.webp — D1 cruzando agua / badenes
 • cementod1.webp — D1 en obra (tarjeta D1 index + modelos)
 • polvod1.webp — D1 en camino de polvo

@@ -1,5 +1,6 @@
 /**
- * Envío de lead desde landings Meta Ads → API + WhatsApp.
+ * Envío de lead → API + WhatsApp.
+ * options.fuente: 'landing' (Meta) | 'formulario' (SEO/home). Default: landing.
  */
 window.DFSK_submitLead = function (form, options) {
   options = options || {};
@@ -14,6 +15,7 @@ window.DFSK_submitLead = function (form, options) {
   var telefono = telefonoEl ? telefonoEl.value.trim() : '';
   var origen = origenEl ? origenEl.value : '';
   var modelo = modeloEl ? modeloEl.value : '';
+  var fuente = options.fuente || 'landing';
 
   if (!nombre || !telefono) {
     var prev = btn.textContent;
@@ -41,7 +43,7 @@ window.DFSK_submitLead = function (form, options) {
       nombre: nombre,
       telefono: telefono,
       modelo: modelo || null,
-      fuente: 'landing',
+      fuente: fuente,
       origen: origen,
       notas: notas || null
     })

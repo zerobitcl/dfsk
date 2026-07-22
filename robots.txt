@@ -10,5 +10,6 @@ Disallow: /dfsk-d1-trabajo.html
 Disallow: /oferta-gastos-cierre.html
 Disallow: /parte-de-pago-dfsk.html
 Disallow: /cotiza-dfsk.html
+Disallow: /camioneta-diesel-4x4-ovalle.html
 
 Sitemap: https://www.felipecallegari.cl/sitemap.xml

@@ -48,6 +48,11 @@ window.DFSK_submitLead = function (form, options) {
     window.DFSK_trackLead({ eventId: eventId, modelo: modelo });
   }
 
+  var waURL = SITE.waHref ? SITE.waHref(waMsg) : 'https://wa.me/' + SITE.phoneWa + '?text=' + encodeURIComponent(waMsg);
+
+  // Abrir WhatsApp en el mismo gesto del clic (evita bloqueo de popups).
+  window.DFSK_openWhatsApp(waURL);
+
   fetch(API_LEADS, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -66,22 +71,42 @@ window.DFSK_submitLead = function (form, options) {
       btn.textContent = 'Enviado — Abriendo WhatsApp…';
       btn.classList.add('opacity-70', 'cursor-not-allowed');
     }
-    var waURL = SITE.waHref ? SITE.waHref(waMsg) : 'https://wa.me/' + SITE.phoneWa + '?text=' + encodeURIComponent(waMsg);
-    setTimeout(function () {
-      window.open(waURL, '_blank', 'noopener,noreferrer');
-    }, 600);
   });
 };
 
+/** Abre WhatsApp de forma fiable en móvil/desktop. */
+window.DFSK_openWhatsApp = function (url) {
+  if (!url) return;
+  var opened = window.open(url, '_blank');
+  // iOS/Safari a veces bloquea _blank tras JS; fallback misma pestaña.
+  if (!opened || opened.closed || typeof opened.closed === 'undefined') {
+    window.location.href = url;
+  }
+};
+
 /**
- * Clic WhatsApp → Pixel Lead + CRM con fuente=whatsapp.
- * Si el form ya tiene nombre+teléfono, usa esos datos; si no, registra el clic igual.
+ * Clic WhatsApp → abre WA al tiro + Pixel/CRM en segundo plano.
  */
 window.DFSK_whatsAppClick = function (e, form, options) {
   options = options || {};
   e.preventDefault();
 
   var API_LEADS = 'api/leads.php';
+  var SITE = window.DFSK_SITE || { phoneWa: '56985480881' };
+  var el = e.currentTarget;
+  var href = el ? el.getAttribute('href') : '';
+
+  // Si el href era tel: o inválido, forzar wa.me
+  if (!href || href.indexOf('wa.me') === -1) {
+    var fallbackMsg = options.waFallbackMsg || 'Hola, quiero cotizar una DFSK.';
+    href = SITE.waHref
+      ? SITE.waHref(fallbackMsg)
+      : 'https://wa.me/' + SITE.phoneWa + '?text=' + encodeURIComponent(fallbackMsg);
+  }
+
+  // Primero WhatsApp (gesto del usuario), después CRM.
+  window.DFSK_openWhatsApp(href);
+
   var nombreEl = form ? form.querySelector('[name="nombre"], #nombre') : null;
   var telefonoEl = form ? form.querySelector('[name="telefono"], #telefono') : null;
   var origenEl = form ? form.querySelector('[name="origen"], #origen_lead') : null;
@@ -103,29 +128,22 @@ window.DFSK_whatsAppClick = function (e, form, options) {
   }
 
   var hasContact = !!(nombre && telefono);
-  var payload = {
-    nombre: hasContact ? nombre : 'Clic WhatsApp',
-    telefono: hasContact ? telefono : 's/d',
-    modelo: modelo || null,
-    fuente: 'whatsapp',
-    origen: origen,
-    notas: [
-      notasBase,
-      hasContact ? 'Canal: WhatsApp (con datos)' : 'Canal: WhatsApp (clic sin formulario)',
-      'Página: ' + window.location.pathname
-    ].filter(Boolean).join(' | '),
-    event_id: eventId,
-    event_source_url: window.location.href
-  };
-
   fetch(API_LEADS, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-  }).catch(function () {}).finally(function () {
-    var href = e.currentTarget.getAttribute('href');
-    if (href) {
-      window.open(href, '_blank', 'noopener,noreferrer');
-    }
-  });
+    body: JSON.stringify({
+      nombre: hasContact ? nombre : 'Clic WhatsApp',
+      telefono: hasContact ? telefono : 's/d',
+      modelo: modelo || null,
+      fuente: 'whatsapp',
+      origen: origen,
+      notas: [
+        notasBase,
+        hasContact ? 'Canal: WhatsApp (con datos)' : 'Canal: WhatsApp (clic sin formulario)',
+        'Página: ' + window.location.pathname
+      ].filter(Boolean).join(' | '),
+      event_id: eventId,
+      event_source_url: window.location.href
+    })
+  }).catch(function () {});
 };

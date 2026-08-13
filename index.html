@@ -1655,6 +1655,13 @@
             window.DFSK_trackLead({ eventId: eventId, modelo: modelo });
           }
 
+          var waURL = SITE.waHref(msg);
+          if (typeof window.DFSK_openWhatsApp === 'function') {
+            window.DFSK_openWhatsApp(waURL);
+          } else {
+            window.open(waURL, '_blank');
+          }
+
           fetch(API_LEADS, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -1673,10 +1680,6 @@
           }).finally(function () {
             formFields.style.display = 'none';
             formSuccess.style.display = 'flex';
-
-            setTimeout(function () {
-              window.open(SITE.waHref(msg), '_blank', 'noopener,noreferrer');
-            }, 800);
 
             if (submitBtn) {
               submitBtn.disabled = false;

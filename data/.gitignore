@@ -1,0 +1,5 @@
+# Los leads viven en leads.db — no versionar.
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*

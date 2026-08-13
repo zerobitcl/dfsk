@@ -435,29 +435,6 @@
       <div class="toolbar">
         <div class="toolbar-left">
           <input type="search" id="search-input" class="search" placeholder="Buscar por nombre, teléfono o modelo…">
-          <div class="filter-tabs" id="filter-tabs">
-            <button type="button" class="filter-tab active" data-estado="">Todos</button>
-            <button type="button" class="filter-tab" data-estado="ingresado">Nuevo</button>
-            <button type="button" class="filter-tab" data-estado="contactado">Contactado</button>
-            <button type="button" class="filter-tab" data-estado="en_veremos">En veremos</button>
-            <button type="button" class="filter-tab" data-estado="reunion_agendada">Reunión</button>
-            <button type="button" class="filter-tab" data-estado="cotizacion_enviada">Cotización</button>
-            <button type="button" class="filter-tab" data-estado="concreto">Venta</button>
-            <button type="button" class="filter-tab" data-estado="perdido">Perdido</button>
-          </div>
-          <div class="filter-tabs" id="filter-canal" style="margin-top:8px;">
-            <button type="button" class="filter-tab active" data-fuente="">Todos los canales</button>
-            <button type="button" class="filter-tab" data-fuente="formulario">Formulario</button>
-            <button type="button" class="filter-tab" data-fuente="whatsapp">WhatsApp</button>
-            <button type="button" class="filter-tab" data-fuente="manual">Manual</button>
-          </div>
-          <div class="filter-tabs" id="filter-origen" style="margin-top:8px;">
-            <button type="button" class="filter-tab active" data-origen="">Todos los orígenes</button>
-            <button type="button" class="filter-tab" data-origen="SEO_Organico">Orgánico</button>
-            <button type="button" class="filter-tab" data-origen="Campana_MetaAds">Pagado</button>
-            <button type="button" class="filter-tab" data-origen="whatsapp">WhatsApp directo</button>
-            <button type="button" class="filter-tab" data-origen="manual">Manual</button>
-          </div>
         </div>
         <div class="toolbar-right">
           <button type="button" class="btn btn-primary" id="add-lead-btn" style="width:auto;padding:10px 16px;">+ Agregar lead</button>
@@ -574,9 +551,6 @@
 
       var state = {
         leads: [],
-        filterEstado: '',
-        filterOrigen: '',
-        filterFuente: '',
         search: '',
       };
 
@@ -725,13 +699,6 @@
 
       function renderLeads() {
         var filtered = state.leads.filter(function (lead) {
-          if (state.filterEstado && lead.estado !== state.filterEstado) return false;
-          if (state.filterOrigen && lead.origen !== state.filterOrigen) return false;
-          if (state.filterFuente === 'formulario') {
-            if (lead.fuente !== 'formulario' && lead.fuente !== 'landing') return false;
-          } else if (state.filterFuente && lead.fuente !== state.filterFuente) {
-            return false;
-          }
           if (!state.search) return true;
           var q = state.search.toLowerCase();
           return [lead.nombre, lead.telefono, lead.modelo, lead.notas, lead.origen, lead.fuente, lead.estado_label, lead.origen_label, lead.fuente_label]
@@ -789,12 +756,7 @@
 
       function loadLeads() {
         var url = API_LEADS;
-        var params = [];
-        if (state.filterEstado) params.push('estado=' + encodeURIComponent(state.filterEstado));
-        if (state.filterOrigen) params.push('origen=' + encodeURIComponent(state.filterOrigen));
-        if (state.filterFuente) params.push('fuente=' + encodeURIComponent(state.filterFuente));
-        if (state.search) params.push('q=' + encodeURIComponent(state.search));
-        if (params.length) url += '?' + params.join('&');
+        if (state.search) url += '?q=' + encodeURIComponent(state.search);
 
         return api(url).then(function (data) {
           state.leads = data.leads || [];
@@ -846,33 +808,6 @@
       document.getElementById('modal-cancel').addEventListener('click', closeModal);
       modalBackdrop.addEventListener('click', function (e) {
         if (e.target === modalBackdrop) closeModal();
-      });
-
-      document.getElementById('filter-tabs').addEventListener('click', function (e) {
-        var btn = e.target.closest('.filter-tab');
-        if (!btn || btn.parentElement.id !== 'filter-tabs') return;
-        document.querySelectorAll('#filter-tabs .filter-tab').forEach(function (el) { el.classList.remove('active'); });
-        btn.classList.add('active');
-        state.filterEstado = btn.dataset.estado || '';
-        loadLeads();
-      });
-
-      document.getElementById('filter-origen').addEventListener('click', function (e) {
-        var btn = e.target.closest('.filter-tab');
-        if (!btn) return;
-        document.querySelectorAll('#filter-origen .filter-tab').forEach(function (el) { el.classList.remove('active'); });
-        btn.classList.add('active');
-        state.filterOrigen = btn.dataset.origen || '';
-        loadLeads();
-      });
-
-      document.getElementById('filter-canal').addEventListener('click', function (e) {
-        var btn = e.target.closest('.filter-tab');
-        if (!btn) return;
-        document.querySelectorAll('#filter-canal .filter-tab').forEach(function (el) { el.classList.remove('active'); });
-        btn.classList.add('active');
-        state.filterFuente = btn.dataset.fuente || '';
-        loadLeads();
       });
 
       var searchTimer;

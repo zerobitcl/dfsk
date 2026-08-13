@@ -1,0 +1,15 @@
+# Base de datos CRM (nunca subir ni sobrescribir en deploy)
+data/*.db
+data/*.db-*
+data/*.sqlite
+data/*.sqlite-*
+
+# Logs y temporales
+*.log
+.DS_Store
+Thumbs.db
+
+# Entorno local
+.env
+.env.*
+!.env.example

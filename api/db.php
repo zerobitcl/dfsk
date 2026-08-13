@@ -84,19 +84,32 @@ function migrateLeadsTable(PDO $pdo): void
 
 function leadToArray(array $row): array
 {
+    $fuente = $row['fuente'] ?? 'formulario';
+
     return [
         'id' => (int) $row['id'],
         'nombre' => $row['nombre'],
         'telefono' => $row['telefono'],
         'modelo' => $row['modelo'],
         'pie' => $row['pie'],
-        'fuente' => $row['fuente'],
+        'fuente' => $fuente,
+        'fuente_label' => fuenteLabel($fuente),
         'origen' => $row['origen'] ?? 'manual',
         'estado' => $row['estado'],
         'notas' => $row['notas'],
         'created_at' => $row['created_at'],
         'updated_at' => $row['updated_at'],
     ];
+}
+
+function fuenteLabel(string $fuente): string
+{
+    return match ($fuente) {
+        'formulario', 'landing' => 'Formulario',
+        'whatsapp' => 'WhatsApp',
+        'manual' => 'Manual',
+        default => $fuente,
+    };
 }
 
 function origenLabel(string $origen): string
@@ -113,12 +126,12 @@ function origenLabel(string $origen): string
 function estadoLabel(string $estado): string
 {
     return match ($estado) {
-        'ingresado' => 'Ingresado',
+        'ingresado' => 'Nuevo',
         'contactado' => 'Contactado',
         'en_veremos' => 'En veremos',
         'reunion_agendada' => 'Reunión agendada',
         'cotizacion_enviada' => 'Cotización enviada',
-        'concreto' => 'Concreto',
+        'concreto' => 'Venta',
         'perdido' => 'Perdido',
         default => $estado,
     };

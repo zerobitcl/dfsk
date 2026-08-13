@@ -30,6 +30,7 @@ if ($method === 'GET') {
 
     $estado = sanitizeText($_GET['estado'] ?? null, 40);
     $origen = sanitizeText($_GET['origen'] ?? null, 40);
+    $fuente = sanitizeText($_GET['fuente'] ?? null, 30);
     $q = sanitizeText($_GET['q'] ?? null, 80);
 
     $sql = 'SELECT * FROM leads WHERE 1=1';
@@ -45,8 +46,15 @@ if ($method === 'GET') {
         $params['origen'] = $origen;
     }
 
+    if ($fuente === 'formulario') {
+        $sql .= ' AND fuente IN ("formulario", "landing")';
+    } elseif ($fuente && in_array($fuente, $allowedFuentes, true)) {
+        $sql .= ' AND fuente = :fuente';
+        $params['fuente'] = $fuente;
+    }
+
     if ($q) {
-        $sql .= ' AND (nombre LIKE :q OR telefono LIKE :q OR modelo LIKE :q OR notas LIKE :q OR origen LIKE :q)';
+        $sql .= ' AND (nombre LIKE :q OR telefono LIKE :q OR modelo LIKE :q OR notas LIKE :q OR origen LIKE :q OR fuente LIKE :q)';
         $params['q'] = '%' . $q . '%';
     }
 
@@ -64,7 +72,9 @@ if ($method === 'GET') {
             SUM(CASE WHEN estado = "cotizacion_enviada" THEN 1 ELSE 0 END) AS cotizaciones,
             SUM(CASE WHEN estado = "concreto" THEN 1 ELSE 0 END) AS concretos,
             SUM(CASE WHEN origen = "SEO_Organico" THEN 1 ELSE 0 END) AS organicos,
-            SUM(CASE WHEN origen = "Campana_MetaAds" THEN 1 ELSE 0 END) AS pagados
+            SUM(CASE WHEN origen = "Campana_MetaAds" THEN 1 ELSE 0 END) AS pagados,
+            SUM(CASE WHEN fuente IN ("formulario", "landing") THEN 1 ELSE 0 END) AS formularios,
+            SUM(CASE WHEN fuente = "whatsapp" THEN 1 ELSE 0 END) AS whatsapps
          FROM leads'
     );
     $stats = $statsStmt->fetch() ?: [];
@@ -87,6 +97,8 @@ if ($method === 'GET') {
             'concretos' => (int) ($stats['concretos'] ?? 0),
             'organicos' => (int) ($stats['organicos'] ?? 0),
             'pagados' => (int) ($stats['pagados'] ?? 0),
+            'formularios' => (int) ($stats['formularios'] ?? 0),
+            'whatsapps' => (int) ($stats['whatsapps'] ?? 0),
         ],
     ]);
 }

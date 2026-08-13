@@ -1,6 +1,6 @@
 /**
  * Envío de lead → API + WhatsApp.
- * options.fuente: 'landing' (Meta) | 'formulario' (SEO/home). Default: landing.
+ * options.fuente: 'landing' (Meta form) | 'formulario' (SEO) | 'whatsapp' (clic WA).
  */
 window.DFSK_submitLead = function (form, options) {
   options = options || {};
@@ -18,18 +18,22 @@ window.DFSK_submitLead = function (form, options) {
   var fuente = options.fuente || 'landing';
 
   if (!nombre || !telefono) {
-    var prev = btn.textContent;
-    btn.textContent = 'Completa nombre y teléfono';
-    btn.classList.add('bg-red-700');
-    setTimeout(function () {
-      btn.textContent = prev;
-      btn.classList.remove('bg-red-700');
-    }, 2500);
+    if (btn) {
+      var prev = btn.textContent;
+      btn.textContent = 'Completa nombre y teléfono';
+      btn.classList.add('bg-red-700');
+      setTimeout(function () {
+        btn.textContent = prev;
+        btn.classList.remove('bg-red-700');
+      }, 2500);
+    }
     return;
   }
 
-  btn.textContent = 'Enviando…';
-  btn.disabled = true;
+  if (btn) {
+    btn.textContent = 'Enviando…';
+    btn.disabled = true;
+  }
 
   var notas = typeof options.notas === 'function' ? options.notas(form) : null;
   var waMsg = typeof options.waMsg === 'function'
@@ -58,8 +62,10 @@ window.DFSK_submitLead = function (form, options) {
       event_source_url: window.location.href
     })
   }).catch(function () {}).finally(function () {
-    btn.textContent = 'Enviado — Abriendo WhatsApp…';
-    btn.classList.add('opacity-70', 'cursor-not-allowed');
+    if (btn) {
+      btn.textContent = 'Enviado — Abriendo WhatsApp…';
+      btn.classList.add('opacity-70', 'cursor-not-allowed');
+    }
     var waURL = SITE.waHref ? SITE.waHref(waMsg) : 'https://wa.me/' + SITE.phoneWa + '?text=' + encodeURIComponent(waMsg);
     setTimeout(function () {
       window.open(waURL, '_blank', 'noopener,noreferrer');
@@ -68,32 +74,58 @@ window.DFSK_submitLead = function (form, options) {
 };
 
 /**
- * Click en WhatsApp: dispara Lead al Pixel. Si hay nombre+teléfono, también CRM.
+ * Clic WhatsApp → Pixel Lead + CRM con fuente=whatsapp.
+ * Si el form ya tiene nombre+teléfono, usa esos datos; si no, registra el clic igual.
  */
 window.DFSK_whatsAppClick = function (e, form, options) {
   options = options || {};
+  e.preventDefault();
+
+  var API_LEADS = 'api/leads.php';
   var nombreEl = form ? form.querySelector('[name="nombre"], #nombre') : null;
   var telefonoEl = form ? form.querySelector('[name="telefono"], #telefono') : null;
+  var origenEl = form ? form.querySelector('[name="origen"], #origen_lead') : null;
   var modeloEl = form ? form.querySelector('[name="modelo"], #modelo_lead') : null;
+  var notasEl = form ? form.querySelector('[name="notas"], #notas_lead') : null;
+
   var nombre = nombreEl ? nombreEl.value.trim() : '';
   var telefono = telefonoEl ? telefonoEl.value.trim() : '';
+  var origen = origenEl ? origenEl.value : (options.origen || 'Campana_MetaAds');
   var modelo = modeloEl ? modeloEl.value : (options.modelo || 'DFSK');
+  var notasBase = notasEl ? notasEl.value : '';
 
-  if (nombre && telefono && form && typeof window.DFSK_submitLead === 'function') {
-    e.preventDefault();
-    window.DFSK_submitLead(form, options);
-    return;
-  }
-
-  e.preventDefault();
   var eventId = typeof window.DFSK_newEventId === 'function'
     ? window.DFSK_newEventId()
     : 'lead_' + Date.now();
+
   if (typeof window.DFSK_trackLead === 'function') {
     window.DFSK_trackLead({ eventId: eventId, modelo: modelo });
   }
-  var href = e.currentTarget.getAttribute('href');
-  if (href) {
-    window.open(href, '_blank', 'noopener,noreferrer');
-  }
+
+  var hasContact = !!(nombre && telefono);
+  var payload = {
+    nombre: hasContact ? nombre : 'Clic WhatsApp',
+    telefono: hasContact ? telefono : 's/d',
+    modelo: modelo || null,
+    fuente: 'whatsapp',
+    origen: origen,
+    notas: [
+      notasBase,
+      hasContact ? 'Canal: WhatsApp (con datos)' : 'Canal: WhatsApp (clic sin formulario)',
+      'Página: ' + window.location.pathname
+    ].filter(Boolean).join(' | '),
+    event_id: eventId,
+    event_source_url: window.location.href
+  };
+
+  fetch(API_LEADS, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).catch(function () {}).finally(function () {
+    var href = e.currentTarget.getAttribute('href');
+    if (href) {
+      window.open(href, '_blank', 'noopener,noreferrer');
+    }
+  });
 };

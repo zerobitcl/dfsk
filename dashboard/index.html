@@ -302,6 +302,10 @@
     .badge-origen-whatsapp { background: rgba(37,211,102,.12); color: #6ee7b7; }
     .badge-origen-manual { background: rgba(107,114,128,.12); color: #d1d5db; }
 
+    .badge-canal-formulario { background: rgba(37,99,235,.14); color: #93c5fd; }
+    .badge-canal-whatsapp { background: rgba(37,211,102,.14); color: #6ee7b7; }
+    .badge-canal-manual { background: rgba(107,114,128,.14); color: #d1d5db; }
+
     .source {
       color: var(--muted);
       font-size: .78rem;
@@ -422,10 +426,10 @@
     <main class="content">
       <div class="stats" id="stats">
         <div class="stat-card"><strong id="stat-total">0</strong><span>Total leads</span></div>
-        <div class="stat-card"><strong id="stat-organicos">0</strong><span>Orgánicos (SEO)</span></div>
-        <div class="stat-card"><strong id="stat-pagados">0</strong><span>Pagados (Ads)</span></div>
-        <div class="stat-card"><strong id="stat-ingresados">0</strong><span>Ingresados</span></div>
-        <div class="stat-card"><strong id="stat-concretos">0</strong><span>Concretos</span></div>
+        <div class="stat-card"><strong id="stat-formularios">0</strong><span>Formulario</span></div>
+        <div class="stat-card"><strong id="stat-whatsapps">0</strong><span>WhatsApp</span></div>
+        <div class="stat-card"><strong id="stat-ingresados">0</strong><span>Nuevos</span></div>
+        <div class="stat-card"><strong id="stat-concretos">0</strong><span>Ventas</span></div>
       </div>
 
       <div class="toolbar">
@@ -433,19 +437,25 @@
           <input type="search" id="search-input" class="search" placeholder="Buscar por nombre, teléfono o modelo…">
           <div class="filter-tabs" id="filter-tabs">
             <button type="button" class="filter-tab active" data-estado="">Todos</button>
-            <button type="button" class="filter-tab" data-estado="ingresado">Ingresado</button>
+            <button type="button" class="filter-tab" data-estado="ingresado">Nuevo</button>
             <button type="button" class="filter-tab" data-estado="contactado">Contactado</button>
             <button type="button" class="filter-tab" data-estado="en_veremos">En veremos</button>
             <button type="button" class="filter-tab" data-estado="reunion_agendada">Reunión</button>
             <button type="button" class="filter-tab" data-estado="cotizacion_enviada">Cotización</button>
-            <button type="button" class="filter-tab" data-estado="concreto">Concreto</button>
+            <button type="button" class="filter-tab" data-estado="concreto">Venta</button>
             <button type="button" class="filter-tab" data-estado="perdido">Perdido</button>
+          </div>
+          <div class="filter-tabs" id="filter-canal" style="margin-top:8px;">
+            <button type="button" class="filter-tab active" data-fuente="">Todos los canales</button>
+            <button type="button" class="filter-tab" data-fuente="formulario">Formulario</button>
+            <button type="button" class="filter-tab" data-fuente="whatsapp">WhatsApp</button>
+            <button type="button" class="filter-tab" data-fuente="manual">Manual</button>
           </div>
           <div class="filter-tabs" id="filter-origen" style="margin-top:8px;">
             <button type="button" class="filter-tab active" data-origen="">Todos los orígenes</button>
             <button type="button" class="filter-tab" data-origen="SEO_Organico">Orgánico</button>
             <button type="button" class="filter-tab" data-origen="Campana_MetaAds">Pagado</button>
-            <button type="button" class="filter-tab" data-origen="whatsapp">WhatsApp</button>
+            <button type="button" class="filter-tab" data-origen="whatsapp">WhatsApp directo</button>
             <button type="button" class="filter-tab" data-origen="manual">Manual</button>
           </div>
         </div>
@@ -460,6 +470,7 @@
             <tr>
               <th>Cliente</th>
               <th>Modelo</th>
+              <th>Canal</th>
               <th>Origen</th>
               <th>Estado</th>
               <th>Fecha</th>
@@ -469,7 +480,7 @@
           <tbody id="leads-body"></tbody>
         </table>
         <div class="mobile-cards" id="leads-cards"></div>
-        <div class="empty hidden" id="empty-state">No hay leads todavía. Los formularios de la web caerán aquí automáticamente.</div>
+        <div class="empty hidden" id="empty-state">No hay leads todavía. Los formularios y clics de WhatsApp caerán aquí automáticamente.</div>
       </div>
     </main>
   </div>
@@ -502,6 +513,17 @@
             </select>
           </div>
           <div class="field">
+            <label for="lead-fuente">Canal</label>
+            <select id="lead-fuente">
+              <option value="formulario">Formulario</option>
+              <option value="whatsapp">WhatsApp</option>
+              <option value="manual">Manual</option>
+              <option value="landing">Landing (Ads)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="field">
             <label for="lead-origen">Origen</label>
             <select id="lead-origen">
               <option value="whatsapp">WhatsApp</option>
@@ -510,24 +532,25 @@
               <option value="Campana_MetaAds">Pagado (Meta Ads)</option>
             </select>
           </div>
-        </div>
-        <div class="form-grid">
           <div class="field">
             <label for="lead-estado">Estado</label>
             <select id="lead-estado">
-              <option value="ingresado">Ingresado</option>
+              <option value="ingresado">Nuevo</option>
               <option value="contactado">Contactado</option>
               <option value="en_veremos">En veremos</option>
               <option value="reunion_agendada">Reunión agendada</option>
               <option value="cotizacion_enviada">Cotización enviada</option>
-              <option value="concreto">Concreto</option>
+              <option value="concreto">Venta</option>
               <option value="perdido">Perdido</option>
             </select>
           </div>
+        </div>
+        <div class="form-grid">
           <div class="field">
             <label for="lead-pie">Pie disponible</label>
             <input type="text" id="lead-pie" placeholder="Ej: Desde $3.200.000">
           </div>
+          <div class="field"></div>
         </div>
         <div class="field">
           <label for="lead-notas">Notas</label>
@@ -553,6 +576,7 @@
         leads: [],
         filterEstado: '',
         filterOrigen: '',
+        filterFuente: '',
         search: '',
       };
 
@@ -589,18 +613,25 @@
       }
 
       var ESTADO_LABELS = {
-        ingresado: 'Ingresado',
+        ingresado: 'Nuevo',
         contactado: 'Contactado',
         en_veremos: 'En veremos',
         reunion_agendada: 'Reunión agendada',
         cotizacion_enviada: 'Cotización enviada',
-        concreto: 'Concreto',
+        concreto: 'Venta',
         perdido: 'Perdido'
       };
 
       var ORIGEN_LABELS = {
         SEO_Organico: 'Orgánico',
         Campana_MetaAds: 'Pagado',
+        whatsapp: 'WhatsApp',
+        manual: 'Manual'
+      };
+
+      var FUENTE_LABELS = {
+        formulario: 'Formulario',
+        landing: 'Formulario',
         whatsapp: 'WhatsApp',
         manual: 'Manual'
       };
@@ -613,6 +644,10 @@
         return ORIGEN_LABELS[origen] || origen;
       }
 
+      function fuenteLabel(fuente) {
+        return FUENTE_LABELS[fuente] || fuente || 'Formulario';
+      }
+
       function origenBadgeClass(origen) {
         if (origen === 'SEO_Organico') return 'badge badge-origen-organico';
         if (origen === 'Campana_MetaAds') return 'badge badge-origen-pagado';
@@ -620,8 +655,15 @@
         return 'badge badge-origen-manual';
       }
 
+      function canalBadgeClass(fuente) {
+        if (fuente === 'whatsapp') return 'badge badge-canal-whatsapp';
+        if (fuente === 'manual') return 'badge badge-canal-manual';
+        return 'badge badge-canal-formulario';
+      }
+
       function waLink(telefono, nombre) {
-        var clean = String(telefono).replace(/\D/g, '');
+        var clean = String(telefono || '').replace(/\D/g, '');
+        if (!clean || clean === 'sd' || telefono === 's/d') return '';
         if (clean.startsWith('56')) clean = clean;
         else if (clean.startsWith('9')) clean = '56' + clean;
         var text = 'Hola ' + nombre + ', te escribe Felipe de Callegari Automotriz (DFSK Ovalle).';
@@ -644,6 +686,7 @@
         document.getElementById('lead-nombre').value = lead ? lead.nombre : '';
         document.getElementById('lead-telefono').value = lead ? lead.telefono : '';
         document.getElementById('lead-modelo').value = lead ? (lead.modelo || '') : '';
+        document.getElementById('lead-fuente').value = lead ? (lead.fuente || 'manual') : 'manual';
         document.getElementById('lead-origen').value = lead ? (lead.origen || 'whatsapp') : 'whatsapp';
         document.getElementById('lead-estado').value = lead ? lead.estado : 'ingresado';
         document.getElementById('lead-pie').value = lead ? (lead.pie || '') : '';
@@ -665,15 +708,16 @@
 
       function renderStats(stats) {
         document.getElementById('stat-total').textContent = stats.total || 0;
-        document.getElementById('stat-organicos').textContent = stats.organicos || 0;
-        document.getElementById('stat-pagados').textContent = stats.pagados || 0;
+        document.getElementById('stat-formularios').textContent = stats.formularios || 0;
+        document.getElementById('stat-whatsapps').textContent = stats.whatsapps || 0;
         document.getElementById('stat-ingresados').textContent = stats.ingresados || 0;
         document.getElementById('stat-concretos').textContent = stats.concretos || 0;
       }
 
       function renderActions(lead) {
+        var wa = waLink(lead.telefono, lead.nombre);
         return '<div class="actions">' +
-          '<a class="btn btn-wa" href="' + waLink(lead.telefono, lead.nombre) + '" target="_blank" rel="noopener">WhatsApp</a>' +
+          (wa ? '<a class="btn btn-wa" href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a>' : '') +
           '<button type="button" class="btn btn-secondary" data-action="edit" data-id="' + lead.id + '">Editar</button>' +
           '<button type="button" class="btn btn-danger" data-action="delete" data-id="' + lead.id + '">Eliminar</button>' +
         '</div>';
@@ -683,9 +727,14 @@
         var filtered = state.leads.filter(function (lead) {
           if (state.filterEstado && lead.estado !== state.filterEstado) return false;
           if (state.filterOrigen && lead.origen !== state.filterOrigen) return false;
+          if (state.filterFuente === 'formulario') {
+            if (lead.fuente !== 'formulario' && lead.fuente !== 'landing') return false;
+          } else if (state.filterFuente && lead.fuente !== state.filterFuente) {
+            return false;
+          }
           if (!state.search) return true;
           var q = state.search.toLowerCase();
-          return [lead.nombre, lead.telefono, lead.modelo, lead.notas, lead.origen, lead.estado_label, lead.origen_label]
+          return [lead.nombre, lead.telefono, lead.modelo, lead.notas, lead.origen, lead.fuente, lead.estado_label, lead.origen_label, lead.fuente_label]
             .join(' ').toLowerCase().indexOf(q) !== -1;
         });
 
@@ -699,9 +748,11 @@
         emptyState.classList.add('hidden');
 
         leadsBody.innerHTML = filtered.map(function (lead) {
+          var canal = lead.fuente_label || fuenteLabel(lead.fuente);
           return '<tr>' +
             '<td><strong>' + escapeHtml(lead.nombre) + '</strong><br><span class="source">' + escapeHtml(lead.telefono) + '</span></td>' +
             '<td>' + escapeHtml(lead.modelo || '—') + (lead.pie ? '<br><span class="source">Pie: ' + escapeHtml(lead.pie) + '</span>' : '') + '</td>' +
+            '<td><span class="' + canalBadgeClass(lead.fuente) + '">' + escapeHtml(canal) + '</span></td>' +
             '<td><span class="' + origenBadgeClass(lead.origen) + '">' + escapeHtml(lead.origen_label || origenLabel(lead.origen)) + '</span></td>' +
             '<td><span class="' + badgeClass(lead.estado) + '">' + escapeHtml(lead.estado_label || estadoLabel(lead.estado)) + '</span></td>' +
             '<td>' + formatDate(lead.created_at) + '</td>' +
@@ -710,6 +761,7 @@
         }).join('');
 
         leadsCards.innerHTML = filtered.map(function (lead) {
+          var canal = lead.fuente_label || fuenteLabel(lead.fuente);
           return '<article class="lead-card">' +
             '<div class="lead-card-head">' +
               '<strong>' + escapeHtml(lead.nombre) + '</strong>' +
@@ -718,6 +770,7 @@
             '<div class="lead-meta">' +
               escapeHtml(lead.telefono) + '<br>' +
               (lead.modelo ? escapeHtml(lead.modelo) + '<br>' : '') +
+              'Canal: ' + escapeHtml(canal) + '<br>' +
               'Origen: ' + escapeHtml(lead.origen_label || origenLabel(lead.origen)) + '<br>' +
               formatDate(lead.created_at) +
             '</div>' +
@@ -739,6 +792,7 @@
         var params = [];
         if (state.filterEstado) params.push('estado=' + encodeURIComponent(state.filterEstado));
         if (state.filterOrigen) params.push('origen=' + encodeURIComponent(state.filterOrigen));
+        if (state.filterFuente) params.push('fuente=' + encodeURIComponent(state.filterFuente));
         if (state.search) params.push('q=' + encodeURIComponent(state.search));
         if (params.length) url += '?' + params.join('&');
 
@@ -812,6 +866,15 @@
         loadLeads();
       });
 
+      document.getElementById('filter-canal').addEventListener('click', function (e) {
+        var btn = e.target.closest('.filter-tab');
+        if (!btn) return;
+        document.querySelectorAll('#filter-canal .filter-tab').forEach(function (el) { el.classList.remove('active'); });
+        btn.classList.add('active');
+        state.filterFuente = btn.dataset.fuente || '';
+        loadLeads();
+      });
+
       var searchTimer;
       document.getElementById('search-input').addEventListener('input', function (e) {
         clearTimeout(searchTimer);
@@ -859,7 +922,7 @@
           estado: document.getElementById('lead-estado').value,
           pie: document.getElementById('lead-pie').value.trim(),
           notas: document.getElementById('lead-notas').value.trim(),
-          fuente: document.getElementById('lead-origen').value === 'Campana_MetaAds' ? 'landing' : 'manual',
+          fuente: document.getElementById('lead-fuente').value || 'manual',
         };
 
         var request = id

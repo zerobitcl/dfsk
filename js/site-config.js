@@ -15,6 +15,8 @@ window.DFSK_SITE = {
   addressFull: 'Covarrubias 340, 1840000 Ovalle, Coquimbo',
   ogImage: 'https://www.felipecallegari.cl/assets/img/Banner.webp',
   contactUrl: 'index.html#contacto',
+  // ID numérico del Pixel (Administrador de eventos → Fuentes de datos). Vacío = no dispara.
+  pixelId: '1508041677677153',
   telHref: function () {
     return 'tel:' + this.phoneTel;
   },

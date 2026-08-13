@@ -146,10 +146,15 @@ if ($method === 'POST') {
         'updated_at' => $now,
     ]);
 
+    $leadId = (int) $pdo->lastInsertId();
+    $eventId = sanitizeText($input['event_id'] ?? null, 80);
+    $sourceUrl = sanitizeText($input['event_source_url'] ?? null, 500);
+    sendMetaCapiLead($telefono, $eventId, $sourceUrl, $modelo);
+
     jsonResponse([
         'ok' => true,
         'message' => 'Lead registrado',
-        'id' => (int) $pdo->lastInsertId(),
+        'id' => $leadId,
     ], 201);
 }
 

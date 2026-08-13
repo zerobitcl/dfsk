@@ -36,6 +36,14 @@ window.DFSK_submitLead = function (form, options) {
     ? options.waMsg(form, nombre, telefono, modelo, origen)
     : 'Hola Felipe, me llamo ' + nombre + ' y quiero cotizar una DFSK. Mi teléfono es ' + telefono + '.';
 
+  var eventId = typeof window.DFSK_newEventId === 'function'
+    ? window.DFSK_newEventId()
+    : 'lead_' + Date.now();
+
+  if (typeof window.DFSK_trackLead === 'function') {
+    window.DFSK_trackLead({ eventId: eventId, modelo: modelo });
+  }
+
   fetch(API_LEADS, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -45,14 +53,47 @@ window.DFSK_submitLead = function (form, options) {
       modelo: modelo || null,
       fuente: fuente,
       origen: origen,
-      notas: notas || null
+      notas: notas || null,
+      event_id: eventId,
+      event_source_url: window.location.href
     })
   }).catch(function () {}).finally(function () {
-    btn.textContent = '✓ Enviado — Abriendo WhatsApp…';
+    btn.textContent = 'Enviado — Abriendo WhatsApp…';
     btn.classList.add('opacity-70', 'cursor-not-allowed');
     var waURL = SITE.waHref ? SITE.waHref(waMsg) : 'https://wa.me/' + SITE.phoneWa + '?text=' + encodeURIComponent(waMsg);
     setTimeout(function () {
       window.open(waURL, '_blank', 'noopener,noreferrer');
     }, 600);
   });
+};
+
+/**
+ * Click en WhatsApp: dispara Lead al Pixel. Si hay nombre+teléfono, también CRM.
+ */
+window.DFSK_whatsAppClick = function (e, form, options) {
+  options = options || {};
+  var nombreEl = form ? form.querySelector('[name="nombre"], #nombre') : null;
+  var telefonoEl = form ? form.querySelector('[name="telefono"], #telefono') : null;
+  var modeloEl = form ? form.querySelector('[name="modelo"], #modelo_lead') : null;
+  var nombre = nombreEl ? nombreEl.value.trim() : '';
+  var telefono = telefonoEl ? telefonoEl.value.trim() : '';
+  var modelo = modeloEl ? modeloEl.value : (options.modelo || 'DFSK');
+
+  if (nombre && telefono && form && typeof window.DFSK_submitLead === 'function') {
+    e.preventDefault();
+    window.DFSK_submitLead(form, options);
+    return;
+  }
+
+  e.preventDefault();
+  var eventId = typeof window.DFSK_newEventId === 'function'
+    ? window.DFSK_newEventId()
+    : 'lead_' + Date.now();
+  if (typeof window.DFSK_trackLead === 'function') {
+    window.DFSK_trackLead({ eventId: eventId, modelo: modelo });
+  }
+  var href = e.currentTarget.getAttribute('href');
+  if (href) {
+    window.open(href, '_blank', 'noopener,noreferrer');
+  }
 };

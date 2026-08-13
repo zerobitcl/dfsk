@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DFSK D1 para Trabajo Pesado en Ovalle | 815kg Carga · Motor Nissan</title>
-  <meta name="description" content="DFSK D1: 815 kilos de carga, remolca 3 toneladas, motor/chasis/caja Nissan. Taller y repuestos en Ovalle. Cotiza gratis con Felipe Núñez." />
+  <script src="js/site-config.js"></script>
+  <script src="js/meta-pixel.js"></script>
+  <title>DFSK D1 para Trabajo Pesado en Ovalle | 815kg Carga Â· Motor Nissan</title>
+  <meta name="description" content="DFSK D1: 815 kilos de carga, remolca 3 toneladas, motor Nissan. Pie desde $3.200.000. Taller y repuestos en Ovalle. Cotiza con Felipe NÃºÃ±ez." />
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="assets/img/logo-dfsk.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/img/logo-dfsk.png" />
 
   <!-- Open Graph para Meta Ads -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="DFSK D1 · La Camioneta Lista para el Trabajo Pesado" />
-  <meta property="og:description" content="815kg de carga, remolque 3 toneladas, motor Nissan. Rendimiento superior al mejor precio del mercado." />
+  <meta property="og:title" content="DFSK D1 Â· La Camioneta Lista para el Trabajo Pesado" />
+  <meta property="og:description" content="815kg de carga, remolque 3 toneladas, motor Nissan. Pie desde $3.200.000. Taller en Ovalle." />
   <meta property="og:image" content="https://www.felipecallegari.cl/assets/img/bannerB.webp" />
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -24,7 +26,8 @@
             sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'system-ui', 'sans-serif'],
           },
           colors: {
-            brand: { 400: '#e8c97a', 500: '#c9a84c', 600: '#a3863a', 700: '#8a6f2d' }
+            brand: { 400: '#e8c97a', 500: '#c9a84c', 600: '#a3863a', 700: '#8a6f2d' },
+            wa: { 500: '#25d366', 600: '#1da851' }
           }
         }
       }
@@ -54,8 +57,9 @@
     }
     @media (max-width: 767px) {
       .hero-img-wrapper::after {
-        background: linear-gradient(to bottom, rgba(9,9,11,0.3) 0%, rgba(9,9,11,0.97) 60%);
+        background: linear-gradient(to bottom, rgba(9,9,11,0.25) 0%, rgba(9,9,11,0.92) 72%);
       }
+      body { padding-bottom: 72px; }
     }
     .trust-badge { animation: fadeUp 0.5s ease both; }
     @keyframes fadeUp {
@@ -78,13 +82,43 @@
     .terrain-card:hover { transform: translateY(-4px); border-color: rgba(201,168,76,.4); }
     .terrain-card img { transition: transform 0.4s ease; }
     .terrain-card:hover img { transform: scale(1.04); }
+    .felipe-chip img {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      object-fit: cover;
+      object-position: center 18%;
+      flex-shrink: 0;
+    }
+    .opt-more summary {
+      list-style: none;
+      cursor: pointer;
+    }
+    .opt-more summary::-webkit-details-marker { display: none; }
+    .sticky-cta {
+      display: none;
+    }
+    @media (max-width: 767px) {
+      .sticky-cta {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 60;
+        gap: 8px;
+        padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+        background: rgba(9,9,11,.94);
+        border-top: 1px solid #27272a;
+        backdrop-filter: blur(10px);
+      }
+    }
   </style>
 </head>
 
 <body class="bg-zinc-950 text-white font-sans antialiased">
 
   <main>
-    <!-- Sello Callegari — barra superior -->
     <div class="relative z-20 bg-zinc-950/90 border-b border-zinc-800 px-4 py-2.5">
       <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
         <div class="callegari-seal inline-flex items-center gap-2 px-3 py-1.5 border border-zinc-700 rounded-lg bg-zinc-900/80" aria-label="Callegari Automotora">
@@ -98,17 +132,16 @@
           >
           <span class="callegari-seal-fallback">Callegari Automotora</span>
         </div>
-        <p class="text-zinc-500 text-xs hidden sm:block">Felipe Núñez · Asesor Comercial</p>
+        <p class="text-zinc-500 text-xs hidden sm:block">Felipe NÃºÃ±ez Â· Asesor Comercial</p>
       </div>
     </div>
 
-    <section class="relative min-h-screen flex items-center overflow-hidden" aria-labelledby="hero-lp-heading">
+    <section class="relative md:min-h-screen md:flex md:items-center overflow-hidden" aria-labelledby="hero-lp-heading">
 
-      <!-- Imagen de fondo principal -->
       <div class="hero-img-wrapper absolute inset-0">
-        <img 
-          src="assets/img/bannerB.webp" 
-          alt="DFSK D1 en faena de trabajo — Región de Coquimbo" 
+        <img
+          src="assets/img/bannerB.webp"
+          alt="DFSK D1 en faena de trabajo â€” RegiÃ³n de Coquimbo"
           class="w-full h-full object-cover object-[center_40%] md:object-center"
           loading="eager"
           fetchpriority="high"
@@ -116,7 +149,6 @@
         />
       </div>
 
-      <!-- Logo DFSK decorativo -->
       <img
         src="assets/img/logo-dfsk.png"
         alt=""
@@ -127,80 +159,86 @@
         loading="eager"
       />
 
-      <!-- Overlay gradiente oscuro -->
       <div class="absolute inset-0 bg-gradient-to-br from-zinc-950/80 via-zinc-950/40 to-transparent pointer-events-none"></div>
 
-      <!-- Contenido -->
-      <div class="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-0">
-        <div class="grid md:grid-cols-2 gap-12 items-center min-h-screen md:min-h-0 py-12">
+      <div class="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 py-8 md:py-0">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center md:min-h-screen py-6 md:py-12">
 
-          <!-- Copy lado izquierdo -->
           <div>
             <p class="text-brand-500 text-xs font-bold uppercase tracking-widest mb-4">
-              Camioneta de Trabajo · Ovalle y IV Región
+              Camioneta de Trabajo Â· Ovalle y IV RegiÃ³n
             </p>
             <h1 id="hero-lp-heading" class="text-4xl sm:text-5xl font-bold tracking-tight leading-tight mb-5">
               La Camioneta DFSK D1<br />
               <span class="text-brand-500">Lista para el Trabajo Pesado</span>
             </h1>
-            <p class="text-zinc-300 text-lg mb-8 leading-relaxed max-w-md">
+            <p class="text-zinc-300 text-lg mb-6 leading-relaxed max-w-md">
               Capacidad de carga de <strong class="text-white">815 kilos</strong> y remolca hasta
-              <strong class="text-white">3 toneladas</strong>. Motor, chasis y caja de cambios
-              <strong class="text-white">Nissan</strong>: el rendimiento que tu faena necesita, al mejor precio del mercado.
-              <strong class="text-white block mt-2">Taller y repuestos en Ovalle.</strong>
+              <strong class="text-white">3 toneladas</strong>. Motor Nissan: el rendimiento que tu faena necesita.
+              <strong class="text-white block mt-2">Pie desde $3.200.000. Taller y repuestos en Ovalle.</strong>
             </p>
 
-            <!-- Trust badges Above the Fold -->
             <div class="flex flex-wrap gap-2.5">
               <span class="trust-badge inline-flex items-center gap-1.5 bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-full px-4 py-2 text-sm font-semibold text-white" style="animation-delay:0.05s">
-                <span aria-hidden="true">??</span> 815kg Carga
+                Pie $3.200.000
               </span>
               <span class="trust-badge inline-flex items-center gap-1.5 bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-full px-4 py-2 text-sm font-semibold text-white" style="animation-delay:0.1s">
-                <span aria-hidden="true">??</span> Motor Nissan
+                815 kg carga
               </span>
               <span class="trust-badge inline-flex items-center gap-1.5 bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-full px-4 py-2 text-sm font-semibold text-white" style="animation-delay:0.15s">
-                <span aria-hidden="true">???</span> Taller en Ovalle
+                Taller en Ovalle
               </span>
             </div>
+            <a href="#cotizar" class="md:hidden inline-flex mt-5 text-sm font-semibold text-brand-500">
+              Cotizar ahora ?
+            </a>
           </div>
 
-          <!-- Formulario lado derecho -->
-          <div class="trust-badge" style="animation-delay:0.1s">
-            <div class="bg-zinc-900/90 backdrop-blur-md border border-zinc-800 rounded-2xl p-7 sm:p-8 shadow-2xl">
-              <div class="mb-6">
-                <h2 class="text-xl font-bold text-white mb-1">Cotiza tu D1 de Trabajo</h2>
-                <p class="text-zinc-400 text-sm">Sin costo · Sin compromiso · Respuesta en 2h</p>
+          <div id="cotizar" class="trust-badge scroll-mt-24" style="animation-delay:0.1s">
+            <div class="bg-zinc-900/90 backdrop-blur-md border border-zinc-800 rounded-2xl p-6 sm:p-8 shadow-2xl">
+              <div class="flex items-center gap-3 mb-5">
+                <div class="felipe-chip">
+                  <img
+                    src="assets/img/foto felipe.webp"
+                    alt="Felipe NÃºÃ±ez"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <h2 class="text-xl font-bold text-white leading-tight">Cotiza tu D1 de Trabajo</h2>
+                  <p class="text-zinc-400 text-xs mt-0.5">Felipe te responde en 2h Â· Sin compromiso</p>
+                </div>
               </div>
 
               <form id="cotizacion-form" action="#" method="POST" novalidate class="space-y-4">
                 <input type="hidden" id="origen_lead" name="origen" value="Campana_MetaAds">
                 <input type="hidden" id="modelo_lead" name="modelo" value="DFSK D1">
-                <input type="hidden" id="notas_lead" name="notas" value="Campaña: Vehículo de Trabajo">
+                <input type="hidden" id="notas_lead" name="notas" value="CampaÃ±a: VehÃ­culo de Trabajo">
 
-                <!-- Nombre -->
                 <div>
                   <label for="nombre" class="block text-xs font-semibold text-zinc-300 uppercase tracking-wide mb-1.5">
                     Nombre completo <span class="text-brand-500">*</span>
                   </label>
-                  <input 
-                    type="text" 
-                    id="nombre" 
+                  <input
+                    type="text"
+                    id="nombre"
                     name="nombre"
                     required
                     autocomplete="name"
-                    placeholder="Ej: Juan González"
+                    placeholder="Ej: Juan GonzÃ¡lez"
                     class="form-input w-full rounded-lg px-4 py-3 text-sm"
                   />
                 </div>
 
-                <!-- Teléfono -->
                 <div>
                   <label for="telefono" class="block text-xs font-semibold text-zinc-300 uppercase tracking-wide mb-1.5">
-                    WhatsApp / Teléfono <span class="text-brand-500">*</span>
+                    WhatsApp / TelÃ©fono <span class="text-brand-500">*</span>
                   </label>
-                  <input 
-                    type="tel" 
-                    id="telefono" 
+                  <input
+                    type="tel"
+                    id="telefono"
                     name="telefono"
                     required
                     autocomplete="tel"
@@ -209,57 +247,60 @@
                   />
                 </div>
 
-                <!-- Ciudad -->
-                <div>
-                  <label for="ciudad" class="block text-xs font-semibold text-zinc-300 uppercase tracking-wide mb-1.5">
-                    Tu Ciudad
-                  </label>
-                  <select id="ciudad" name="ciudad" class="form-input w-full rounded-lg px-4 py-3 text-sm">
-                    <option value="">Selecciona tu ciudad</option>
-                    <option value="ovalle">Ovalle</option>
-                    <option value="la-serena">La Serena</option>
-                    <option value="coquimbo">Coquimbo</option>
-                    <option value="otra">Otra ciudad IV Región</option>
-                  </select>
-                </div>
+                <details class="opt-more rounded-lg border border-zinc-800 bg-zinc-950/40">
+                  <summary class="px-4 py-3 text-xs font-semibold text-zinc-400 uppercase tracking-wide flex items-center justify-between">
+                    Datos extra (opcional)
+                    <span class="text-brand-500 text-base font-normal" aria-hidden="true">+</span>
+                  </summary>
+                  <div class="px-4 pb-4 space-y-4">
+                    <div>
+                      <label for="ciudad" class="block text-xs font-semibold text-zinc-300 uppercase tracking-wide mb-1.5">
+                        Tu Ciudad
+                      </label>
+                      <select id="ciudad" name="ciudad" class="form-input w-full rounded-lg px-4 py-3 text-sm">
+                        <option value="">Selecciona tu ciudad</option>
+                        <option value="ovalle">Ovalle</option>
+                        <option value="la-serena">La Serena</option>
+                        <option value="coquimbo">Coquimbo</option>
+                        <option value="otra">Otra ciudad IV RegiÃ³n</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="mensaje" class="block text-xs font-semibold text-zinc-300 uppercase tracking-wide mb-1.5">
+                        Â¿Para quÃ© faena la necesitas?
+                      </label>
+                      <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        rows="2"
+                        placeholder="Ej: Agricultura, construcciÃ³n, reparto..."
+                        class="form-input w-full rounded-lg px-4 py-3 text-sm resize-none"
+                      ></textarea>
+                    </div>
+                  </div>
+                </details>
 
-                <!-- Uso del vehículo -->
-                <div>
-                  <label for="mensaje" class="block text-xs font-semibold text-zinc-300 uppercase tracking-wide mb-1.5">
-                    ¿Para qué faena la necesitas? <span class="text-zinc-600">(opcional)</span>
-                  </label>
-                  <textarea 
-                    id="mensaje" 
-                    name="mensaje"
-                    rows="2"
-                    placeholder="Ej: Agricultura, construcción, reparto..."
-                    class="form-input w-full rounded-lg px-4 py-3 text-sm resize-none"
-                  ></textarea>
-                </div>
-
-                <!-- Submit -->
-                <button 
+                <button
                   type="submit"
-                  class="btn-cta w-full bg-brand-500 hover:bg-brand-400 text-zinc-950 font-bold py-4 rounded-xl text-base mt-2"
+                  class="btn-cta w-full bg-brand-500 hover:bg-brand-400 text-zinc-950 font-bold py-4 rounded-xl text-base mt-1"
                   aria-describedby="form-disclaimer"
                 >
-                  Quiero mi DFSK D1 de Trabajo ?
+                  Quiero cotizar la D1 ?
                 </button>
 
                 <p id="form-disclaimer" class="text-center text-xs text-zinc-600 leading-relaxed">
-                  Al enviar, aceptas ser contactado por Felipe Núñez Autos.<br />
-                  Sin spam. Solo te llamamos si lo pediste.
+                  Al enviar, aceptas ser contactado por Felipe NÃºÃ±ez.<br />
+                  Sin spam. Solo te escribimos si lo pediste.
                 </p>
               </form>
 
-              <!-- Alternativa WhatsApp -->
               <div class="mt-5 pt-5 border-t border-zinc-800 text-center">
-                <p class="text-zinc-500 text-xs mb-2">¿Prefieres escribir directamente?</p>
-                <a 
-                  href="https://wa.me/56985480881?text=Hola%2C%20quiero%20cotizar%20la%20DFSK%20D1%20para%20trabajo%20pesado"
+                <p class="text-zinc-500 text-xs mb-2">Â¿Prefieres escribir ahora?</p>
+                <a
+                  href="https://wa.me/56985480881?text=Hola%2C%20quiero%20cotizar%20la%20DFSK%20D1%20para%20trabajo%20pesado%2C%20pie%20desde%20%243.200.000"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-sm text-white font-semibold hover:text-brand-500 transition-colors duration-200"
+                  class="wa-lead inline-flex items-center justify-center gap-2 w-full bg-wa-500 hover:bg-wa-600 text-zinc-950 font-bold py-3 rounded-xl text-sm transition-colors"
                   aria-label="WhatsApp +56 9 8548 0881"
                 >
                   <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -273,16 +314,15 @@
       </div>
     </section>
 
-    <!-- GALERÍA TERRENO — D1 en acción real -->
     <section class="bg-zinc-950 border-t border-zinc-800 py-16 px-4" aria-labelledby="terrain-heading">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-10">
-          <p class="text-brand-500 text-xs font-bold uppercase tracking-widest mb-3">Terreno real · IV Región</p>
+          <p class="text-brand-500 text-xs font-bold uppercase tracking-widest mb-3">Terreno real Â· IV RegiÃ³n</p>
           <h2 id="terrain-heading" class="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
             La D1 rinde donde la necesitas
           </h2>
           <p class="text-zinc-400 text-sm max-w-xl mx-auto">
-            Agua, cemento, polvo o tierra — probada en las condiciones de faena de Ovalle y la Región de Coquimbo.
+            Agua, cemento, polvo o tierra â€” probada en las condiciones de faena de Ovalle y la RegiÃ³n de Coquimbo.
           </p>
         </div>
 
@@ -302,14 +342,14 @@
           <article class="terrain-card group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
             <img
               src="assets/img/cementod1.webp"
-              alt="DFSK D1 en obra y construcción"
+              alt="DFSK D1 en obra y construcciÃ³n"
               class="w-full aspect-[4/3] object-cover"
               loading="lazy"
               width="400"
               height="300"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent"></div>
-            <p class="absolute bottom-3 left-3 right-3 text-xs sm:text-sm font-semibold text-white">Obra y construcción</p>
+            <p class="absolute bottom-3 left-3 right-3 text-xs sm:text-sm font-semibold text-white">Obra y construcciÃ³n</p>
           </article>
           <article class="terrain-card group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
             <img
@@ -326,7 +366,7 @@
           <article class="terrain-card group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
             <img
               src="assets/img/tierrad1.webp"
-              alt="DFSK D1 en terreno agrícola"
+              alt="DFSK D1 en terreno agrÃ­cola"
               class="w-full aspect-[4/3] object-cover"
               loading="lazy"
               width="400"
@@ -339,27 +379,49 @@
       </div>
     </section>
 
-    <!-- SOCIAL PROOF -->
-    <section class="bg-zinc-900 border-t border-zinc-800 py-12 px-4" aria-label="Prueba social">
+    <section class="bg-zinc-900 border-t border-zinc-800 py-12 px-4" aria-labelledby="cta-final-heading">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 id="cta-final-heading" class="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
+          Â¿La viste en faena? CotÃ­zala con Felipe
+        </h2>
+        <p class="text-zinc-400 text-sm mb-6 max-w-lg mx-auto">
+          Pie desde <strong class="text-white">$3.200.000</strong>. Te responde en menos de 2 horas, sin compromiso.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="#cotizar" class="btn-cta bg-brand-500 hover:bg-brand-400 text-zinc-950 font-bold px-8 py-4 rounded-xl text-sm">
+            Pedir cotizaciÃ³n ?
+          </a>
+          <a
+            href="https://wa.me/56985480881?text=Hola%2C%20quiero%20cotizar%20la%20DFSK%20D1%20para%20trabajo%20pesado%2C%20pie%20desde%20%243.200.000"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="wa-lead border border-zinc-700 hover:border-wa-500 text-white font-semibold px-8 py-4 rounded-xl text-sm transition-colors"
+          >
+            Escribir por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-zinc-950 border-t border-zinc-800 py-12 px-4" aria-label="Prueba social">
       <div class="max-w-4xl mx-auto grid sm:grid-cols-3 gap-6 text-center">
         <div>
-          <p class="text-3xl font-bold text-brand-500 mb-1">815kg</p>
+          <p class="text-3xl font-bold text-brand-500 mb-1">$3.2M</p>
+          <p class="text-zinc-400 text-sm">Pie desde, sujeto a evaluaciÃ³n</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-brand-500 mb-1">815 kg</p>
           <p class="text-zinc-400 text-sm">Capacidad de carga certificada</p>
         </div>
         <div>
           <p class="text-3xl font-bold text-brand-500 mb-1">3 toneladas</p>
           <p class="text-zinc-400 text-sm">Capacidad de remolque</p>
         </div>
-        <div>
-          <p class="text-3xl font-bold text-brand-500 mb-1">3 años</p>
-          <p class="text-zinc-400 text-sm">Garantía oficial de fábrica</p>
-        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER MINIMALISTA -->
   <footer class="bg-zinc-950 border-t border-zinc-800 py-8 px-4 text-center" role="contentinfo">
     <div class="flex items-center justify-center gap-3 mb-3" aria-label="Callegari Automotora">
       <img
@@ -371,34 +433,54 @@
         class="opacity-80"
         onerror="this.style.display='none';"
       >
-      <span class="text-zinc-500 text-xs">Callegari Automotriz · Covarrubias 340, Ovalle</span>
+      <span class="text-zinc-500 text-xs">Callegari Automotriz Â· Covarrubias 340, Ovalle</span>
     </div>
     <p class="text-zinc-600 text-xs">
-      © 2026 Felipe Callegari · www.felipecallegari.cl ·
+      Â© 2026 Felipe Callegari Â· www.felipecallegari.cl Â·
       <a href="tel:+56985480881" class="hover:text-zinc-400 transition-colors">+56 9 8548 0881</a>
     </p>
   </footer>
 
+  <div class="sticky-cta" role="navigation" aria-label="Cotizar ahora">
+    <a href="#cotizar" class="flex-1 text-center bg-brand-500 text-zinc-950 font-bold py-3 rounded-xl text-sm">
+      Cotizar
+    </a>
+    <a
+      href="https://wa.me/56985480881?text=Hola%2C%20quiero%20cotizar%20la%20DFSK%20D1%20para%20trabajo%20pesado%2C%20pie%20desde%20%243.200.000"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="wa-lead flex-1 text-center bg-wa-500 text-zinc-950 font-bold py-3 rounded-xl text-sm"
+    >
+      WhatsApp
+    </a>
+  </div>
+
   <script src="js/site-config.js"></script>
   <script src="js/lead-form.js"></script>
   <script>
-    const form = document.getElementById('cotizacion-form');
+    var form = document.getElementById('cotizacion-form');
+    var leadOpts = {
+      notas: function (f) {
+        var notasBase = f.querySelector('#notas_lead').value;
+        var ciudad = f.querySelector('#ciudad').value;
+        var mensaje = f.querySelector('#mensaje').value.trim();
+        return [notasBase, ciudad ? 'Ciudad: ' + ciudad : '', mensaje ? 'Faena: ' + mensaje : ''].filter(Boolean).join(' | ');
+      },
+      waMsg: function (f, nombre, telefono) {
+        return 'Hola, me llamo *' + nombre + '* y vi el anuncio de la *DFSK D1 para trabajo pesado* (815kg, remolque 3 toneladas, pie desde $3.200.000). Quiero cotizarla. Mi telÃ©fono es ' + telefono + '.';
+      }
+    };
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        window.DFSK_submitLead(form, {
-          notas: function (f) {
-            var notasBase = f.querySelector('#notas_lead').value;
-            var ciudad = f.querySelector('#ciudad').value;
-            var mensaje = f.querySelector('#mensaje').value.trim();
-            return [notasBase, ciudad ? 'Ciudad: ' + ciudad : '', mensaje ? 'Faena: ' + mensaje : ''].filter(Boolean).join(' | ');
-          },
-          waMsg: function (f, nombre, telefono) {
-            return 'Hola, me llamo *' + nombre + '* y vi el anuncio de la *DFSK D1 para trabajo pesado* (815kg, remolque 3 toneladas, motor Nissan). Quiero cotizarla. Mi teléfono es ' + telefono + '.';
-          }
-        });
+        window.DFSK_submitLead(form, leadOpts);
       });
     }
+    document.querySelectorAll('.wa-lead').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        window.DFSK_whatsAppClick(e, form, leadOpts);
+      });
+    });
   </script>
 
 </body>

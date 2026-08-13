@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/site-config.js"></script>
+  <script src="js/meta-pixel.js"></script>
   <meta name="theme-color" content="#0d1117">
 
   <!-- ═══ SEO PRIMARIO ═══ -->
@@ -149,7 +151,7 @@
       --c-gray-500:  #6b7280;
       --c-gray-700:  #374151;
       --c-gray-900:  #111827;
-      --font:        -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Helvetica Neue', Arial, sans-serif;
+      --font:        -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
       --r-sm:   8px;
       --r-md:   14px;
       --r-lg:   22px;
@@ -584,7 +586,9 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 18px;
-      font-size: 1.5rem;
+      color: var(--c-gold);
+    }
+    .benefit-icon svg { width: 24px; height: 24px; }
     }
     .benefit-title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
     .benefit-desc { font-size: .88rem; color: var(--c-gray-500); line-height: 1.6; }
@@ -788,7 +792,8 @@
       font-size: .9rem;
       line-height: 1.5;
     }
-    .req-icon { flex-shrink: 0; color: var(--c-wa); font-size: 1rem; margin-top: 1px; }
+    .req-icon { flex-shrink: 0; color: var(--c-wa); margin-top: 1px; display: flex; }
+    .req-icon svg { width: 16px; height: 16px; }
     .parte-pago-banner {
       margin-top: 24px;
       background: linear-gradient(135deg, rgba(201,168,76,.12), rgba(201,168,76,.05));
@@ -799,7 +804,8 @@
       gap: 14px;
       align-items: flex-start;
     }
-    .parte-pago-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .parte-pago-icon { flex-shrink: 0; color: var(--c-gold); display: flex; }
+    .parte-pago-icon svg { width: 28px; height: 28px; }
     .parte-pago-text strong { display: block; font-size: .95rem; font-weight: 700; color: var(--c-gold); margin-bottom: 4px; }
     .parte-pago-text span { font-size: .84rem; color: rgba(255,255,255,.65); line-height: 1.55; }
 
@@ -815,7 +821,8 @@
       border-radius: var(--r-lg);
       text-align: center;
     }
-    .guarantee-strip .g-icon { font-size: 2rem; }
+    .guarantee-strip .g-icon { color: var(--c-wa); display: flex; }
+    .guarantee-strip .g-icon svg { width: 32px; height: 32px; }
     .guarantee-strip strong { display: block; font-size: 1rem; font-weight: 800; }
     .guarantee-strip span { font-size: .85rem; color: var(--c-gray-500); }
 
@@ -941,7 +948,8 @@
       gap: 14px;
       padding: 40px 20px;
     }
-    .form-success .success-icon { font-size: 3.5rem; }
+    .form-success .success-icon { color: var(--c-wa); display: flex; }
+    .form-success .success-icon svg { width: 56px; height: 56px; }
     .form-success strong { font-size: 1.2rem; font-weight: 800; }
     .form-success p { font-size: .9rem; color: var(--c-gray-500); line-height: 1.6; }
 
@@ -1125,7 +1133,7 @@
 
     <!-- ════════ URGENCY BAR ════════ -->
     <div class="urgency-bar" role="alert">
-      ⚡ Stock limitado en Ovalle y IV Región · <span>Incluye permiso, patente, 1ª mantención, kit y pisos de goma</span>
+      Stock limitado en Ovalle y IV Región · <span>Incluye permiso, patente, 1ª mantención, kit y pisos de goma</span>
     </div>
 
     <!-- ════════ BENEFITS ════════ -->
@@ -1138,22 +1146,22 @@
         </div>
         <div class="benefits-grid">
           <article class="benefit-card fade-in">
-            <div class="benefit-icon" aria-hidden="true">🔧</div>
+            <div class="benefit-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75a4.5 4.5 0 01-5.94 4.28L9.22 17.87a2.25 2.25 0 01-3.18-3.18l6.84-6.59A4.5 4.5 0 1119.5 4.5L16.06 7.94"/></svg></div>
             <h3 class="benefit-title">Taller y repuestos en Ovalle</h3>
             <p class="benefit-desc">Servicio técnico y repuestos en la misma ciudad. Sin depender de Santiago para mantener tu camioneta operativa.</p>
           </article>
           <article class="benefit-card fade-in">
-            <div class="benefit-icon" aria-hidden="true">🔄</div>
+            <div class="benefit-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div>
             <h3 class="benefit-title">Parte de pago de tu auto usado</h3>
             <p class="benefit-desc">Recibimos vehículos desde año 2016 con máximo 100.000 km en parte de pago. Tasación rápida para bajar tu pie.</p>
           </article>
           <article class="benefit-card fade-in">
-            <div class="benefit-icon" aria-hidden="true">💰</div>
+            <div class="benefit-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V7m0 10v-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
             <h3 class="benefit-title">Pie desde $3.200.000</h3>
             <p class="benefit-desc">Crédito Tradicional hasta 60 cuotas o Crédito Inteligente hasta 48 cuotas. Te armo la mejor simulación según tu renta.</p>
           </article>
           <article class="benefit-card fade-in">
-            <div class="benefit-icon" aria-hidden="true">🎁</div>
+            <div class="benefit-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-8 4h16M5 12v8a2 2 0 002 2h10a2 2 0 002-2v-8"/></svg></div>
             <h3 class="benefit-title">Beneficios de cierre incluidos</h3>
             <p class="benefit-desc">Permiso de circulación, patente, 1ª mantención, kit de bienvenida, pisos de goma y garantía 3 años / 100.000 km.</p>
           </article>
@@ -1350,29 +1358,29 @@
               <h3>Opciones de financiamiento</h3>
               <ul class="req-list" aria-label="Opciones de crédito">
                 <li class="req-item">
-                  <span class="req-icon" aria-hidden="true">✓</span>
+                  <span class="req-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
                   <span><strong>Pie desde:</strong> $3.200.000 (sujeto a evaluación crediticia)</span>
                 </li>
                 <li class="req-item">
-                  <span class="req-icon" aria-hidden="true">✓</span>
+                  <span class="req-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
                   <span><strong>Crédito Tradicional:</strong> hasta 60 cuotas</span>
                 </li>
                 <li class="req-item">
-                  <span class="req-icon" aria-hidden="true">✓</span>
+                  <span class="req-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
                   <span><strong>Crédito Inteligente:</strong> hasta 48 cuotas</span>
                 </li>
                 <li class="req-item">
-                  <span class="req-icon" aria-hidden="true">✓</span>
+                  <span class="req-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
                   <span><strong>Documentos:</strong> Cédula vigente + 3 últimas liquidaciones</span>
                 </li>
                 <li class="req-item">
-                  <span class="req-icon" aria-hidden="true">✓</span>
+                  <span class="req-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
                   <span>Parte de pago: vehículos desde año 2016, máximo 100.000 km</span>
                 </li>
               </ul>
 
               <div class="parte-pago-banner" role="note" aria-label="Opción de parte de pago con tu vehículo usado">
-                <span class="parte-pago-icon" aria-hidden="true">🔄</span>
+                <span class="parte-pago-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></span>
                 <div class="parte-pago-text">
                   <strong>¿Tienes camioneta o auto usado?</strong>
                   <span>Lo tasamos y lo dejamos en parte de pago. Bajas el pie y aceleras la aprobación.</span>
@@ -1381,7 +1389,7 @@
             </div>
 
             <div class="guarantee-strip fade-in" role="note" aria-label="Garantía DFSK">
-              <span class="g-icon" aria-hidden="true">🛡️</span>
+              <span class="g-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
               <div>
                 <strong>Garantía 3 años o 100.000 km</strong>
                 <span>Taller y repuestos en Ovalle · Red autorizada en Chile</span>
@@ -1504,7 +1512,7 @@
               </div>
               <!-- Success state (shown after submit) -->
               <div class="form-success" id="form-success" aria-live="polite">
-                <span class="success-icon" aria-hidden="true">✅</span>
+                <span class="success-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg></span>
                 <strong>¡Listo! Felipe te escribe pronto.</strong>
                 <p>Recibirás respuesta en menos de 1 hora vía WhatsApp.</p>
                 <a
@@ -1640,6 +1648,13 @@
             submitBtn.textContent = 'Enviando…';
           }
 
+          var eventId = typeof window.DFSK_newEventId === 'function'
+            ? window.DFSK_newEventId()
+            : ('lead_' + Date.now());
+          if (typeof window.DFSK_trackLead === 'function') {
+            window.DFSK_trackLead({ eventId: eventId, modelo: modelo });
+          }
+
           fetch(API_LEADS, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -1649,7 +1664,9 @@
               modelo: modelo,
               pie: pie || null,
               fuente: 'formulario',
-              origen: origen
+              origen: origen,
+              event_id: eventId,
+              event_source_url: window.location.href
             })
           }).catch(function () {
             /* Si falla el backend, igual mostramos éxito */
